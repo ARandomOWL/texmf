@@ -1,0 +1,153 @@
+%% eqparse.sty
+%%
+%% Parse natural math equations to LaTeX style equations
+\ProvidesPackage{eqparse}[2017/08/31 v1.0 Parse natural math equations to LaTeX style equations https://tex.stackexchange.com/a/332061/132551]
+\RequirePackage{listofitems,ifthen}
+
+\def\QS[#1]{%
+  \if+\Qsep[#1]+\else%
+  \if-\Qsep[#1]-\else%
+  \if/\Qsep[#1]\over\else%
+  \if=\Qsep[#1]=\else%
+  \if^\Qsep[#1]^\else%
+  \if(\Qsep[#1]\bgroup\left(\else%
+  \if)\Qsep[#1]\right)\egroup\else%
+  \if[\Qsep[#1]\bgroup\else%
+  \if]\Qsep[#1]\egroup\else%
+  \if*\Qsep[#1]\cdot\else%
+  \if_\Qsep[#1]\expandafter\theund\else%
+  \csname \Qsep[#1]\endcsname\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi%
+}%
+
+\def\theund#1[#2]{_{\mathrm{#1[#2]}}}%
+
+\setsepchar[@]{=@(||)||[||]@^@/||*@+||-@_@alpha||beta||pi||cos||sin||tan}
+
+\def\gQ[#1]{\edef\tmp{#1}\expandafter\g@addto@macro\expandafter\Z%
+  \expandafter{\expandafter\Q\expandafter[\tmp]}}
+\def\gQS[#1]{\edef\tmp{#1}\expandafter\g@addto@macro\expandafter\Z%
+  \expandafter{\expandafter\QS\expandafter[\tmp]}}
+
+\newcommand\eqparse[1]{%
+  \def\Z{}%
+  \greadlist*\Q{#1}%
+  \presentQ%
+  \Z%
+}
+
+\newcounter{lindex}
+\def\presentQ{% =
+  \setcounter{lindex}{0}%
+  \whiledo{\value{lindex}<\listlen\Q[]}{%
+    \stepcounter{lindex}%
+    \presentQA[\thelindex]%
+    \ifnum\value{lindex}<\listlen\Q[]\relax%
+      \gQS[\thelindex]%
+    \fi%
+  }%
+}
+\newcounter{lindexA}
+\def\presentQA[#1]{% ()
+  \setcounter{lindexA}{0}%
+  \whiledo{\value{lindexA}<\listlen\Q[#1]}{%
+    \stepcounter{lindexA}%
+    \presentQB[#1,\thelindexA]%
+    \ifnum\value{lindexA}<\listlen\Q[#1]\relax%
+      \gQS[#1,\thelindexA]%
+    \fi%
+  }
+}
+\newcounter{lindexB}
+\def\presentQB[#1]{% ^
+  \setcounter{lindexB}{0}%
+  \whiledo{\value{lindexB}<\listlen\Q[#1]}{%
+    \stepcounter{lindexB}%
+    \presentQC[#1,\thelindexB]%
+    \ifnum\value{lindexB}<\listlen\Q[#1]\relax%
+      \gQS[#1,\thelindexB]%
+    \fi%
+  }
+}
+\newcounter{lindexC}
+\def\presentQC[#1]{% /*
+  \setcounter{lindexC}{0}%
+  \whiledo{\value{lindexC}<\listlen\Q[#1]}{%
+    \stepcounter{lindexC}%
+    \presentQD[#1,\thelindexC]%
+    \ifnum\value{lindexC}<\listlen\Q[#1]\relax%
+      \gQS[#1,\thelindexC]%
+    \fi%
+  }
+}
+\newcounter{lindexD}
+\def\presentQD[#1]{% +-
+  \setcounter{lindexD}{0}%
+  \whiledo{\value{lindexD}<\listlen\Q[#1]}{%
+    \stepcounter{lindexD}%
+    \presentQE[#1,\thelindexD]%
+    \ifnum\value{lindexD}<\listlen\Q[#1]\relax%
+      \gQS[#1,\thelindexD]%
+    \fi%
+  }
+}
+\newcounter{lindexE}
+\def\presentQE[#1]{% _
+  \setcounter{lindexE}{0}%
+  \whiledo{\value{lindexE}<\listlen\Q[#1]}{%
+    \stepcounter{lindexE}%
+    \presentQF[#1,\thelindexE]%
+    \ifnum\value{lindexE}<\listlen\Q[#1]\relax%
+      \gQS[#1,\thelindexE]%
+    \fi%
+  }
+}
+\newcounter{lindexF}
+\def\presentQF[#1]{% alpha beta pi cos sin tan
+  \setcounter{lindexF}{0}%
+  \whiledo{\value{lindexF}<\listlen\Q[#1]}{%
+    \stepcounter{lindexF}%
+    \gQ[#1,\thelindexF]%
+    \ifnum\value{lindexF}<\listlen\Q[#1]\relax%
+      \gQS[#1,\thelindexF]%
+    \fi%
+  }
+}
+
+% THESE ARE THE REDEFITIIONS FOR TRANSLATION
+\usepackage{environ}
+
+\def\QSALT[#1]{%
+  \if+\Qsep[#1]+\else%
+  \if-\Qsep[#1]-\else%
+  \if/\Qsep[#1]\over\else%
+  \if=\Qsep[#1]=\else%
+  \if^\Qsep[#1]^\else%
+  \if(\Qsep[#1]{\left(\else%
+  \if)\Qsep[#1]\right)}\else%
+  \if[\Qsep[#1]{\else%
+  \if]\Qsep[#1]}\else%
+  \if*\Qsep[#1]\cdot\else%
+  \if_\Qsep[#1]\expandafter\theundALT\else%
+  \expandafter\noexpand\csname \Qsep[#1]\endcsname\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi%
+}%
+
+\def\theundALT#1[#2]{_{\noexpand\mathrm{#1[#2]}}}%
+
+\newcommand\translateeq[1]{%
+  \bgroup%
+  \let\QS\QSALT%
+  \def\Z{}%
+  \greadlist*\Q{#1}%
+  \presentQ%
+  \protected@edef\ZZ{\Z}
+  \par\medskip\noindent%
+  \parbox{\linewidth}{\detokenize\expandafter{\ZZ}}%
+  \par\medskip%
+  \egroup%
+}
+
+\NewEnviron{translateeqs}{\expandafter\nexteqn\BODY\par\relax}
+
+\long\def\nexteqn#1\par#2\relax{%
+  \translateeq{#1}\ifx\relax#2\else\nexteqn#2\relax\fi%
+}

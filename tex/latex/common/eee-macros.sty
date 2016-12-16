@@ -1,0 +1,22 @@
+%% eee-macros.sty
+%%
+%% Macros for commonly used EEE terms.
+\ProvidesPackage{eee-macros}[2017/04/29 v1.0 Macros for commonly used EEE terms.]
+\RequirePackage{amssymb}
+
+\newcommand{\mzero}{Cortex-M0}
+\newcommand{\mzerop}{Cortex-M0+}
+\newcommand{\vdd}[1]{%
+  \def\temp{#1}\ifx\temp\empty
+    \ensuremath{V_{\mathrm{DD}}}%
+  \else
+    \ensuremath{V_{\mathrm{DD,#1}}}%
+  \fi
+}
+\newcommand{\nclx}{NCL-X}
+\newcommand{\ncld}{NCL-D}
+
+
+\newcommand{\pushright}[1]{\ifmeasuring@#1\else\omit\hfill$\displaystyle#1$\fi\ignorespaces}
+\newcommand{\pushleft}[1]{\ifmeasuring@#1\else\omit$\displaystyle#1$\hfill\fi\ignorespaces}
+\newcommand{\qed}{\pushright{\text{\hfill$\blacksquare$}}}

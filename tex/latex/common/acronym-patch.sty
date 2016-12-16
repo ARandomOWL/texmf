@@ -1,0 +1,22 @@
+%% acronym-patch.tex
+%%
+%% Prevents multiply defined labels when using acronym with cleveref. See:
+%% http://tex.stackexchange.com/questions/71364/acronym-acresetall-cleveref-multiply-defined-labels
+\ProvidesPackage{acronym-patch}[2016/12/12 v1.0 Prevents multiple labels when acronym is used with cleveref]
+\newcommand*{\org@overidelabel}{}
+\let\org@overridelabel\@verridelabel
+\@ifpackagelater{acronym}{2015/03/21}{% v1.41
+  \renewcommand*{\@verridelabel}[1]{%
+    \@bsphack
+    \protected@write\@auxout{}{\string\AC@undonewlabel{#1@cref}}%
+    \org@overridelabel{#1}%
+    \@esphack
+  }%
+}{% older versions
+  \renewcommand*{\@verridelabel}[1]{%
+    \@bsphack
+    \protected@write\@auxout{}{\string\undonewlabel{#1@cref}}%
+    \org@overridelabel{#1}%
+    \@esphack
+  }%
+}

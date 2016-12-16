@@ -1,0 +1,11 @@
+%% acronym-abstract.tex
+%%
+%% Acronym usage in abstracts
+\ProvidesPackage{acronym-abstract}[2017/05/13 v1.0 Acronym usage in abstracts]
+\RequirePackage{acronym}
+\RequirePackage{etoolbox}
+
+% Force long version of acronym in abstract
+\AtBeginEnvironment{abstract}{\renewcommand{\ac}{\acl}}
+% Reset all acronym usage after abstract
+\AfterEndEnvironment{abstract}{\acresetall}

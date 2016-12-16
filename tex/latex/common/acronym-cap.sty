@@ -1,0 +1,80 @@
+%% acronym-cap.sty
+%%
+%% Add macros for capitalizing the first letter of acronyms.
+\ProvidesPackage{acronym-cap}[2017/04/29 v1.0 Add macros for capitalizing the first letter of acronyms.]
+\RequirePackage{acronym}
+\RequirePackage{etoolbox}
+
+\newif\ifAC@uppercase@first
+
+\def\Aclp#1{\AC@uppercase@firsttrue\aclp{#1}\AC@uppercase@firstfalse}
+\def\AC@aclp#1{%
+  \ifcsname fn@#1@PL\endcsname
+    \ifAC@uppercase@first
+      \expandafter\expandafter\expandafter\MakeUppercase\csname fn@#1@PL\endcsname
+    \else
+      \csname fn@#1@PL\endcsname
+    \fi
+  \else
+    \AC@acl{#1}s%
+  \fi 
+}
+
+\def\Acp#1{\AC@uppercase@firsttrue\acp{#1}\AC@uppercase@firstfalse}
+\def\AC@acp#1{%
+  \ifcsname fn@#1@PL\endcsname
+    \ifAC@uppercase@first
+      \expandafter\expandafter\expandafter\MakeUppercase\csname fn@#1@PL\endcsname
+    \else
+      \csname fn@#1@PL\endcsname
+    \fi
+  \else
+    \AC@ac{#1}s%
+  \fi
+}
+
+\def\Acfp#1{\AC@uppercase@firsttrue\acfp{#1}\AC@uppercase@firstfalse}
+\def\AC@acfp#1{%
+  \ifcsname fn@#1@PL\endcsname
+    \ifAC@uppercase@first
+      \expandafter\expandafter\expandafter\MakeUppercase\csname fn@#1@PL\endcsname
+    \else
+      \csname fn@#1@PL\endcsname
+    \fi
+  \else
+    \AC@acf{#1}s%
+  \fi
+}
+
+\def\Acsp#1{\AC@uppercase@firsttrue\acsp{#1}\AC@uppercase@firstfalse}
+\def\AC@acsp#1{%
+  \ifcsname fn@#1@PS\endcsname
+    \ifAC@uppercase@first
+      \expandafter\expandafter\expandafter\MakeUppercase\csname fn@#1@PS\endcsname
+    \else
+      \csname fn@#1@PS\endcsname
+    \fi
+  \else
+    \AC@acs{#1}s%
+  \fi
+}
+
+\edef\AC@uppercase@write{\string\ifAC@uppercase@first\string\expandafter\string\MakeUppercase\string\fi\space}
+\def\AC@acrodef#1[#2]#3{%
+  \@bsphack
+  \protected@write\@auxout{}{%
+    \string\newacro{#1}[#2]{\AC@uppercase@write #3}%
+  }\@esphack
+}
+\def\Acl#1{\AC@uppercase@firsttrue\acl{#1}\AC@uppercase@firstfalse}
+\def\Acf#1{\AC@uppercase@firsttrue\acf{#1}\AC@uppercase@firstfalse}
+\def\Ac#1{\AC@uppercase@firsttrue\ac{#1}\AC@uppercase@firstfalse}
+\def\Acs#1{\AC@uppercase@firsttrue\acs{#1}\AC@uppercase@firstfalse}
+\robustify\Aclp
+\robustify\Acfp
+\robustify\Acp
+\robustify\Acsp
+\robustify\Acl
+\robustify\Acf
+\robustify\Ac
+\robustify\Acs
