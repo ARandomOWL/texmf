@@ -1,0 +1,28 @@
+%% boolean.sty
+%%
+%% Boolean operators
+\ProvidesPackage{boolean}[2017/09/03 v1.0 Provides configurable boolean operators.]
+\RequirePackage{amssymb}
+
+\DeclareOption{eng}{
+  \DeclareRobustCommand*{\band}{\cdot}
+  \DeclareRobustCommand*{\bor}{+}
+  \DeclareRobustCommand*{\bxor}{\oplus}
+  \DeclareRobustCommand*{\bnot}{\bar}
+}
+
+\DeclareOption{math}{
+  \DeclareRobustCommand*{\band}{\land}
+  \DeclareRobustCommand*{\bor}{\lor}
+  \DeclareRobustCommand*{\bxor}{\veebar}
+  \DeclareRobustCommand*{\bnot}{\neg}
+}
+
+\DeclareOption{implicit-and}{
+  \DeclareRobustCommand*{\band}{}
+}
+
+\ExecuteOptions{eng}
+\ProcessOptions\relax
+
+\endinput
