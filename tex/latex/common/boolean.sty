@@ -9,6 +9,7 @@
   \DeclareRobustCommand*{\bor}{+}
   \DeclareRobustCommand*{\bxor}{\oplus}
   \DeclareRobustCommand*{\bnot}{\bar}
+  \DeclareRobustCommand*{\bnotg}{\overline}
 }
 
 \DeclareOption{math}{
@@ -16,6 +17,7 @@
   \DeclareRobustCommand*{\bor}{\lor}
   \DeclareRobustCommand*{\bxor}{\veebar}
   \DeclareRobustCommand*{\bnot}{\neg}
+  \DeclareRobustCommand*{\bnotg}[1]{\neg(#1)}
 }
 
 \DeclareOption{implicit-and}{
