@@ -4,12 +4,15 @@
 \ProvidesPackage{boolean}[2017/09/03 v1.0 Provides configurable boolean operators.]
 \RequirePackage{amssymb}
 
+% https://tex.stackexchange.com/a/22134/132551
+\newcommand*{\xoverline}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
 \DeclareOption{eng}{
   \DeclareRobustCommand*{\band}{\cdot}
   \DeclareRobustCommand*{\bor}{+}
   \DeclareRobustCommand*{\bxor}{\oplus}
-  \DeclareRobustCommand*{\bnot}{\bar}
-  \DeclareRobustCommand*{\bnotg}{\overline}
+  \DeclareRobustCommand*{\bnot}{\xoverline}
+  \DeclareRobustCommand*{\bnotg}{\xoverline}
 }
 
 \DeclareOption{math}{
