@@ -1,12 +1,12 @@
 %% subeqn.sty
 %%
 %% https://tex.stackexchange.com/a/34568/132551
-\ProvidesPackage{subeqn}[2017/04/29 v1.0 Subequations inside an align environment.]
+\ProvidesPackage{subeqn}[2017/12/05 v1.1 Subequations inside an align environment.]
 %% USAGE:
 %%\begin{align}
 %%  A + B &\to C + D \\
 %%  E + F &\to G + H \label{eq:EFGH} \\
-%%  I + J &\to K + L \beginsubeqn\subeqn \\
+%%  I + J &\to K + L \beginsubeqn \\
 %%        &\to M + N \subeqn \label{eq:MN}\\
 %%        &\to O + P \subeqn
 %%\end{align}
@@ -21,4 +21,4 @@
   \refstepcounter{subeqn}% Step subequation number
   \tag{\thesubeqn}% Label equation
 }
-\newcommand{\beginsubeqn}{\refstepcounter{equation}}
+\newcommand{\beginsubeqn}{\setcounter{subeqn}{0}\refstepcounter{equation}\subeqn}
