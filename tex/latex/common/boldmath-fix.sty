@@ -3,3 +3,8 @@
 %%
 \ProvidesPackage{boldmath-fix}[2017/11/28 v1.0 Patch bfseries to include boldmath]
 \g@addto@macro\bfseries{\boldmath}
+
+% Fix siunitx bold if the package is loaded.
+\@ifpackageloaded{siunitx}{%
+  \sisetup{detect-weight=true,detect-inline-weight=math}
+}{}
