@@ -1,0 +1,9 @@
+%%
+%% siprefix.sty
+%%
+\ProvidesPackage{siprefix}[2018/04/16 v1.0 Provides command for engineering prefix.]
+% Usage: 
+% \SIprefix{12.3e7}{\volt}
+% Prints: 123 MV
+\newcommand{\SIprefix}[2]{%
+    \SI[scientific-notation=engineering,exponent-to-prefix]{#1}{#2}}
