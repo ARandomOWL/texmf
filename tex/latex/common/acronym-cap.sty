@@ -85,7 +85,7 @@
   \else%
   \ifAC@printonlyused%
     \expandafter\ifx\csname acused@#1\endcsname\AC@used%
-       \item[\protect\AC@hypertarget{#1}{\acsfont{#2}}] #3%
+       \item[\protect\AC@hypertarget{#1}{\aclabelfont{#2}}] #3%
           \ifAC@withpage%
             \expandafter\ifx\csname r@acro:#1\endcsname\relax%
                \PackageInfo{acronym}{%
@@ -97,7 +97,7 @@
           \fi%
     \fi%
  \else%
-    \item[\protect\AC@hypertarget{#1}{\acsfont{#2}}] #3%
+    \item[\protect\AC@hypertarget{#1}{\aclabelfont{#2}}] #3%
  \fi%
  \fi%
  \begingroup
