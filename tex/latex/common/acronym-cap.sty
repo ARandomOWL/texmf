@@ -107,3 +107,7 @@
        {\string\newacro{#1}[\string\AC@hyperlink{#1}{#2}]{\AC@uppercase@write #3}}%
     \@esphack
   \endgroup}
+
+% Also capitalize in list of acronyms
+\patchcmd{\AC@@acro}{] #3}{] \MakeUppercase #3}{}{}
+\patchcmd{\AC@@acro}{] #3}{] \MakeUppercase #3}{}{}
