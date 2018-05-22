@@ -2,43 +2,59 @@
 %%
 %% Useful list of acronyms for use with the `acronym` package
 \ProvidesPackage{eee-acronyms}[2016/12/20 v1.0 Useful list of acronyms for use with the acronym package]
+\newif\ifeeeacro@nolist
+\DeclareOption{list}{\eeeacro@nolistfalse}
+\DeclareOption{nolist}{\eeeacro@nolisttrue}
+\ExecuteOptions{nolist}
+\ProcessOptions\relax
+
+\ifeeeacro@nolist
+  \PassOptionsToPackage{nolist}{acronym}
+  \AtEndDocument{\listofacronyms}
+\fi
+\PassOptionsToPackage{printonlyused}{acronym}
 \RequirePackage{acronym}
 
-\acrodef{BD}{bounded delay}
-\acrodef{CPOG}{conditional partial order graph}
-\acrodef{DI}{delay insensitive}
-\acrodef{DRAM}{dynamic RAM}
-\acrodef{DVFS}{dynamic voltage and frequency scaling}
-\acrodef{HDL}{hardware description language}
-\acrodefindefinite{HDL}{an}{a}
-\acrodef{INWE}{inverse-narrow-width effect}
-\acrodefindefinite{INWE}{an}{an}
-\acrodef{ISA}{instruction set architecture}
-\acrodefindefinite{ISA}{an}{an}
-\acrodef{IoT}{internet of things}
-\acrodefindefinite{IoT}{an}{an}
-\acrodef{MEP}{minimum energy point}
-\acrodefindefinite{MEP}{an}{a}
-\acrodef{MPP}{maximum power point}
-\acrodefindefinite{MPP}{an}{a}
-\acrodef{MPPT}{maximum power point tracking}
-\acrodefindefinite{MPPT}{an}{a}
-\acrodef{NCL}{null convention logic}
-\acrodefindefinite{NCL}{an}{a}
-\acrodef{PVT}{process, variation and temperature}
-\acrodef{QDI}{quasi delay insensitive}
-\acrodef{RAM}{random-access memory}
-\acrodefplural{RAM}{random-access memories}
-\acrodef{RDF}{random dopant fluctuation}
-\acrodef{SCM}{standard cell memory}
-\acrodefindefinite{SCM}{an}{a}
-\acrodefplural{SCM}{standard cell memories}
-\acrodef{SI}{speed independent}
-\acrodefindefinite{SI}{an}{a}
-\acrodef{SRAM}{static RAM}
-\acrodefindefinite{SRAM}{an}{a}
-\acrodef{STG}{signal transition graph}
-\acrodefindefinite{STG}{a}{an}
-\acrodef{ULV}{ultra-low voltage}
-\acrodefindefinite{ULV}{a}{an}
-\acrodef{WSN}{wide sensor network}
+\newcommand{\listofacronyms}{%
+  \begin{acronym}[DRAM]
+    \acro{BD}{bounded delay}
+    \acro{CD}{completion detection}
+    \acro{CPOG}{conditional partial order graph}
+    \acro{DI}{delay insensitive}
+    \acro{DRAM}{dynamic RAM}
+    \acro{DVFS}{dynamic voltage and frequency scaling}
+    \acro{HDL}{hardware description language}
+    \acrodefindefinite{HDL}{an}{a}
+    \acro{INWE}{inverse-narrow-width effect}
+    \acrodefindefinite{INWE}{an}{an}
+    \acro{ISA}{instruction set architecture}
+    \acrodefindefinite{ISA}{an}{an}
+    \acro{IoT}{internet of things}
+    \acrodefindefinite{IoT}{an}{an}
+    \acro{MEP}{minimum energy point}
+    \acrodefindefinite{MEP}{an}{a}
+    \acro{MPP}{maximum power point}
+    \acrodefindefinite{MPP}{an}{a}
+    \acro{MPPT}{maximum power point tracking}
+    \acrodefindefinite{MPPT}{an}{a}
+    \acro{NCL}{null convention logic}
+    \acrodefindefinite{NCL}{an}{a}
+    \acro{PVT}{process, variation and temperature}
+    \acro{QDI}{quasi delay insensitive}
+    \acro{RAM}{random-access memory}
+    \acrodefplural{RAM}{random-access memories}
+    \acro{RDF}{random dopant fluctuation}
+    \acro{SCM}{standard cell memory}
+    \acrodefindefinite{SCM}{an}{a}
+    \acrodefplural{SCM}{standard cell memories}
+    \acro{SI}{speed independent}
+    \acrodefindefinite{SI}{an}{a}
+    \acro{SRAM}{static RAM}
+    \acrodefindefinite{SRAM}{an}{a}
+    \acro{STG}{signal transition graph}
+    \acrodefindefinite{STG}{a}{an}
+    \acro{ULV}{ultra-low voltage}
+    \acrodefindefinite{ULV}{a}{an}
+    \acro{WSN}{wide sensor network}
+  \end{acronym}
+}
