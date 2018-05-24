@@ -15,7 +15,12 @@
 \PassOptionsToPackage{printonlyused}{acronym}
 \RequirePackage{acronym}
 
+\newcommand{\listacronymname}{List of Acronyms}
 \newcommand{\listofacronyms}{%
+  \ifeeeacro@nolist
+  \else
+    \chapter{\listacronymname}
+  \fi
   \begin{acronym}[DRAM]
     \acro{BD}{bounded delay}
     \acro{CD}{completion detection}
@@ -57,4 +62,5 @@
     \acrodefindefinite{ULV}{a}{an}
     \acro{WSN}{wide sensor network}
   \end{acronym}
+  \global\let\listofacronyms\relax
 }
