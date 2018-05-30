@@ -1,0 +1,7 @@
+#!/bin/bash
+for filename in $@; do
+	if [[ "$filename" =~ .bib$ ]]; then
+		echo "Processing $filename"
+		bibtool -r .bibtool.res -i "$filename" -o "$filename"
+	fi
+done

@@ -7,12 +7,7 @@ files=$(git diff --cached --name-only --diff-filter=ACMR $bibpath)
 git stash -q --keep-index
 # Run bibtool on changed bibliography
 [[ ! -z ${files// /} ]] && echo "$(tput bold)Processing bibliography files...$(tput sgr0)"
-for filename in $files; do
-	if [[ "$filename" =~ .bib$ ]]; then
-		echo "Processing $filename"
-		bibtool -r .bibtool.res -i "$filename" -o "$filename"
-	fi
-done
+./.bibtool "$files"
 # Restage files that were altered
 git add -u
 # Re-apply original unstaged changes
