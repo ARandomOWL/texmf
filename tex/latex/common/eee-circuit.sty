@@ -1,0 +1,31 @@
+\ProvidesPackage{eee-circuit}[2018/05/31 v1.0 Tikz styles for circuit drawing.]
+\RequirePackage{tikz}
+
+\usetikzlibrary{circuits.logic.US}
+\tikzstyle{mylogic} = [%
+	circuit logic US,
+	font=\sffamily\small,
+	every node/.append style={scale=1},
+	line width=1pt,
+]
+\tikzstyle{input} = [
+	align=right,
+	anchor=east,
+	execute at begin node=\ttfamily,
+	text=red!70,
+]
+\tikzstyle{input above} = [input, every node/.append style={yshift=.5}]
+\tikzstyle{input below} = [input, every node/.append style={yshift=-.5}]
+\tikzstyle{output} = [
+	align=left,
+	anchor=west,
+	execute at begin node=\ttfamily,
+	text=blue!70,
+]
+\tikzstyle{label} = [
+	execute at begin node=\setlength{\baselineskip}{9pt},
+	opaque,
+]
+\tikzstyle{label left} = [label, align=left, anchor=west]
+\tikzstyle{label right} = [label, align=right, anchor=east]
+\tikzstyle{label center} = [label, align=center]
