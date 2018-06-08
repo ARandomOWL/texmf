@@ -6,6 +6,7 @@
 \DeclareOption{list}{\eeeacro@nolistfalse}
 \DeclareOption{nolist}{\eeeacro@nolisttrue}
 \ExecuteOptions{nolist}
+\DeclareOption*{\PassOptionsToPackage{\CurrentOption}{acronym}}
 \ProcessOptions\relax
 
 \ifeeeacro@nolist
