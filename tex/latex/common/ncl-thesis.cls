@@ -53,6 +53,7 @@
 }
 
 % Header/footer styles using fancyhdr
+\setlength{\headheight}{14pt}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[RE]{\leftmark}
