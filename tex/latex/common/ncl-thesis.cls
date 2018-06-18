@@ -64,6 +64,12 @@
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
 \renewcommand\sectionmark[1]{\markright{\thesection.\ #1}}
 
+\doublehyphendemerits=10000       % No consecutive line hyphens.
+\brokenpenalty=10000              % No broken words across columns/pages.
+\widowpenalty=9999                % Almost no widows at bottom of page.
+\clubpenalty=9999                 % Almost no orphans at top of page.
+\interfootnotelinepenalty=9999    % Almost never break footnotes.
+
 \global\let\@university\@empty
 \global\let\@supervisors\@empty
 
