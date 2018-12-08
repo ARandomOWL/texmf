@@ -1,17 +1,30 @@
-\ProvidesClass{ncl-thesis}[2018/05/07 Class for thesis of Newcastle University (UK)]
+\ProvidesClass{ncl-thesis}[2018/12/08 Class for thesis of Newcastle University (UK)]
 \newif\ifnclthesis@print
+\newif\ifnclthesis@draft
 \DeclareOption{print}{\nclthesis@printtrue}
+\DeclareOption{draft}{\nclthesis@drafttrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
-%
+
 \RequirePackage{colors-ncl}
 \RequirePackage{fancyhdr}
+\RequirePackage{setspace}
+
+\newif\ifnclthesis@doublespacing
 \ifnclthesis@print
-	\PassOptionsToClass{twoside,final}{book}
+	\PassOptionsToClass{twoside}{book}
 	\PassOptionsToPackage{hidelinks}{hyperref}
+	\ifnclthesis@draft
+		\nclthesis@doublespacingtrue
+	\fi
 \else
 	\PassOptionsToClass{oneside}{book}
 \fi
+\ifnclthesis@draft
+	\PassOptionsToPackage{draft}{book}
+	\PassOptionsToPackage{backref=true}{biblatex}
+\fi
+
 \LoadClass[
 	11pt,
 	a4paper,
@@ -50,6 +63,11 @@
 			\@date\par}
 		\end{center}%
 	\end{titlepage}
+	%
+	% use double line spacing if we're in draft mode and printing mode
+	\ifnclthesis@doublespacing
+		\doublespacing
+	\fi
 }
 
 % Header/footer styles using fancyhdr
