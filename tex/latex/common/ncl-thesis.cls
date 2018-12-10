@@ -10,7 +10,6 @@
 \newif\ifnclthesis@doublespacing
 \ifnclthesis@print
 	\PassOptionsToClass{twoside}{book}
-	\PassOptionsToPackage{hidelinks}{hyperref}
 	\ifnclthesis@draft
 		\nclthesis@doublespacingtrue
 	\fi
@@ -52,6 +51,10 @@
 \newcommand{\supervisors}[1]{\def\@supervisors{#1}\global\let\supervisors\@empty}
 
 \def\maketitle{%
+	% Set hidelinks here in case link type was changed in main tex file
+	\ifnclthesis@print
+		\hypersetup{hidelinks}
+	\fi
 	\begin{titlepage}
 		\begin{center}%
 			\let\footnote\thanks
