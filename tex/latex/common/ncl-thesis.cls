@@ -33,6 +33,11 @@
 \RequirePackage[
 	markifdraft,
 	]{gitinfo2}
+\ifnclthesis@draft
+	\RequirePackage[firstpage]{draftwatermark}
+	\SetWatermarkText{DRAFT}
+	\SetWatermarkScale{1}
+\fi
 
 \def\@university{\@empty}
 \def\@supervisors{\@empty}
