@@ -6,6 +6,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 
+% Process draft and print options
 \newif\ifnclthesis@doublespacing
 \ifnclthesis@print
 	\PassOptionsToClass{twoside}{book}
@@ -22,17 +23,23 @@
 	\PassOptionsToPackage{backref=true}{biblatex}
 \fi
 
+% Use the book class
 \LoadClass[
 	11pt,
 	a4paper,
 	]{book}
 
+% Load required packages
 \RequirePackage{colors-ncl}
 \RequirePackage{fancyhdr}
 \RequirePackage{setspace}
 \RequirePackage[
 	markifdraft,
 	]{gitinfo2}
+\PassOptionsToPackage{pdfusetitle}{hyperref}
+	\RequirePackage{hyperref}
+
+% Draft watermark
 \ifnclthesis@draft
 	\RequirePackage[firstpage]{draftwatermark}
 	\SetWatermarkText{DRAFT}
