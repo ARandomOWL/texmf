@@ -6,10 +6,6 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 
-\RequirePackage{colors-ncl}
-\RequirePackage{fancyhdr}
-\RequirePackage{setspace}
-
 \newif\ifnclthesis@doublespacing
 \ifnclthesis@print
 	\PassOptionsToClass{twoside}{book}
@@ -21,7 +17,8 @@
 	\PassOptionsToClass{oneside}{book}
 \fi
 \ifnclthesis@draft
-	\PassOptionsToPackage{draft}{book}
+	\PassOptionsToClass{draft}{book}
+	\PassOptionsToPackage{draft}{gitinfo2}
 	\PassOptionsToPackage{backref=true}{biblatex}
 \fi
 
@@ -29,6 +26,13 @@
 	11pt,
 	a4paper,
 	]{book}
+
+\RequirePackage{colors-ncl}
+\RequirePackage{fancyhdr}
+\RequirePackage{setspace}
+\RequirePackage[
+	markifdraft,
+	]{gitinfo2}
 
 \def\@university{\@empty}
 \def\@supervisors{\@empty}
@@ -60,7 +64,12 @@
 			Doctor of Philosophy\par}
 			\vspace{.5cm}
 			{\Large
-			\@date\par}
+			\ifnclthesis@draft
+				\color{red}Draft compiled \@date{}\par
+			\else
+				\@date\par
+			\fi
+			}
 		\end{center}%
 	\end{titlepage}
 	%
