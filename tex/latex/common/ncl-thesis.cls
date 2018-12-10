@@ -45,6 +45,18 @@
 	\SetWatermarkScale{1}
 \fi
 
+% More sensible float placement
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\dbltopfraction}{.85}
+\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\dblfloatpagefraction}{.75}
+\setcounter{topnumber}{9}
+\setcounter{bottomnumber}{9}
+\setcounter{totalnumber}{20}
+\setcounter{dbltopnumber}{9}
+
 \def\@university{\@empty}
 \def\@supervisors{\@empty}
 \newcommand{\university}[1]{\def\@university{#1}\global\let\university\@empty}
