@@ -1,10 +1,20 @@
 \ProvidesClass{ncl-thesis}[2018/12/08 Class for thesis of Newcastle University (UK)]
 \newif\ifnclthesis@print
 \newif\ifnclthesis@draft
+\newif\ifnclthesis@final
 \DeclareOption{print}{\nclthesis@printtrue}
 \DeclareOption{draft}{\nclthesis@drafttrue}
+\DeclareOption{final}{\nclthesis@finaltrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
+
+% Set global options
+\ifnclthesis@draft
+	\def\@classoptionslist{draft}
+\fi
+\ifnclthesis@final
+	\def\@classoptionslist{final}
+\fi
 
 % Process draft and print options
 \newif\ifnclthesis@doublespacing
@@ -17,8 +27,6 @@
 	\PassOptionsToClass{oneside}{book}
 \fi
 \ifnclthesis@draft
-	\PassOptionsToClass{draft}{book}
-	\PassOptionsToPackage{draft}{gitinfo2}
 	\PassOptionsToPackage{backref=true}{biblatex}
 \fi
 
@@ -28,7 +36,7 @@
 	a4paper,
 	]{book}
 
-% Load required packages
+\RequirePackage{etoolbox}
 \RequirePackage{colors-ncl}
 \RequirePackage{fancyhdr}
 \RequirePackage{setspace}
@@ -36,14 +44,15 @@
 	markifdraft,
 	]{gitinfo2}
 \PassOptionsToPackage{pdfusetitle}{hyperref}
+\AtEndPreamble{%
 	\RequirePackage{hyperref}
-
-% Draft watermark
-\ifnclthesis@draft
-	\RequirePackage[firstpage]{draftwatermark}
-	\SetWatermarkText{DRAFT}
-	\SetWatermarkScale{1}
-\fi
+	% Draft watermark
+	\ifnclthesis@draft
+		\RequirePackage[firstpage]{draftwatermark}
+		\SetWatermarkText{DRAFT}
+		\SetWatermarkScale{1}
+	\fi
+}
 
 % More sensible float placement
 \renewcommand{\topfraction}{0.85}
