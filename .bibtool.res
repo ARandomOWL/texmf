@@ -1,3 +1,4 @@
+check.double = {on}
 delete.field = {file}
 preserve.key.case = {on}
 sort = {on}
@@ -6,3 +7,5 @@ sort = {on}
 rewrite.rule = {url # "{\\_}\|{_}\|\\_" # "_"}
 # Replace '{'$\sim$'}', '$\sim$' or '{~}' with '~'
 rewrite.rule = {url # "{$\\sim$}\|$\\sim$\|{~}" # "~"}
+# Remove braces from month field
+rewrite.rule = {month # "{\|}" # ""}
