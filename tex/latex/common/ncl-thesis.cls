@@ -43,6 +43,7 @@
 \RequirePackage[
 	markifdraft,
 	]{gitinfo2}
+	\renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} (\gitAuthorDate) \gitReln}
 \PassOptionsToPackage{pdfusetitle}{hyperref}
 \AtEndPreamble{%
 	\RequirePackage{hyperref}
