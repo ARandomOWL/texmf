@@ -32,7 +32,7 @@
 
 % Use the book class
 \LoadClass[
-	11pt,
+	12pt,
 	a4paper,
 	]{book}
 
