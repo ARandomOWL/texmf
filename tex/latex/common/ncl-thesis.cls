@@ -113,6 +113,8 @@
 	% use double line spacing if we're in draft mode and printing mode
 	\ifnclthesis@doublespacing
 		\doublespacing
+	\else
+		\onehalfspacing
 	\fi
 }
 
