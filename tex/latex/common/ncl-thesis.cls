@@ -5,6 +5,7 @@
 \DeclareOption{print}{\nclthesis@printtrue}
 \DeclareOption{draft}{\nclthesis@drafttrue}
 \DeclareOption{final}{\nclthesis@finaltrue}
+\DeclareOption{linenomodulo}{\PassOptionsToPackage{modulo}{lineno}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 
@@ -20,6 +21,7 @@
 \newif\ifnclthesis@doublespacing
 \ifnclthesis@print
 	\PassOptionsToClass{twoside}{book}
+	\PassOptionsToClass{switch}{lineno}
 	\ifnclthesis@draft
 		\nclthesis@doublespacingtrue
 	\fi
@@ -40,6 +42,12 @@
 \RequirePackage{colors-ncl}
 \RequirePackage{fancyhdr}
 \RequirePackage{setspace}
+\RequirePackage[pagewise]{lineno}
+	% Add line numbers to main matter if draft mode
+	\ifnclthesis@draft
+		\g@addto@macro\mainmatter{\linenumbers}
+		\g@addto@macro\backmatter{\nolinenumbers}
+	\fi
 \RequirePackage[
 	markifdraft,
 	]{gitinfo2}
