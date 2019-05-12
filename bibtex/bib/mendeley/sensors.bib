@@ -1,9 +1,10 @@
 
-@TechReport{	  Fisher,
+@TechReport{	  Fisher2015,
   author	= {Fisher, John},
   institution	= {Vishay Semiconductors},
   title		= {{Vishay's TSSP4056 Sensor for Fast Proximity Sensing}},
-  url		= {www.vishay.com}
+  url		= {www.vishay.com},
+  year		= {2015}
 }
 
 @Misc{		  Kvam2017,
@@ -11,4 +12,71 @@
   title		= {{Time of Flight: Principles, Challenges and Performance}},
   url		= {https://www.st.com/content/dam/technology-tour-2017/session-1_track-4_time-of-flight-technology.pdf},
   year		= {2017}
+}
+
+@TechReport{	  Slade2013,
+  abstract	= {In digital signal processing (DSP), the fast fourier
+		  transform (FFT) is one of the most fundamental and useful
+		  system building block available to the designer. Whereas
+		  the software version of the FFT is readily implemented, the
+		  FFT in hardware (i.e. in digital logic, field programmable
+		  gate arrays, etc.) is useful for high-speed real-time
+		  processing, but is somewhat less straightforward in its
+		  implementation. The software version is generally
+		  constrained to execute instructions serially (one at a
+		  time) and is therefore severely constrained by the
+		  processor instruction throughput. The hardware FFT performs
+		  many of its processing tasks in parallel, hence can achieve
+		  order-of-magnitude throughput improvements over software
+		  FFTs executed in DSP microprocessors. However
+		  straightforward the FFT algorithm, when implementing the
+		  FFT in hardware, one needs to make use of a number of
+		  not-so-obvious tricks to keep the size and speed of the
+		  logic on a useful, practical scale. We do not present this
+		  document as an exhaustive study of the hardware fourier
+		  transform. On the other hand, we hope thet reader comes
+		  away with an understanding on how to construct a basic, but
+		  useful FFT calculator that can be the basis for deeper
+		  study as well as future improvements and optimization. In
+		  this article, we focus on the Cooley-Tukey Radix-2 FFT
+		  algorithm [6], which is highly efficient, is the easiest to
+		  implement and is widely used in practice. We review the
+		  mathematical basis of the algorithm and its software
+		  implementation before launching into the description of the
+		  various system blocks needed to implement the hardware
+		  version of the FFT. We then describe how the FFT is
+		  instantiated in a field programmable gate array (FPGA) and
+		  used in a real system. It is hoped that by reading this
+		  document, the reader will have a good grasp on how to
+		  implement a hardware FFT of any power-of-two size and can
+		  add his own custom improvements and modifications.},
+  author	= {Slade, G William},
+  institution	= {Orban Microwave Products},
+  title		= {{The Fast Fourier Transform in Hardware: A Tutorial Based
+		  on an FPGA Implementation}},
+  url		= {https://www.researchgate.net/publication/235995761},
+  year		= {2013}
+}
+
+@TechReport{	  TexasInstruments2018,
+  abstract	= {This user's guide provides information about
+		  Time-of-Flight (ToF) long range proximity and distance
+		  sensor system design. This document describes the detailed
+		  functionality of ToF proximity systems, explains the
+		  trade-offs involved in a typical ToF system and provides a
+		  step-by-step design flow.},
+  author	= {{Texas Instruments}},
+  title		= {{Introduction to Time-of-Flight Long Range Proximity and
+		  Distance Sensor System Design}},
+  url		= {https://www.ti.com/lit/ug/sbau305a/sbau305a.pdf},
+  year		= {2018}
+}
+
+@TechReport{	  VishaySemiconductors2019,
+  abstract	= {IR Sensor Module for Reflective Sensor, Light Barrier, and
+		  Fast Proximity Applications},
+  author	= {{Vishay Semiconductors}},
+  title		= {{TSSP40xx Datasheet}},
+  url		= {www.vishay.com/doc?91000},
+  year		= {2019}
 }
