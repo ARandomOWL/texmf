@@ -20,6 +20,81 @@
   year		= {1987}
 }
 
+@Article{	  Courbariaux2016,
+  abstract	= {We introduce a method to train Binarized Neural Networks
+		  (BNNs) - neural networks with binary weights and
+		  activations at run-time. At training-time the binary
+		  weights and activations are used for computing the
+		  parameters gradients. During the forward pass, BNNs
+		  drastically reduce memory size and accesses, and replace
+		  most arithmetic operations with bit-wise operations, which
+		  is expected to substantially improve power-efficiency. To
+		  validate the effectiveness of BNNs we conduct two sets of
+		  experiments on the Torch7 and Theano frameworks. On both,
+		  BNNs achieved nearly state-of-the-art results over the
+		  MNIST, CIFAR-10 and SVHN datasets. Last but not least, we
+		  wrote a binary matrix multiplication GPU kernel with which
+		  it is possible to run our MNIST BNN 7 times faster than
+		  with an unoptimized GPU kernel, without suffering any loss
+		  in classification accuracy. The code for training and
+		  running our BNNs is available on-line.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1602.02830},
+  author	= {Courbariaux, Matthieu and Hubara, Itay and Soudry, Daniel
+		  and El-Yaniv, Ran and Bengio, Yoshua},
+  eprint	= {1602.02830},
+  month		= feb,
+  title		= {{Binarized Neural Networks: Training Deep Neural Networks
+		  with Weights and Activations Constrained to +1 or -1}},
+  url		= {http://arxiv.org/abs/1602.02830},
+  year		= {2016}
+}
+
+@InProceedings{	  Ding2018,
+  abstract	= {Deep Neural Networks (DNNs) have been adopted in many
+		  systems because of their higher classification accuracy,
+		  with custom hardware implementations great candidates for
+		  high-speed, accurate inference. While progress in achieving
+		  large scale, highly accurate DNNs has been made,
+		  significant energy and area are required due to massive
+		  memory accesses and computations. Such demands pose a
+		  challenge to any DNN implementation, yet it is more natural
+		  to handle in a custom hardware platform. To alleviate the
+		  increased demand in storage and energy, quantized DNNs
+		  constrain their weights (and activations) from
+		  floating-point numbers to only a few discrete levels.
+		  Therefore, storage is reduced, thereby leading to less
+		  memory accesses. In this paper, we provide an overview of
+		  different types of quantized DNNs, as well as the training
+		  approaches for them. Among the various quantized DNNs, our
+		  LightNN (Light Neural Network) approach can reduce both
+		  memory accesses and computation energy, by filling the gap
+		  between classic, full-precision and binarized DNNs. We
+		  provide a detailed comparison between LightNNs,
+		  conventional DNNs and Binarized Neural Networks (BNNs),
+		  with MNIST and CIFAR-10 datasets. In contrast to other
+		  quantized DNNs that trade-off significant amounts of
+		  accuracy for lower memory requirements, LightNNs can
+		  significantly reduce storage, energy and area while still
+		  maintaining a test error similar to a large DNN
+		  configuration. Thus, LightNNs provide more options for
+		  hardware designers to trade-off accuracy and energy.
+		  {\textcopyright} 2018 IEEE.},
+  author	= {Ding, Ruizhou and Liu, Zeye and Blanton, R. D.Shawn and
+		  Marculescu, Diana},
+  booktitle	= {Proc. Asia South Pacific Des. Autom. Conf. ASP-DAC},
+  doi		= {10.1109/ASPDAC.2018.8297274},
+  isbn		= {9781509006021},
+  month		= jan,
+  pages		= {1--8},
+  publisher	= {IEEE},
+  title		= {{Quantized deep neural networks for energy efficient
+		  hardware-based inference}},
+  url		= {http://ieeexplore.ieee.org/document/8297274/},
+  volume	= {2018-Janua},
+  year		= {2018}
+}
+
 @Article{	  Hopfield1998,
   abstract	= {Most computational engineering based loosely on biology
 		  uses continuous variables to represent neural activity. Yet
@@ -52,6 +127,44 @@
   title		= {{Computing with action potentials}},
   volume	= {10},
   year		= {1998}
+}
+
+@Article{	  Johnson2018,
+  abstract	= {Reducing hardware overhead of neural networks for faster
+		  or lower power inference and training is an active area of
+		  research. Uniform quantization using integer multiply-add
+		  has been thoroughly investigated, which requires learning
+		  many quantization parameters, fine-tuning training or other
+		  prerequisites. Little effort is made to improve floating
+		  point relative to this baseline; it remains energy
+		  inefficient, and word size reduction yields drastic loss in
+		  needed dynamic range. We improve floating point to be more
+		  energy efficient than equivalent bit width integer hardware
+		  on a 28 nm ASIC process while retaining accuracy in 8 bits
+		  with a novel hybrid log multiply/linear add, Kulisch
+		  accumulation and tapered encodings from Gustafson's posit
+		  format. With no network retraining, and drop-in replacement
+		  of all math and float32 parameters via
+		  round-to-nearest-even only, this open-sourced 8-bit log
+		  float is within 0.9{\%} top-1 and 0.2{\%} top-5 accuracy of
+		  the original float32 ResNet-50 CNN model on ImageNet.
+		  Unlike int8 quantization, it is still a general purpose
+		  floating point arithmetic, interpretable out-of-the-box.
+		  Our 8/38-bit log float multiply-add is synthesized and
+		  power profiled at 28 nm at 0.96x the power and 1.12x the
+		  area of 8/32-bit integer multiply-add. In 16 bits, our log
+		  float multiply-add is 0.59x the power and 0.68x the area of
+		  IEEE 754 float16 fused multiply-add, maintaining the same
+		  signficand precision and dynamic range, proving useful for
+		  training ASICs as well.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1811.01721},
+  author	= {Johnson, Jeff},
+  eprint	= {1811.01721},
+  month		= nov,
+  title		= {{Rethinking floating point for deep learning}},
+  url		= {http://arxiv.org/abs/1811.01721},
+  year		= {2018}
 }
 
 @InProceedings{	  Lin2016,
@@ -105,8 +218,10 @@
 		  neural,asm,computation sharing
 		  multiplication,cshm,man,multiplier-less artificial
 		  neuron,network},
+  month		= feb,
   title		= {{Multiplier-less Artificial Neurons Exploiting Error
 		  Resiliency for Energy-Efficient Neural Computing}},
+  url		= {http://arxiv.org/abs/1602.08557},
   year		= {2016}
 }
 
@@ -123,6 +238,80 @@
 		  Approximations}},
   url		= {https://ieeexplore.ieee.org/document/8358698/},
   year		= {2018}
+}
+
+@InProceedings{	  Tang1997,
+  author	= {Tang, C.Z. and Kwan, H.K.},
+  booktitle	= {Proc. 1997 IEEE Int. Symp. Circuits Syst. Circuits Syst.
+		  Inf. Age ISCAS '97},
+  doi		= {10.1109/ISCAS.1997.608912},
+  isbn		= {0-7803-3583-X},
+  pages		= {649--652},
+  publisher	= {IEEE},
+  title		= {{Digital implementation of neural networks with quantized
+		  neurons}},
+  url		= {http://ieeexplore.ieee.org/document/608912/},
+  volume	= {1},
+  year		= {1997}
+}
+
+@InProceedings{	  Venkataramani2014,
+  abstract	= {Neuromorphic algorithms, which are comprised of highly
+		  complex, large-scale networks of artificial neurons, are
+		  increasingly used for a variety of recognition,
+		  classification, search and vision tasks. However, their
+		  computational and energy requirements can be quite high,
+		  and hence their energy-efficient implementation is of great
+		  interest. We propose a new approach to design
+		  energy-efficient hardware implementations of large-scale
+		  neural networks (NNs) using approximate computing. Our work
+		  is motivated by the observations that (i) NNs are used in
+		  applications where less-than-perfect results are
+		  acceptable, and often inevitable, and (ii) they are highly
+		  resilient to inexactness in many (but not all) of their
+		  constituent computations. We make two key contributions.
+		  First, we propose a method to transform any given NN into
+		  an Approximate Neural Network (AxNN). This is performed by
+		  (i) adapting the backpropagation technique, which is
+		  commonly used to train these networks, to quantify the
+		  impact of approximating each neuron to the overall network
+		  quality (e.g., classification accuracy), and (ii)
+		  selectively approximating those neurons that impact network
+		  quality the least. Further, we make the key observation
+		  that training is a naturally error-healing process that can
+		  be used to mitigate the impact of approximations to
+		  neurons. Therefore, we incrementally retrain the network
+		  with the approximations in-place, reclaiming a significant
+		  portion of the quality ceded by approximations. As a second
+		  contribution, we propose a programmable and
+		  quality-configurable neuromorphic processing engine
+		  (qcNPE), which utilizes arrays of specialized processing
+		  elements that execute neuron computations with dynamically
+		  configurable accuracies and can be used to execute AxNNs
+		  from diverse applications. We evaluated the proposed
+		  approach by constructing AXNNs for 6 recognition
+		  applications (ranging in complexity from 12-47,818 neurons
+		  and 160-3,155,968 connections) and executing them on two
+		  different platforms-qcNPE implementation containing 272
+		  processing elements in 45nm technology and a commodity
+		  Intel Xeon server. Our results demonstrate 1.14X-1.92X
+		  energy benefits for virtually no loss ({\textless} 0.5{\%})
+		  in output quality, and even higher improvements (upto 2.3X)
+		  when some loss (upto 7.5{\%}) in output quality is
+		  acceptable.},
+  address	= {New York, New York, USA},
+  author	= {Venkataramani, Swagath and Ranjan, Ashish and Roy, Kaushik
+		  and Raghunathan, Anand},
+  booktitle	= {Proc. 2014 Int. Symp. Low power Electron. Des. - ISLPED
+		  '14},
+  doi		= {10.1145/2627369.2627613},
+  isbn		= {9781450329750},
+  pages		= {27--32},
+  publisher	= {ACM Press},
+  title		= {{AxNN: Energy-efficient neuromorphic systems using
+		  approximate computing}},
+  url		= {http://dl.acm.org/citation.cfm?doid=2627369.2627613},
+  year		= {2014}
 }
 
 @Article{	  Zhang2018,
