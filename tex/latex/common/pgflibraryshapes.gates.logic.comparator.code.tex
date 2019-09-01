@@ -1,0 +1,257 @@
+\usepgflibrary{shapes.gates.logic}
+\usepgflibrary{shapes.gates.logic.IEC}
+
+\pgfkeys{/pgf/.cd,
+	comparator symbol/.initial=,
+}
+
+% Shape comparator
+%
+\pgfdeclareshape{comparator}{%
+  \expandafter\pgfutil@g@addto@macro\csname pgf@sh@s@comparator\endcsname{%
+    \pgf@lib@sh@logicgate@parseinputs{2}%
+    \pgfmathloop%
+    \ifnum\pgfmathcounter>\pgf@lib@sh@logicgate@numinputs%
+    \else%
+            \pgfutil@ifundefined{pgf@anchor@comparator@input \pgfmathcounter}{%
+                    \expandafter\xdef\csname pgf@anchor@comparator@input \pgfmathcounter\endcsname{%
+                            \noexpand\pgf@lib@sh@logicgate@IEC@inputanchor{\pgfmathcounter}%
+                    }%
+            }{}%
+    \repeatpgfmathloop%
+    \ifnum\pgf@lib@sh@logicgate@numinputs<2\relax%
+      \pgferror{A comparator must have two inputs}%
+    \fi%
+  }%
+  \savedmacro\numinputs{\let\numinputs\pgf@lib@sh@logicgate@numinputs}%
+  \saveddimen\invertedradius{%
+          \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/pgf/logic gate inverted radius}}%
+  }%
+  \saveddimen\outerinvertedradius{%
+          \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/pgf/logic gate inverted radius}}%
+          \advance\pgf@x.5\pgflinewidth%
+  }
+  \saveddimen\halflinewidth{%
+    \pgf@x.5\pgflinewidth%
+  }%
+  \savedmacro\dimensions{\pgf@lib@sh@logicgates@dimensions@orUS}%
+  \savedanchor\centerpoint{%
+    \pgf@x.5\wd\pgfnodeparttextbox%
+    \pgf@y.5\ht\pgfnodeparttextbox%
+    \advance\pgf@y-.5\dp\pgfnodeparttextbox%
+  }%
+  \savedanchor\midpoint{%
+    \pgf@x.5\wd\pgfnodeparttextbox%
+    \pgfmathsetlength\pgf@y{+0.5ex}%
+  }%
+  \savedanchor\basepoint{%
+    \pgf@x.5\wd\pgfnodeparttextbox%
+    \pgf@y0pt%
+  }%
+  \anchor{center}{\centerpoint}%
+  \anchor{mid}{\midpoint}%
+  \anchor{mid east}{%
+    \midpoint%
+    \pgfutil@tempdima\pgf@y%
+    \csname pgf@anchor@comparator@east\endcsname%
+    \pgf@y\pgfutil@tempdima%
+  }%
+  \anchor{mid west}{%
+    \dimensions%
+    \pgf@xc\halfside%
+    \pgf@xc-.833333\pgf@xc%
+    \advance\pgf@xc-\outerxsep%
+    \midpoint%
+    \advance\pgf@x\pgf@xc%
+  }%
+  \anchor{base}{\basepoint}%
+  \anchor{base east}{%
+    \basepoint%
+    \pgfutil@tempdima\pgf@y%
+    \csname pgf@anchor@comparator@east\endcsname%
+    \pgf@y\pgfutil@tempdima%
+  }%
+  \anchor{base west}{%
+    \dimensions%
+    \pgf@xc\halfside%
+    \pgf@xc-.833333\pgf@xc%
+    \advance\pgf@xc-\outerxsep%
+    \basepoint%
+    \advance\pgf@x\pgf@xc%
+  }%
+  \inheritanchor[from=and gate US]{base}%
+  \anchor{output}{%
+    \dimensions%
+    \pgf@xc\halfside%
+    \centerpoint%
+    \advance\pgf@x-.166666\pgf@xc%
+    \pgf@xc2.0\pgf@xc%
+    \advance\pgf@x.866025\pgf@xc%
+    \advance\pgf@x\outerxsep%
+  }%
+  \anchor{east}{%
+    \dimensions%
+    \tipanchor%
+    \pgf@xa\pgf@x%
+    \centerpoint%
+    \advance\pgf@x\pgf@xa%
+  }%
+  \anchor{north}{%
+    \dimensions%
+    \ifpgfgateanchorsuseboundingrectangle%
+      \csname pgf@anchor@comparator@north west\endcsname%
+      \pgf@ya\pgf@y%
+      \centerpoint%
+      \pgf@y\pgf@ya%
+    \else%
+      \pgfpointintersectionoflines{\centerpoint}{\centerpoint\advance\pgf@y1pt}%
+      {\csname pgf@anchor@comparator@north west\endcsname}%
+      {%
+        \pgfpointadd{\centerpoint}{%
+          \tipanchor%
+          \pgf@xa\outerxsep%
+          \advance\pgf@x2.350943\pgf@xa%
+        }%
+      }%
+    \fi%
+  }%
+  \anchor{south}{%
+    \dimensions%
+    \ifpgfgateanchorsuseboundingrectangle%
+      \csname pgf@anchor@comparator@south west\endcsname%
+      \pgf@ya\pgf@y%
+      \centerpoint%
+      \pgf@y\pgf@ya%
+    \else%
+      \pgfpointintersectionoflines{\centerpoint}{\centerpoint\advance\pgf@y-1pt}%
+      {\csname pgf@anchor@comparator@south west\endcsname}%
+      {%
+        \pgfpointadd{\centerpoint}{%
+          \tipanchor%
+          \pgf@xa\outerxsep%
+          \advance\pgf@x2.350943\pgf@xa%
+        }%
+      }%
+    \fi%
+  }%
+  \anchor{south east}{%
+    \dimensions%
+    \ifpgfgateanchorsuseboundingrectangle%
+      \csname pgf@anchor@comparator@south west\endcsname%
+      \pgf@ya\pgf@y%
+      \pgf@process{%
+        \dimensions%
+        \tipanchor%
+        \pgf@xa\pgf@x%
+        \centerpoint%
+        \advance\pgf@x\pgf@xa%
+      }%
+      \pgf@y\pgf@ya%
+    \else%
+      \pgfpointintersectionoflines{\centerpoint}{\centerpoint\advance\pgf@x1pt\advance\pgf@y-1pt}%
+      {\csname pgf@anchor@comparator@south west\endcsname}%
+      {%
+        \pgfpointadd{\centerpoint}{%
+          \tipanchor%
+          \pgf@xa\outerxsep%
+          \advance\pgf@x2.350943\pgf@xa%
+        }%
+      }%
+    \fi%
+  }%
+  \anchor{north east}{%
+    \dimensions%
+    \ifpgfgateanchorsuseboundingrectangle%
+      \csname pgf@anchor@comparator@north west\endcsname%
+      \pgf@ya\pgf@y%
+      \pgf@process{%
+        \dimensions%
+        \tipanchor%
+        \pgf@xa\pgf@x%
+        \centerpoint%
+        \advance\pgf@x\pgf@xa%
+      }%
+      \pgf@y\pgf@ya%
+    \else%
+      \pgfpointintersectionoflines{\centerpoint}{\centerpoint\advance\pgf@x1pt\advance\pgf@y1pt}%
+      {\csname pgf@anchor@comparator@north west\endcsname}%
+      {%
+        \pgfpointadd{\centerpoint}{%
+          \tipanchor%
+          \pgf@xa\outerxsep%
+          \advance\pgf@x2.350943\pgf@xa%
+        }%
+      }%
+    \fi%
+  }%
+  \anchor{south west}{%
+    \dimensions%
+    \pgf@xa\halfside%
+    \centerpoint%
+    \advance\pgf@x-.833333\pgf@xa
+    \advance\pgf@x-\outerxsep%
+    \advance\pgf@y-1.166666\pgf@xa%
+    \pgf@ya\outerysep%
+    \advance\pgf@y-1.565\pgf@ya% Selected by trial and error.
+  }%
+  \anchor{north west}{%
+    \dimensions%
+    \pgf@xa\halfside%
+    \centerpoint%
+    \advance\pgf@x-.833333\pgf@xa
+    \advance\pgf@x-\outerxsep%
+    \advance\pgf@y1.166666\pgf@xa%
+    \pgf@ya\outerysep%
+    \advance\pgf@y1.565\pgf@ya% Selected by trial and error.
+  }%
+  \anchor{west}{%
+    \dimensions%
+    \pgf@xc\halfside%
+    \pgf@xc-.833333\pgf@xc%
+    \advance\pgf@xc-\outerxsep%
+    \centerpoint%
+    \advance\pgf@x\pgf@xc%
+  }%
+  \backgroundpath{%
+    \dimensions%
+    \pgf@xc\halfwidth%
+    \pgf@yc\halfheight%
+    \advance\pgf@xc-\outerxsep%
+    \advance\pgf@yc-\outerysep%
+    {%
+	\pgftransformshift{\centerpoint}%
+	\pgfpathmoveto{\tipanchor}%
+	\pgfpathlineto{\pgfpoint{-\pgf@xc}{-\pgf@yc}}
+	\pgfpathlineto{\pgfpoint{-\pgf@xc}{\pgf@yc}}
+	\pgfpathlineto{\tipanchor}%
+
+	%
+	% Draw inputs.
+	%
+	\pgf@xc-\halfwidth%
+	\advance\pgf@xc-\invertedradius%
+	\pgf@yc\halfheight%
+	\pgfutil@tempdima2.0\pgf@yc%
+	\c@pgf@counta\numinputs%
+	\advance\c@pgf@counta1\relax%
+	\divide\pgfutil@tempdima\c@pgf@counta%
+	\pgfmathloop%
+	\ifnum\pgfmathcounter>\numinputs%
+	\else%
+		\advance\pgf@yc-\pgfutil@tempdima%
+		\expandafter\ifx\expandafter\pgf@lib@sh@itext\csname input-\pgfmathcounter\endcsname%
+			{%
+				\pgfpathcircle{\pgfqpoint{\pgf@xc}{\pgf@yc}}{\invertedradius}%			
+			}%
+		\fi%
+	\repeatpgfmathloop%
+    }%
+  }%
+  \anchorborder{%
+    \pgf@lib@gates@not@buffer@border{comparator}
+  }%
+
+}%
+
+
+\endinput
