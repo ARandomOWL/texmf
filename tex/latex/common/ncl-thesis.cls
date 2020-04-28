@@ -52,6 +52,7 @@
 	markifdraft,
 	]{gitinfo2}
 	\renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} (\gitAuthorDate) \gitReln}
+	\apptocmd\gitMarkFormat{\upshape\mdseries}{}{} % Fix: text is bold if bold text begins next page
 \PassOptionsToPackage{pdfusetitle}{hyperref}
 \AtEndPreamble{%
 	\RequirePackage{hyperref}
