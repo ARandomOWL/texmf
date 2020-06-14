@@ -17,6 +17,20 @@
   url		= {https://github.com/AniketBadhan/Convolutional-Neural-Network}
 }
 
+@Article{	  Ardakani2015,
+  archiveprefix	= {arXiv},
+  arxivid	= {1509.08972},
+  author	= {Ardakani, Arash and Leduc-Primeau, Fran{\c{c}}ois and
+		  Onizawa, Naoya and Hanyu, Takahiro and Gross, Warren J.},
+  doi		= {10.1109/tvlsi.2017.2654298},
+  eprint	= {1509.08972},
+  month		= sep,
+  title		= {{VLSI Implementation of Deep Neural Network Using Integral
+		  Stochastic Computing}},
+  url		= {https://arxiv.org/abs/1509.08972},
+  year		= {2015}
+}
+
 @Misc{		  Bittware,
   author	= {Bittware},
   title		= {{FPGA Acceleration of Convolutional Neural Networks}},
@@ -30,6 +44,75 @@
   title		= {{Speech recognition experiments with perceptrons}},
   url		= {https://dl.acm.org/citation.cfm?id=2969659},
   year		= {1987}
+}
+
+@Article{	  Choi2018,
+  abstract	= {Binarized neural network (BNN) is one of the most
+		  promising solution for low-cost convolutional neural
+		  network acceleration. Since BNN is based on binarized
+		  bit-level operations, there exist great opportunities to
+		  reduce power-hungry data transfers and complex arithmetic
+		  operations. In this paper, we propose a content addressable
+		  memory (CAM) based BNN accelerator. By using time-domain
+		  signal processing, the huge convolution operations of BNN
+		  can be effectively replaced to the CAM search operation. In
+		  addition, thanks to fully parallel search of CAM, the
+		  parallel convolution operations for non-overlapped
+		  filtering window is enabled for high throughput data
+		  processing. To verify the effectiveness of the proposed CAM
+		  based BNN accelerator, the convo-lutional layer of LeNet-5
+		  model has been implemented using 65nm CMOS technology. e
+		  implementation results show that the proposed BNN
+		  accelerator achieves 9.4{\%} and 38.5{\%} of area and
+		  energy savings, respectively. e parallel convolution
+		  operation of the proposed approach also shows 2.4x improved
+		  processing time.},
+  author	= {Choi, Woong and Jeong, Kwanghyo and Choi, Kyungrak and
+		  Lee, Kyeongho and Park, Jongsun},
+  doi		= {10.1145/3195970.3196014},
+  isbn		= {9781450357005},
+  keywords	= {Binarized neural network,Content addressable
+		  memory,Time-domain signal processing},
+  title		= {{Content Addressable Memory Based Binarized Neural Network
+		  Accelerator Using Time-Domain Signal Processing}},
+  url		= {https://doi.org/10.1145/3195970.3196014},
+  year		= {2018}
+}
+
+@Article{	  Courbariaux2015,
+  abstract	= {Deep Neural Networks (DNN) have achieved state-of-the-art
+		  results in a wide range of tasks, with the best results
+		  obtained with large training sets and large models. In the
+		  past, GPUs enabled these breakthroughs because of their
+		  greater computational speed. In the future, faster
+		  computation at both training and test time is likely to be
+		  crucial for further progress and for consumer applications
+		  on low-power devices. As a result, there is much interest
+		  in research and development of dedicated hardware for Deep
+		  Learning (DL). Binary weights, i.e., weights which are
+		  constrained to only two possible values (e.g. -1 or 1),
+		  would bring great benefits to specialized DL hardware by
+		  replacing many multiply-accumulate operations by simple
+		  accumulations, as multipliers are the most space and
+		  power-hungry components of the digital implementation of
+		  neural networks. We introduce BinaryConnect, a method which
+		  consists in training a DNN with binary weights during the
+		  forward and backward propagations, while retaining
+		  precision of the stored weights in which gradients are
+		  accumulated. Like other dropout schemes, we show that
+		  BinaryConnect acts as regularizer and we obtain near
+		  state-of-the-art results with BinaryConnect on the
+		  permutation-invariant MNIST, CIFAR-10 and SVHN.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1511.00363},
+  author	= {Courbariaux, Matthieu and Bengio, Yoshua and David,
+		  Jean-Pierre},
+  eprint	= {1511.00363},
+  month		= nov,
+  title		= {{BinaryConnect: Training Deep Neural Networks with binary
+		  weights during propagations}},
+  url		= {http://arxiv.org/abs/1511.00363},
+  year		= {2015}
 }
 
 @Article{	  Courbariaux2016,
@@ -92,6 +175,41 @@
   year		= {2016}
 }
 
+@Article{	  Covell2019,
+  abstract	= {In this work, we propose to quantize all parts of standard
+		  classification networks and replace the
+		  activation-weight--multiply step with a simple table-based
+		  lookup. This approach results in networks that are free of
+		  floating-point operations and free of multiplications,
+		  suitable for direct FPGA and ASIC implementations. It also
+		  provides us with two simple measures of per-layer and
+		  network-wide compactness as well as insight into the
+		  distribution characteristics of activationoutput and weight
+		  values. We run controlled studies across different
+		  quantization schemes, both fixed and adaptive and, within
+		  the set of adaptive approaches, both parametric and
+		  model-free. We implement our approach to quantization with
+		  minimal, localized changes to the training process,
+		  allowing us to benefit from advances in training
+		  continuous-valued network architectures. We apply our
+		  approach successfully to AlexNet, ResNet, and MobileNet. We
+		  show results that are within 1.6{\%} of the reported,
+		  non-quantized performance on MobileNet using only 40
+		  entries in our table. This performance gap narrows to zero
+		  when we allow tables with 320 entries. Our results give the
+		  best accuracies among multiply-free networks.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1906.04798},
+  author	= {Covell, Michele and Marwood, David and Baluja, Shumeet and
+		  Johnston, Nick},
+  eprint	= {1906.04798},
+  month		= jun,
+  title		= {{Table-Based Neural Units: Fully Quantizing Networks for
+		  Multiply-Free Inference}},
+  url		= {http://arxiv.org/abs/1906.04798},
+  year		= {2019}
+}
+
 @InProceedings{	  Ding2018,
   abstract	= {Deep Neural Networks (DNNs) have been adopted in many
 		  systems because of their higher classification accuracy,
@@ -145,6 +263,75 @@
   year		= {2018}
 }
 
+@Article{	  Gale2014,
+  abstract	= {Memristors have been suggested as a novel route to
+		  neuromorphic computing based on the similarity between
+		  neurons (synapses and ion pumps) and memristors. The D.C.
+		  action of the memristor is a current spike, which we think
+		  will be fruitful for building memristor computers. In this
+		  paper, we introduce 4 different logical assignations to
+		  implement sequential logic in the memristor and introduce
+		  the physical rules, summation, `bounce-back',
+		  directionality and `diminishing returns', elucidated from
+		  our investigations. We then demonstrate how memristor
+		  sequential logic works by instantiating a NOT gate, an AND
+		  gate and a Full Adder with a single memristor. The Full
+		  Adder makes use of the memristor's memory to add three
+		  binary values together and outputs the value, the carry
+		  digit and even the order they were input in.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1402.4036},
+  author	= {Gale, Ella and Costello, Ben de Lacy and Adamatzky,
+		  Andrew},
+  eprint	= {1402.4036},
+  month		= feb,
+  title		= {{Is Spiking Logic the Route to Memristor-Based
+		  Computers?}},
+  url		= {http://arxiv.org/abs/1402.4036},
+  year		= {2014}
+}
+
+@InCollection{	  Gale2016,
+  author	= {Gale, Ella},
+  doi		= {10.1007/978-3-319-41312-9_9},
+  pages		= {99--115},
+  publisher	= {Springer, Cham},
+  title		= {{Analysis of Boolean Logic Gates Logical Complexity for
+		  Use with Spiking Memristor Gates}},
+  url		= {http://link.springer.com/10.1007/978-3-319-41312-9_9},
+  year		= {2016}
+}
+
+@Article{	  Hao2017,
+  abstract	= {Field Programmable Gate Arrays (FPGAs) plays an
+		  increasingly important role in data sampling and processing
+		  industries due to its highly parallel architecture, low
+		  power consumption, and flexibility in custom algorithms.
+		  Especially, in the artificial intelligence field, for
+		  training and implement the neural networks and machine
+		  learning algorithms, high energy efficiency hardware
+		  implement and massively parallel computing capacity are
+		  heavily demanded. Therefore, many global companies have
+		  applied FPGAs into AI and Machine learning fields such as
+		  autonomous driving and Automatic Spoken Language
+		  Recognition (Baidu) [1] [2] and Bing search (Microsoft)
+		  [3]. Considering the FPGAs great potential in these fields,
+		  we tend to implement a general neural network hardware
+		  architecture on XILINX ZU9CG System On Chip (SOC) platform
+		  [4], which contains abundant hardware resource and powerful
+		  processing capacity. The general neural network
+		  architecture on the FPGA SOC platform can perform forward
+		  and backward algorithms in deep neural networks (DNN) with
+		  high performance and easily be adjusted according to the
+		  type and scale of the neural networks.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1711.05860},
+  author	= {Hao, Yufeng},
+  eprint	= {1711.05860},
+  title		= {{A General Neural Network Hardware Architecture on FPGA}},
+  year		= {2017}
+}
+
 @Article{	  Hopfield1998,
   abstract	= {Most computational engineering based loosely on biology
 		  uses continuous variables to represent neural activity. Yet
@@ -177,6 +364,43 @@
   title		= {{Computing with action potentials}},
   volume	= {10},
   year		= {1998}
+}
+
+@Article{	  Hubara2016,
+  abstract	= {We introduce a method to train Quantized Neural Networks
+		  (QNNs) --- neural networks with extremely low precision
+		  (e.g., 1-bit) weights and activations, at run-time. At
+		  train-time the quantized weights and activations are used
+		  for computing the parameter gradients. During the forward
+		  pass, QNNs drastically reduce memory size and accesses, and
+		  replace most arithmetic operations with bit-wise
+		  operations. As a result, power consumption is expected to
+		  be drastically reduced. We trained QNNs over the MNIST,
+		  CIFAR-10, SVHN and ImageNet datasets. The resulting QNNs
+		  achieve prediction accuracy comparable to their 32-bit
+		  counterparts. For example, our quantized version of AlexNet
+		  with 1-bit weights and 2-bit activations achieves
+		  {\$}51\backslash{\%}{\$} top-1 accuracy. Moreover, we
+		  quantize the parameter gradients to 6-bits as well which
+		  enables gradients computation using only bit-wise
+		  operation. Quantized recurrent neural networks were tested
+		  over the Penn Treebank dataset, and achieved comparable
+		  accuracy as their 32-bit counterparts using only 4-bits.
+		  Last but not least, we programmed a binary matrix
+		  multiplication GPU kernel with which it is possible to run
+		  our MNIST QNN 7 times faster than with an unoptimized GPU
+		  kernel, without suffering any loss in classification
+		  accuracy. The QNN code is available online.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1609.07061},
+  author	= {Hubara, Itay and Courbariaux, Matthieu and Soudry, Daniel
+		  and El-Yaniv, Ran and Bengio, Yoshua},
+  eprint	= {1609.07061},
+  month		= sep,
+  title		= {{Quantized Neural Networks: Training Neural Networks with
+		  Low Precision Weights and Activations}},
+  url		= {http://arxiv.org/abs/1609.07061},
+  year		= {2016}
 }
 
 @Article{	  Johnson2018,
@@ -217,6 +441,78 @@
   year		= {2018}
 }
 
+@Article{	  Lemieux2019,
+  abstract	= {Reduced-precision arithmetic improves the size, cost,
+		  power and performance of neural networks in digital logic.
+		  In convolutional neural networks, the use of 1b weights can
+		  achieve state-of-the-art error rates while eliminating
+		  multiplication, reducing storage and improving power
+		  efficiency. The BinaryConnect binary-weighted system, for
+		  example, achieves 9.9{\%} error using floating-point
+		  activations on the CIFAR-10 dataset. In this paper, we
+		  introduce TinBiNN, a lightweight vector processor overlay
+		  for accelerating inference computations with 1b weights and
+		  8b activations. The overlay is very small -- it uses about
+		  5,000 4-input LUTs and fits into a low cost iCE40 UltraPlus
+		  FPGA from Lattice Semiconductor. To show this can be
+		  useful, we build two embedded 'person detector' systems by
+		  shrinking the original BinaryConnect network. The first is
+		  a 10-category classifier with a 89{\%} smaller network that
+		  runs in 1,315ms and achieves 13.6{\%} error. The other is a
+		  1-category classifier that is even smaller, runs in 195ms,
+		  and has only 0.4{\%} error. In both classifiers, the error
+		  can be attributed entirely to training and not reduced
+		  precision.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1903.06630},
+  author	= {Lemieux, Guy G. F. and Edwards, Joe and Vandergriendt,
+		  Joel and Severance, Aaron and {De Iaco}, Ryan and Raouf,
+		  Abdullah and Osman, Hussein and Watzka, Tom and Singh,
+		  Satwant},
+  eprint	= {1903.06630},
+  month		= mar,
+  title		= {{TinBiNN: Tiny Binarized Neural Network Overlay in about
+		  5,000 4-LUTs and 5mW}},
+  url		= {http://arxiv.org/abs/1903.06630},
+  year		= {2019}
+}
+
+@Article{	  Li2017,
+  abstract	= {FPGA-based hardware accelerators for convolutional neural
+		  networks (CNNs) have obtained great attentions due to their
+		  higher energy efficiency than GPUs. However, it is
+		  challenging for FPGA-based solutions to achieve a higher
+		  throughput than GPU counterparts. In this paper, we
+		  demonstrate that FPGA acceleration can be a superior
+		  solution in terms of both throughput and energy efficiency
+		  when a CNN is trained with binary constraints on weights
+		  and activations. Specifically, we propose an optimized FPGA
+		  accelerator architecture tailored for bitwise convolution
+		  and normalization that features massive spatial parallelism
+		  with deep pipelines stages. A key advantage of the FPGA
+		  accelerator is that its performance is insensitive to data
+		  batch size, while the performance of GPU acceleration
+		  varies largely depending on the batch size of the data.
+		  Experiment results show that the proposed accelerator
+		  architecture for binary CNNs running on a Virtex-7 FPGA is
+		  8.3x faster and 75x more energy-efficient than a Titan X
+		  GPU for processing online individual requests in small
+		  batch sizes. For processing static data in large batch
+		  sizes, the proposed solution is on a par with a Titan X GPU
+		  in terms of throughput while delivering 9.5x higher energy
+		  efficiency.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1702.06392},
+  author	= {Li, Yixing and Liu, Zichuan and Xu, Kai and Yu, Hao and
+		  Ren, Fengbo},
+  eprint	= {1702.06392},
+  month		= feb,
+  title		= {{A GPU-Outperforming FPGA Accelerator Architecture for
+		  Binary Convolutional Neural Networks}},
+  url		= {http://arxiv.org/abs/1702.06392},
+  year		= {2017}
+}
+
 @InProceedings{	  Lin2016,
   author	= {Lin, Yingyan and Zhang, Sai and Shanbhag, Naresh R.},
   booktitle	= {2016 IEEE Int. Work. Signal Process. Syst.},
@@ -251,6 +547,102 @@
   publisher	= {MIT Press},
   title		= {{Perceptrons; an introduction to computational geometry}},
   year		= {1969}
+}
+
+@Article{	  Morin2019,
+  abstract	= {Neural network models are resource hungry. Low bit
+		  quantization such as binary and ternary quantization is a
+		  common approach to alleviate this resource requirements.
+		  Ternary quantization provides a more flexible model and
+		  often beats binary quantization in terms of accuracy, but
+		  doubles memory and increases computation cost. Mixed
+		  quantization depth models, on another hand, allows a
+		  trade-off between accuracy and memory footprint. In such
+		  models, quantization depth is often chosen manually (which
+		  is a tiring task), or is tuned using a separate
+		  optimization routine (which requires training a quantized
+		  network multiple times). Here, we propose Smart Ternary
+		  Quantization (STQ) in which we modify the quantization
+		  depth directly through an adaptive regularization function,
+		  so that we train a model only once. This method jumps
+		  between binary and ternary quantization while training. We
+		  show its application on image classification.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1909.12205},
+  author	= {Morin, Gr{\'{e}}goire and Razani, Ryan and Nia, Vahid
+		  Partovi and Sari, Eyy{\"{u}}b},
+  eprint	= {1909.12205},
+  month		= sep,
+  title		= {{Smart Ternary Quantization}},
+  url		= {http://arxiv.org/abs/1909.12205},
+  year		= {2019}
+}
+
+@Article{	  Munoz-Martin2019,
+  author	= {Munoz-Martin, Irene and Bianchi, Stefano and Pedretti,
+		  Giacomo and Melnic, Octavian and Ambrogio, Stefano and
+		  Ielmini, Daniele},
+  doi		= {10.1109/JXCDC.2019.2911135},
+  issn		= {2329-9231},
+  journal	= {IEEE J. Explor. Solid-State Comput. Devices Circuits},
+  month		= jun,
+  number	= {1},
+  pages		= {58--66},
+  title		= {{Unsupervised Learning to Overcome Catastrophic Forgetting
+		  in Neural Networks}},
+  url		= {https://ieeexplore.ieee.org/document/8693665/},
+  volume	= {5},
+  year		= {2019}
+}
+
+@Article{	  Qiao2015,
+  abstract	= {Implementing compact, low-power artificial neural
+		  processing systems with real-time on-line learning
+		  abilities is still an open challenge. In this paper we
+		  present a full-custom mixed-signal VLSI device with
+		  neuromorphic learning circuits that emulate the biophysics
+		  of real spiking neurons and dynamic synapses for exploring
+		  the properties of computational neuroscience models and for
+		  building brain-inspired computing systems. The proposed
+		  architecture allows the on-chip configuration of a wide
+		  range of network connectivities, including recurrent and
+		  deep networks with short-term and long-term plasticity. The
+		  device comprises 128 K analog synapse and 256 neuron
+		  circuits with biologically plausible dynamics and bi-stable
+		  spike-based plasticity mechanisms that endow it with
+		  on-line learning abilities. In addition to the analog
+		  circuits, the device comprises also asynchronous digital
+		  logic circuits for setting different synapse and neuron
+		  properties as well as different network configurations.
+		  This prototype device, fabricated using a 180 nm 1P6M CMOS
+		  process, occupies an area of 51.4 mm 2 , and consumes
+		  approximately 4 mW for typical experiments, for example
+		  involving attractor networks. Here we describe the details
+		  of the overall architecture and of the individual circuits
+		  and present experimental results that showcase its
+		  potential. By supporting a wide range of cortical-like
+		  computational modules comprising plasticity mechanisms,
+		  this device will enable the realization of intelligent
+		  autonomous systems with on-line learning capabilities.},
+  author	= {Qiao, Ning and Mostafa, Hesham and Corradi, Federico and
+		  Osswald, Marc and Stefanini, Fabio and Sumislawska, Dora
+		  and Indiveri, Giacomo},
+  doi		= {10.3389/fnins.2015.00141},
+  issn		= {1662-453X},
+  journal	= {Front. Neurosci.},
+  keywords	= {Autonomous Systems,Event-driven,Real-time,Spike-based
+		  learning,Winner-take-all (WTA),analog
+		  VLSI,asynchronous,attractor network,brain inspired
+		  computing,cortical model,event-based,low-power,neuromorphic
+		  computing,spike-timing dependent plasticity (STDP)},
+  month		= apr,
+  pages		= {141},
+  publisher	= {Frontiers},
+  title		= {{A reconfigurable on-line learning spiking neuromorphic
+		  processor comprising 256 neurons and 128K synapses}},
+  url		= {http://journal.frontiersin.org/article/10.3389/fnins.2015.00141/abstract},
+  volume	= {9},
+  year		= {2015}
 }
 
 @Article{	  Sarwar2016,
@@ -312,6 +704,25 @@
   year		= {2018}
 }
 
+@Article{	  TANAKA2009,
+  author	= {TANAKA, Hideki and MORIE, Takashi and AIHARA, Kazuyuki},
+  doi		= {10.1587/transfun.E92.A.1690},
+  issn		= {1745-1337},
+  journal	= {IEICE Trans. Fundam. Electron. Commun. Comput. Sci.},
+  keywords	= {LSI implementation,associative memory,spike,spiking neuron
+		  model,timing dependent synaptic plasticity (STDP)},
+  month		= jul,
+  number	= {7},
+  pages		= {1690--1698},
+  publisher	= {The Institute of Electronics, Information and
+		  Communication Engineers},
+  title		= {{A CMOS Spiking Neural Network Circuit with
+		  Symmetric/Asymmetric STDP Function}},
+  url		= {http://joi.jlc.jst.go.jp/JST.JSTAGE/transfun/E92.A.1690?from=CrossRef},
+  volume	= {E92-A},
+  year		= {2009}
+}
+
 @InProceedings{	  Tang1997,
   author	= {Tang, C.Z. and Kwan, H.K.},
   booktitle	= {Proc. 1997 IEEE Int. Symp. Circuits Syst. Circuits Syst.
@@ -325,6 +736,70 @@
   url		= {http://ieeexplore.ieee.org/document/608912/},
   volume	= {1},
   year		= {1997}
+}
+
+@InProceedings{	  Tann2017,
+  abstract	= {The pervasive presence of interconnected objects enables
+		  new communication paradigms where devices can easily reach
+		  each other while interacting within their environment. The
+		  so-called Internet of Things (IoT) represents the
+		  integration of several computing and communications systems
+		  aiming at facilitating the interaction between these
+		  devices. Arduino is one of the most popular platforms used
+		  to prototype new IoT devices due to its open, flexible and
+		  easy-to-use archi- tecture. Ardunio Yun is a dual board
+		  microcontroller that supports a Linux distribution and it
+		  is currently one of the most versatile and powerful Arduino
+		  systems. This feature positions Arduino Yun as a popular
+		  platform for developers, but it also introduces unique
+		  infection vectors from the secu- rity viewpoint. In this
+		  work, we present a security analysis of Arduino Yun. We
+		  show that Arduino Yun is vulnerable to a number of attacks
+		  and we implement a proof of concept capable of exploiting
+		  some of them.},
+  archiveprefix	= {arXiv},
+  arxivid	= {arXiv:1603.07016v1},
+  author	= {Tann, Hokchhay and Hashemi, Soheil and Bahar, R. Iris and
+		  Reda, Sherief},
+  booktitle	= {Proc. 54th Annu. Des. Autom. Conf. 2017 - DAC '17},
+  doi		= {10.1145/3061639.3062259},
+  eprint	= {arXiv:1603.07016v1},
+  isbn		= {9781450349277},
+  issn		= {16130073},
+  title		= {{Hardware-Software Codesign of Accurate, Multiplier-free
+		  Deep Neural Networks}},
+  year		= {2017}
+}
+
+@Article{	  Torikai2006,
+  author	= {Torikai, H. and Hamanaka, H. and Saito, T.},
+  doi		= {10.1109/TCSII.2006.876381},
+  issn		= {1057-7130},
+  journal	= {IEEE Trans. Circuits Syst. II Express Briefs},
+  month		= aug,
+  number	= {8},
+  pages		= {734--738},
+  title		= {{Reconfigurable Digital Spiking Neuron and Its
+		  Pulse-Coupled Network: Basic Characteristics and Potential
+		  Applications}},
+  url		= {http://ieeexplore.ieee.org/document/1683990/},
+  volume	= {53},
+  year		= {2006}
+}
+
+@Article{	  Umuroglu2016,
+  archiveprefix	= {arXiv},
+  arxivid	= {1612.07119},
+  author	= {Umuroglu, Yaman and Fraser, Nicholas J. and Gambardella,
+		  Giulio and Blott, Michaela and Leong, Philip and Jahre,
+		  Magnus and Vissers, Kees},
+  doi		= {10.1145/3020078.3021744},
+  eprint	= {1612.07119},
+  month		= dec,
+  title		= {{FINN: A Framework for Fast, Scalable Binarized Neural
+		  Network Inference}},
+  url		= {https://arxiv.org/abs/1612.07119},
+  year		= {2016}
 }
 
 @InProceedings{	  Venkataramani2014,
@@ -392,6 +867,54 @@
   author	= {Wang, Dong},
   title		= {{PipeCNN}},
   url		= {https://github.com/doonny/PipeCNN}
+}
+
+@Article{	  Wang2019a,
+  archiveprefix	= {arXiv},
+  arxivid	= {1904.00938},
+  author	= {Wang, Erwei and Davis, James J. and Cheung, Peter Y. K.
+		  and Constantinides, George A.},
+  eprint	= {1904.00938},
+  month		= apr,
+  title		= {{LUTNet: Rethinking Inference in FPGA Soft Logic}},
+  url		= {https://arxiv.org/abs/1904.00938},
+  year		= {2019}
+}
+
+@Article{	  Zhang2017,
+  abstract	= {Keyword spotting (KWS) is a critical component for
+		  enabling speech based user interactions on smart devices.
+		  It requires real-time response and high accuracy for good
+		  user experience. Recently, neural networks have become an
+		  attractive choice for KWS architecture because of their
+		  superior accuracy compared to traditional speech processing
+		  algorithms. Due to its always-on nature, KWS application
+		  has highly constrained power budget and typically runs on
+		  tiny microcontrollers with limited memory and compute
+		  capability. The design of neural network architecture for
+		  KWS must consider these constraints. In this work, we
+		  perform neural network architecture evaluation and
+		  exploration for running KWS on resource-constrained
+		  microcontrollers. We train various neural network
+		  architectures for keyword spotting published in literature
+		  to compare their accuracy and memory/compute requirements.
+		  We show that it is possible to optimize these neural
+		  network architectures to fit within the memory and compute
+		  constraints of microcontrollers without sacrificing
+		  accuracy. We further explore the depthwise separable
+		  convolutional neural network (DS-CNN) and compare it
+		  against other neural network architectures. DS-CNN achieves
+		  an accuracy of 95.4{\%}, which is {\~{}}10{\%} higher than
+		  the DNN model with similar number of parameters.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1711.07128},
+  author	= {Zhang, Yundong and Suda, Naveen and Lai, Liangzhen and
+		  Chandra, Vikas},
+  eprint	= {1711.07128},
+  month		= nov,
+  title		= {{Hello Edge: Keyword Spotting on Microcontrollers}},
+  url		= {http://arxiv.org/abs/1711.07128},
+  year		= {2017}
 }
 
 @Article{	  Zhang2018,

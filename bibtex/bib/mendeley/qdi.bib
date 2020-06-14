@@ -1,8 +1,240 @@
 
+@InProceedings{	  Bai2016,
+  abstract	= {Despite many attractive advantages, Null Convention Logic
+		  (NCL) remains to be a niche largely due to its high
+		  implementation costs. Using emerging spintronic devices,
+		  this paper proposes a Domain-Wall-Motion-based NCL circuit
+		  design methodology that achieves approximately 30× and 8×
+		  improvements in energy efficiency and chip layout area,
+		  respectively, over its equivalent CMOS design, while
+		  maintaining similar delay performance for a 32-bit full
+		  adder. These advantages are made possible mostly by
+		  exploiting the domain wall motion physics to natively
+		  realize the hysteresis critically needed in NCL. More
+		  Interestingly, this design choice achieves ultra-high
+		  robustness by allowing spintronic device parameters to vary
+		  within a predetermined range while still achieving correct
+		  operations.},
+  author	= {Bai, Yu and Hu, Bo and Kuang, Weidong and Lin, Mingjie},
+  booktitle	= {Proc. 26th Ed. Gt. Lakes Symp. VLSI - GLSVLSI '16},
+  doi		= {10.1145/2902961.2903019},
+  isbn		= {9781450342742},
+  title		= {{Ultra-Robust Null Convention Logic Circuit with Emerging
+		  Domain Wall Devices}},
+  year		= {2016}
+}
+
+@Misc{		  Balasubramanian,
+  author	= {Balasubramanian, P. and Edwards, D. A.},
+  booktitle	= {Proc. 19 th Int. Work. Log. Synth.},
+  title		= {{Self-timed realization of combinational logic}},
+  url		= {http://citeseerx.ist.psu.edu/viewdoc/citations;jsessionid=925611691BD39FCC86389C42996D76F6?doi=10.1.1.685.3778}
+}
+
+@Article{	  Chang2017,
+  abstract	= {NULL Convention Logic (NCL) is a promising design paradigm
+		  for constructing low-power robust asynchronous circuits.
+		  The conventional NCL paradigm requires pipeline registers
+		  for separating two neighboring logic blocks, and those
+		  registers can account for up to 35{\%} of the overall power
+		  consumption of the NCL circuit. This brief presents the
+		  Register-Less NCL (RL-NCL) design paradigm, which achieves
+		  low power consumption by eliminating pipeline registers,
+		  simplifying the control circuit, and supporting
+		  fine-grained power gating to mitigate the leakage power of
+		  sleeping logic blocks. Compared with the conventional NCL
+		  counterpart, the RL-NCL implementation of an 8-bit
+		  five-stage pipelined Kogge-Stone adder can reduce power
+		  dissipation by 56.4{\%}-72.5{\%} for the input data rate
+		  ranging from 10 to 900 MHz. Moreover, the RL-NCL
+		  implementation can reduce the transistor count of the adder
+		  by 49.5{\%}.},
+  author	= {Chang, Meng Chou and Yang, Po Hung and Pan, Ze Gang},
+  doi		= {10.1109/TCSII.2016.2557812},
+  isbn		= {978-1-4338-0446-5},
+  issn		= {15497747},
+  journal	= {IEEE Trans. Circuits Syst. II Express Briefs},
+  keywords	= {Asynchronous circuits,NULL Convention Logic
+		  (NCL),low-power electronics,power gating},
+  title		= {{Register-Less NULL Convention Logic}},
+  year		= {2017}
+}
+
+@TechReport{	  Chelcea,
+  abstract	= {Future deep sub-micron technologies will be characterized
+		  by large parametric variations, which could make
+		  asynchronous design an attractive solution for use on large
+		  scale. However, the investment in asynchronous CAD tools
+		  does not approach that in synchronous ones. Even when
+		  asynchronous tools leverage existing synchronous toolflows,
+		  they introduce large area and speed overheads. This paper
+		  proposes several heuristic and optimal algorithms , based
+		  on timing interval analysis, for improving existing
+		  asynchronous CAD solutions by optimizing area. The
+		  optimized circuits are 2.4 times smaller for an optimal
+		  algorithm and 1.8 times smaller for a heuristic one than
+		  the existing solutions. The optimized circuits are also
+		  shown to be resilient to large parametric variations,
+		  yielding better average-case latencies than their
+		  synchronous counterparts .},
+  author	= {Chelcea, Tiberiu and Venkataramani, Girish and Goldstein,
+		  Seth C},
+  title		= {{Area Optimizations for Dual-Rail Circuits Using
+		  Relative-Timing Analysis}}
+}
+
+@InProceedings{	  Dabholkar2016,
+  abstract	= {Digital signal processing is at the heart of modern
+		  personal communication devices that support high throughput
+		  media streams. Although DSPs are typically implemented
+		  using high performance clocked processors,
+		  delay-insensitive asynchronous techniques are being
+		  increasingly applied as they are robust to the extreme
+		  variability of modern nano-scale fabrication processes. As
+		  an additional benefit, these systems do not exhibit the
+		  trade off between latency and throughput that is a
+		  characteristic of clocked Boolean systems. In this paper, a
+		  low latency Null Convention Logic based parallel 16×16 bit
+		  multiplier is used to illustrate the pipelining behaviour
+		  in an NCL system. We show that a 16×16 non-pipelined NCL
+		  multiplier achieves a throughput of nearly 260 Mops/sec,
+		  with a latency of around 1.20 ns. By including 15 pipeline
+		  stages, the multiplier throughput can be more than doubled
+		  to 609 Mops/sec while the latency increases to only 2.26
+		  ns. This can be contrasted with the corresponding
+		  synchronous multiplier incorporating the same number of
+		  pipeline stages, which would exhibit a latency of around 25
+		  ns at an equivalent throughput.},
+  author	= {Dabholkar, Prashant and Beckett, Paul},
+  booktitle	= {2016, 10th Int. Conf. Signal Process. Commun. Syst. ICSPCS
+		  2016 - Proc.},
+  doi		= {10.1109/ICSPCS.2016.7843357},
+  isbn		= {9781509009411},
+  title		= {{A high throughput, low latency null convention logic
+		  16×16-bit multiplier}},
+  year		= {2016}
+}
+
+@InProceedings{	  Dobkin,
+  author	= {Dobkin, R. and Ginosar, R. and Kolodny, A.},
+  booktitle	= {12th IEEE Int. Symp. Asynchronous Circuits Syst.},
+  doi		= {10.1109/ASYNC.2006.17},
+  isbn		= {0-7695-2498-2},
+  pages		= {117--127},
+  publisher	= {IEEE},
+  title		= {{Fast Asynchronous Shift Register for Bit-Serial
+		  Communication}},
+  url		= {http://ieeexplore.ieee.org/document/1595695/}
+}
+
+@InProceedings{	  Huemer2018,
+  author	= {Huemer, Florian and Steininger, Andreas},
+  booktitle	= {2018 Austrochip Work. Microelectron.},
+  doi		= {10.1109/Austrochip.2018.8520702},
+  isbn		= {978-1-5386-8200-5},
+  month		= sep,
+  pages		= {50--55},
+  publisher	= {IEEE},
+  title		= {{Advanced Delay-Insensitive 4-Phase Protocols}},
+  url		= {https://ieeexplore.ieee.org/document/8520702/},
+  year		= {2018}
+}
+
+@InProceedings{	  Lin2012a,
+  author	= {Lin, Tong and Chong, Kwen-Siong and Chang, Joseph S. and
+		  Gwee, Bah-Hwee and Shu, Wei},
+  booktitle	= {2012 IEEE Subthreshold Microelectron. Conf.},
+  doi		= {10.1109/SubVT.2012.6404298},
+  isbn		= {978-1-4673-1587-6},
+  month		= oct,
+  pages		= {1--3},
+  publisher	= {IEEE},
+  title		= {{A robust asynchronous approach for realizing ultra-low
+		  power digital Self-Adaptive VDD Scaling system}},
+  url		= {http://ieeexplore.ieee.org/document/6404298/},
+  year		= {2012}
+}
+
+@InProceedings{	  Moreira2014,
+  author	= {Moreira, Matheus and Neutzling, Augusto and Martins,
+		  Mayler and Reis, Andre and Ribas, Renato and Calazans,
+		  Ney},
+  booktitle	= {2014 20th IEEE Int. Symp. Asynchronous Circuits Syst.},
+  doi		= {10.1109/ASYNC.2014.15},
+  isbn		= {978-1-4799-3789-9},
+  month		= may,
+  pages		= {53--60},
+  publisher	= {IEEE},
+  title		= {{Semi-custom NCL Design with Commercial EDA Frameworks: Is
+		  it Possible?}},
+  url		= {http://ieeexplore.ieee.org/document/6835811/},
+  year		= {2014}
+}
+
+@Article{	  Moreira2018,
+  author	= {Moreira, Matheus T. and Beerel, Peter A. and Sartori,
+		  Marcos L. L. and Calazans, Ney L. V.},
+  doi		= {10.1109/TCSI.2017.2772206},
+  issn		= {1549-8328},
+  journal	= {IEEE Trans. Circuits Syst. I Regul. Pap.},
+  month		= jun,
+  number	= {6},
+  pages		= {1981--1993},
+  title		= {{NCL Synthesis With Conventional EDA Tools: Technology
+		  Mapping and Optimization}},
+  url		= {https://ieeexplore.ieee.org/document/8241815/},
+  volume	= {65},
+  year		= {2018}
+}
+
 @InProceedings{	  Toms2003,
   author	= {Toms, W.B.},
   booktitle	= {Proc. 14th UK Asynchronous Forum},
   title		= {{QDI Implementations of Boolean Graphs}},
   url		= {http://async.org.uk/ukasyncforum14/forum14-papers/forum14-toms.pdf},
   year		= {2003}
+}
+
+@InProceedings{	  Tran2017,
+  author	= {Tran, Linh Duc and Matthews, Glenn I. and Beckett, Paul
+		  and Stojcevski, Alex},
+  booktitle	= {2017 Int. Conf. Recent Adv. Signal Process. Telecommun.
+		  Comput.},
+  doi		= {10.1109/SIGTELCOM.2017.7849815},
+  isbn		= {978-1-5090-2291-5},
+  month		= jan,
+  pages		= {158--163},
+  publisher	= {IEEE},
+  title		= {{Null convention logic (NCL) based asynchronous design —
+		  fundamentals and recent advances}},
+  url		= {http://ieeexplore.ieee.org/document/7849815/},
+  year		= {2017}
+}
+
+@InProceedings{	  Zhou2006a,
+  abstract	= {Designing asynchronous circuits by reusing existing
+		  synchronous tools has become a promising solution to the
+		  problem of poor CAD support in asynchronous world. A
+		  straightforward way is to structurally map the gates in a
+		  synchronous netlist to their functionally equivalent
+		  modules which use delay-insensitive codes. Different
+		  trade-offs exist in previous methods between the overheads
+		  of the implementations and their robustness. The aim of
+		  this paper is to optimise the area of asynchronous circuits
+		  using partial acknowledgement concept. We employ this
+		  concept in two design flows, which are implemented in a
+		  software tool to evaluate the efficiency of the method. The
+		  benchmark results show the average reduction in area by
+		  28{\%} and in the number of inter-functional module wires
+		  that require timing verification by 67{\%}, compared to
+		  NCL-X. Copyright 2006 ACM.},
+  author	= {Zhou, Yu and Sokolov, Danil and Yakovlev, Alex},
+  booktitle	= {IEEE/ACM Int. Conf. Comput. Des. Dig. Tech. Pap. ICCAD},
+  doi		= {10.1109/ICCAD.2006.320080},
+  isbn		= {1595933891},
+  issn		= {10923152},
+  pages		= {158--163},
+  title		= {{Cost-aware synthesis of asynchronous circuits based on
+		  partial acknowledgement}},
+  year		= {2006}
 }

@@ -1,4 +1,78 @@
 
+@Article{	  Abeyrathna2019,
+  abstract	= {The recently introduced Tsetlin Machine (TM) has provided
+		  competitive pattern classification accuracy in several
+		  benchmarks, composing patterns with easy-to-interpret
+		  conjunctive clauses in propositional logic. In this paper,
+		  we go beyond pattern classification by introducing a new
+		  type of TMs, namely, the Regression Tsetlin Machine (RTM).
+		  In all brevity, we modify the inner inference mechanism of
+		  the TM so that input patterns are transformed into a single
+		  continuous output, rather than to distinct categories. We
+		  achieve this by: (1) using the conjunctive clauses of the
+		  TM to capture arbitrarily complex patterns; (2) mapping
+		  these patterns to a continuous output through a novel
+		  voting and normalization mechanism; and (3) employing a
+		  feedback scheme that updates the TM clauses to minimize the
+		  regression error. The feedback scheme uses a new activation
+		  probability function that stabilizes the updating of
+		  clauses, while the overall system converges towards an
+		  accurate input-output mapping. The performance of the
+		  proposed approach is evaluated using six different
+		  artificial datasets with and without noise. The performance
+		  of the RTM is compared with the Classical Tsetlin Machine
+		  (CTM) and the Multiclass Tsetlin Machine (MTM). Our
+		  empirical results indicate that the RTM obtains the best
+		  training and testing results for both noisy and noise-free
+		  datasets, with a smaller number of clauses. This, in turn,
+		  translates to higher regression accuracy, using
+		  significantly less computational resources.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1905.04206},
+  author	= {Abeyrathna, K. Darshana and Granmo, Ole-Christoffer and
+		  Jiao, Lei and Goodwin, Morten},
+  eprint	= {1905.04206},
+  month		= may,
+  title		= {{The Regression Tsetlin Machine: A Tsetlin Machine for
+		  Continuous Output Problems}},
+  url		= {http://arxiv.org/abs/1905.04206},
+  year		= {2019}
+}
+
+@Article{	  Abeyrathna2019a,
+  abstract	= {In this paper, we apply a new promising tool for pattern
+		  classification, namely, the Tsetlin Machine (TM), to the
+		  field of disease forecasting. The TM is interpretable
+		  because it is based on manipulating expressions in
+		  propositional logic, leveraging a large team of Tsetlin
+		  Automata (TA). Apart from being interpretable, this
+		  approach is attractive due to its low computational cost
+		  and its capacity to handle noise. To attack the problem of
+		  forecasting, we introduce a preprocessing method that
+		  extends the TM so that it can handle continuous input.
+		  Briefly stated, we convert continuous input into a binary
+		  representation based on thresholding. The resulting
+		  extended TM is evaluated and analyzed using an artificial
+		  dataset. The TM is further applied to forecast dengue
+		  outbreaks of all the seventeen regions in Philippines using
+		  the spatio-temporal properties of the data. Experimental
+		  results show that dengue outbreak forecasts made by the TM
+		  are more accurate than those obtained by a Support Vector
+		  Machine (SVM), Decision Trees (DTs), and several
+		  multi-layered Artificial Neural Networks (ANNs), both in
+		  terms of forecasting precision and F1-score.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1905.04199},
+  author	= {Abeyrathna, K. Darshana and Granmo, Ole-Christoffer and
+		  Zhang, Xuan and Goodwin, Morten},
+  eprint	= {1905.04199},
+  month		= may,
+  title		= {{A Scheme for Continuous Input to the Tsetlin Machine with
+		  Applications to Forecasting Disease Outbreaks}},
+  url		= {http://arxiv.org/abs/1905.04199},
+  year		= {2019}
+}
+
 @Article{	  Berge2018,
   abstract	= {Medical applications challenge today's text categorization
 		  techniques by demanding both high accuracy and
@@ -128,6 +202,53 @@
 @TechReport{	  Granmo2019,
   author	= {Granmo, Ole-Christoffer},
   title		= {{Introduction to the Tsetlin Machine}},
+  year		= {2019}
+}
+
+@Article{	  Granmo2019a,
+  abstract	= {Deep neural networks have obtained astounding successes
+		  for important pattern recognition tasks, but they suffer
+		  from high computational complexity and the lack of
+		  interpretability. The recent Tsetlin Machine (TM) attempts
+		  to address this lack by using easy-to-interpret conjunctive
+		  clauses in propositional logic to solve complex pattern
+		  recognition problems. The TM provides competitive accuracy
+		  in several benchmarks, while keeping the important property
+		  of interpretability. It further facilitates hardware-near
+		  implementation since inputs, patterns, and outputs are
+		  expressed as bits, while recognition and learning rely on
+		  straightforward bit manipulation. In this paper, we exploit
+		  the TM paradigm by introducing the Convolutional Tsetlin
+		  Machine (CTM), as an interpretable alternative to
+		  convolutional neural networks (CNNs). Whereas the TM
+		  categorizes an image by employing each clause once to the
+		  whole image, the CTM uses each clause as a convolution
+		  filter. That is, a clause is evaluated multiple times, once
+		  per image patch taking part in the convolution. To make the
+		  clauses location-aware, each patch is further augmented
+		  with its coordinates within the image. The output of a
+		  convolution clause is obtained simply by ORing the outcome
+		  of evaluating the clause on each patch. In the learning
+		  phase of the TM, clauses that evaluate to 1 are contrasted
+		  against the input. For the CTM, we instead contrast against
+		  one of the patches, randomly selected among the patches
+		  that made the clause evaluate to 1. Accordingly, the
+		  standard Type I and Type II feedback of the classic TM can
+		  be employed directly, without further modification. The CTM
+		  obtains a peak test accuracy of 99.51{\%} on MNIST,
+		  96.21{\%} on Kuzushiji-MNIST, 89.56{\%} on Fashion-MNIST,
+		  and 100.0{\%} on the 2D Noisy XOR Problem, which is
+		  competitive with results reported for simple 4-layer CNNs,
+		  BinaryConnect, and a recent FPGA-accelerated Binary CNN.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1905.09688},
+  author	= {Granmo, Ole-Christoffer and Glimsdal, Sondre and Jiao, Lei
+		  and Goodwin, Morten and Omlin, Christian W. and Berge, Geir
+		  Thore},
+  eprint	= {1905.09688},
+  month		= may,
+  title		= {{The Convolutional Tsetlin Machine}},
+  url		= {http://arxiv.org/abs/1905.09688},
   year		= {2019}
 }
 

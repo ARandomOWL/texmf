@@ -1,0 +1,269 @@
+
+@InProceedings{	  Chi2018,
+  abstract	= {Neural networks (NNs) are key to deep learning systems.
+		  Their efficient hardware implementation is crucial to
+		  applications at the edge. Binarized NNs (BNNs), where the
+		  weights and output of a neuron are of binary values {\{}-1,
+		  +1{\}} (or encoded in {\{}0,1{\}}), have been proposed
+		  recently. As no multiplier is required, they are
+		  particularly attractive and suitable for hardware
+		  realization. Most prior NN synthesis methods target on
+		  hardware architectures with neural processing elements
+		  (NPEs), where the weights of a neuron are loaded and the
+		  output of the neuron is computed. The load-and-compute
+		  method, though area efficient, requires expensive memory
+		  access, which deteriorates energy and performance
+		  efficiency. In this work we aim at synthesizing BNN dense
+		  layers into dedicated logic circuits. We formulate the
+		  corresponding matrix covering problem and propose a
+		  scalable algorithm to reduce the area and routing cost of
+		  BNNs. Experimental results justify the effectiveness of the
+		  method in terms of area and net savings on FPGA
+		  implementation. Our method provides an alternative
+		  implementation of BNNs, and can be applied in combination
+		  with NPE-based implementation for area, speed, and power
+		  tradeoffs.},
+  author	= {Chi, Chia Chih and Jiang, Jie Hong R.},
+  booktitle	= {IEEE/ACM Int. Conf. Comput. Des. Dig. Tech. Pap. ICCAD},
+  doi		= {10.1145/3240765.3240822},
+  isbn		= {9781450359504},
+  issn		= {10923152},
+  keywords	= {binarized neural network,logic synthesis,matrix covering},
+  month		= nov,
+  publisher	= {Institute of Electrical and Electronics Engineers Inc.},
+  title		= {{Logic synthesis of binarized neural networks for
+		  efficient circuit implementation}},
+  year		= {2018}
+}
+
+@InProceedings{	  He2018,
+  abstract	= {In this work, we propose a multiplication-less deep
+		  convolution neural network, called BD-NET. As far as we
+		  know, BD-NET is the first to use binarized depthwise
+		  separable convolution block as the drop-in replacement of
+		  conventional spatial-convolution in deep convolution neural
+		  network (CNN). In BD-NET, the computation-expensive
+		  convolution operations (i.e. Multiplication and
+		  Accumulation) are converted into hardware-friendly
+		  Addition/Subtraction operations. In this work, we first
+		  investigate and analyze the performance of BD-NET in terms
+		  of accuracy, parameter size and computation cost, w.r.t
+		  various network configurations. Then, the experiment
+		  results show that our proposed BD-NET with binarized
+		  depthwise separable convolution can achieve even higher
+		  inference accuracy to its baseline CNN counterpart with
+		  full-precision conventional convolution layer on the
+		  CIFAR-10 dataset. From the perspective of hardware
+		  implementation, the convolution layer of BD-NET achieves up
+		  to 97.2{\%}, 88.9{\%}, and 99.4{\%} reduction in terms of
+		  computation energy, memory usage, and chip area
+		  respectively.},
+  author	= {He, Zhezhi and Angizi, Shaahin and Rakin, Adnan Siraj and
+		  Fan, Deliang},
+  booktitle	= {Proc. IEEE Comput. Soc. Annu. Symp. VLSI, ISVLSI},
+  doi		= {10.1109/ISVLSI.2018.00033},
+  isbn		= {9781538670996},
+  issn		= {21593477},
+  keywords	= {Binarized neural network,Multiplication less},
+  month		= aug,
+  pages		= {130--135},
+  publisher	= {IEEE Computer Society},
+  title		= {{BD-NET: A multiplication-less DNN with binarized
+		  depthwise separable convolution}},
+  volume	= {2018-July},
+  year		= {2018}
+}
+
+@InProceedings{	  Krestinskaya2019,
+  abstract	= {This paper proposes the analog hardware implementation of
+		  Binarized Neural Network (BNN). Most of the existing
+		  hardware implementations of neural networks do not consider
+		  the memristor variability issue and its effect on the
+		  overall system performance. In this work, we investigate
+		  the variability in memristive devices in crossbar dot
+		  product computation and leakage currents in the proposed
+		  BNN, and show how it effects the overall system
+		  performance.},
+  author	= {Krestinskaya, Olga and Otaniyozov, Otaniyoz and James,
+		  Alex Pappachen},
+  booktitle	= {Proc. 2019 IEEE Int. Conf. Artif. Intell. Circuits Syst.
+		  AICAS 2019},
+  doi		= {10.1109/AICAS.2019.8771565},
+  isbn		= {9781538678848},
+  keywords	= {Analog Circuits,BNN,Memristor Variability,Memristors},
+  month		= mar,
+  pages		= {274--275},
+  publisher	= {Institute of Electrical and Electronics Engineers Inc.},
+  title		= {{Binarized Neural Network with Stochastic Memristors}},
+  year		= {2019}
+}
+
+@InProceedings{	  Lin2017,
+  abstract	= {State-of-the-art convolutional neural networks are
+		  enormously costly in both compute and memory, demanding
+		  massively parallel GPUs for execution. Such networks strain
+		  the computational capabilities and energy available to
+		  embedded and mobile processing platforms, restricting their
+		  use in many important applications. In this paper, we
+		  propose BCNN with Separable Filters (BCNNw/SF), which
+		  applies Singular Value Decomposition (SVD) on BCNN kernels
+		  to further reduce computational and storage complexity. We
+		  provide a closed form of the gradient over SVD to calculate
+		  the exact gradient with respect to every binarized weight
+		  in backward propagation. We verify BCNNw/SF on the MNIST,
+		  CIFAR-10, and SVHN datasets, and implement an accelerator
+		  for CIFAR10 on FPGA hardware. Our BCNNw/SF accelerator
+		  realizes memory savings of 17{\%} and execution time
+		  reduction of 31.3{\%} compared to BCNN with only minor
+		  accuracy sacrifices.},
+  archiveprefix	= {arXiv},
+  arxivid	= {1707.04693},
+  author	= {Lin, Jeng Hau and Xing, Tianwei and Zhao, Ritchie and
+		  Zhang, Zhiru and Srivastava, Mani and Tu, Zhuowen and
+		  Gupta, Rajesh K.},
+  booktitle	= {IEEE Comput. Soc. Conf. Comput. Vis. Pattern Recognit.
+		  Work.},
+  doi		= {10.1109/CVPRW.2017.48},
+  eprint	= {1707.04693},
+  isbn		= {9781538607336},
+  issn		= {21607516},
+  month		= aug,
+  pages		= {344--352},
+  publisher	= {IEEE Computer Society},
+  title		= {{Binarized Convolutional Neural Networks with Separable
+		  Filters for Efficient Hardware Acceleration}},
+  volume	= {2017-July},
+  year		= {2017}
+}
+
+@InProceedings{	  Nurvitadhi2017,
+  abstract	= {Deep neural networks (DNNs) are widely used in data
+		  analytics, since they deliver state-of-the-art accuracies.
+		  Binarized neural networks (BNNs) are recently proposed
+		  optimized variant of DNNs. BNNs constraint network weight
+		  and/or neuron value to either +1 or -1, which is
+		  representable in 1 bit. This leads to dramatic algorithm
+		  efficiency improvement, due to reduction in the memory and
+		  computational demands. This paper evaluates the opportunity
+		  to further improve the execution efficiency of BNNs through
+		  hardware acceleration. We first proposed a BNN hardware
+		  accelerator design. Then, we implemented the proposed
+		  accelerator on Aria 10 FPGA as well as 14-nm ASIC, and
+		  compared them against optimized software on Xeon server
+		  CPU, NVIDIA Titan X server GPU, and NVIDIA TX1 mobile GPU.
+		  Our evaluation shows that FPGA provides superior efficiency
+		  over CPU and GPU. Even though CPU and GPU offer high peak
+		  theoretical performance, they are not as efficiently
+		  utilized since BNNs rely on binarized bit-level operations
+		  that are better suited for custom hardware. Finally, even
+		  though ASIC is still more efficient, FPGA can provide
+		  orders of magnitudes in efficiency improvements over
+		  software, without having to lock into a fixed ASIC
+		  solution.},
+  author	= {Nurvitadhi, Eriko and Sheffield, David and Sim, Jaewoong
+		  and Mishra, Asit and Venkatesh, Ganesh and Marr, Debbie},
+  booktitle	= {Proc. 2016 Int. Conf. Field-Programmable Technol. FPT
+		  2016},
+  doi		= {10.1109/FPT.2016.7929192},
+  isbn		= {9781509056026},
+  keywords	= {ASIC,Binarized neural networks,CPU,Data analytics,Deep
+		  learning,FPGA,GPU,Hardware accelerator},
+  month		= may,
+  pages		= {77--84},
+  publisher	= {Institute of Electrical and Electronics Engineers Inc.},
+  title		= {{Accelerating binarized neural networks: Comparison of
+		  FPGA, CPU, GPU, and ASIC}},
+  year		= {2017}
+}
+
+@InProceedings{	  Rasoulinezhad2020,
+  abstract	= {Binarized neural networks (BNNs) have shown exciting
+		  potential for utilising neural networks in embedded
+		  implementations where area, energy and latency constraints
+		  are paramount. With BNNs, multiply-accumulate (MAC)
+		  operations can be simplified to XnorPopcount operations,
+		  leading to massive reductions in both memory and
+		  computation resources. Furthermore, multiple efficient
+		  implementations of BNNs have been reported on
+		  field-programmable gate array (FPGA) implementations. This
+		  paper proposes a smaller, faster, more energy-efficient
+		  approximate replacement for the XnorPopcountoperation,
+		  called XNorMaj, inspired by state-of-the-art FPGAlook-up
+		  table schemes which benefit FPGA implementations. Weshow
+		  that XNorMaj is up to 2x more resource-efficient than the
+		  XnorPopcount operation. While the XNorMaj operation has a
+		  minor detrimental impact on accuracy, the resource savings
+		  enable us to use larger networks to recover the loss.},
+  archiveprefix	= {arXiv},
+  arxivid	= {2002.12900},
+  author	= {Rasoulinezhad, Seyedramin and Fox, Sean and Zhou, Hao and
+		  Wang, Lingli and Boland, David and Leong, Philip H.W.},
+  doi		= {10.1109/icfpt47387.2019.00062},
+  eprint	= {2002.12900},
+  month		= feb,
+  pages		= {339--342},
+  publisher	= {Institute of Electrical and Electronics Engineers (IEEE)},
+  title		= {{MajorityNets: BNNs Utilising Approximate Popcount for
+		  Improved Efficiency}},
+  year		= {2020}
+}
+
+@InProceedings{	  Shin2019,
+  abstract	= {This paper introduces FPGA implementation of learning
+		  hardware for a neural network. The proposed learning
+		  hardware is designed using CMOS invertible logic that
+		  realizes probabilistic bidirectional (forward and backward)
+		  operations with basic CMOS logic gates. The backward
+		  operation based on CMOS invertible logic makes
+		  hardware-based learning possible because the loss function
+		  is not required. For a simple case study, the proposed
+		  learning hardware trains using simplified a MNIST data set
+		  for a 25-input binarized perceptron. Our FPGA
+		  implementation on Digilent Genesys 2 achieves around 100 x
+		  faster operating speed than that using a traditional
+		  learning algorithm on software while maintaining the same
+		  recognition accuracy of 99{\%}.},
+  author	= {Shin, Duckgyu and Onizawa, Naoya and Hanyu, Takahiro},
+  booktitle	= {2019 26th IEEE Int. Conf. Electron. Circuits Syst. ICECS
+		  2019},
+  doi		= {10.1109/ICECS46596.2019.8965097},
+  isbn		= {9781728109961},
+  keywords	= {Hamiltonian,Spin gate,Stochastic computing},
+  month		= nov,
+  pages		= {115--116},
+  publisher	= {Institute of Electrical and Electronics Engineers Inc.},
+  title		= {{FPGA implementation of binarized perceptron learning
+		  hardware using CMOS invertible logic}},
+  year		= {2019}
+}
+
+@InProceedings{	  Takamaeda-Yamazaki2018,
+  abstract	= {Hardware-oriented approaches to accelerate deep neural
+		  network processing are very important for various embedded
+		  intelligent applications. This paper is a summary of our
+		  recent achievements for efficient neural network
+		  processing. We focus on the binarization approach for
+		  energy-and area-efficient neural network processor. We
+		  first present an energy-efficient binarized processor for
+		  deep neural networks by employing inmemory processing
+		  architecture. The real processor LSI achieves high
+		  performance and energy-efficiency compared to prior works.
+		  We then present an architecture exploration technique for
+		  binarized neural network processor on an FPGA. The
+		  exploration result indicates that the binarized hardware
+		  achieves very high performance by exploiting multiple
+		  different parallelisms at the same time.},
+  author	= {Takamaeda-Yamazaki, Shinya and Ueyoshi, Kodai and Ando,
+		  Kota and Uematsu, Ryota and Hirose, Kazutoshi and Ikebe,
+		  Masayuki and Asai, Tetsuya and Motomura, Masato},
+  booktitle	= {Proc. - 9th Asia-Pacific Signal Inf. Process. Assoc. Annu.
+		  Summit Conf. APSIPA ASC 2017},
+  doi		= {10.1109/APSIPA.2017.8282183},
+  isbn		= {9781538615423},
+  month		= feb,
+  pages		= {1045--1051},
+  publisher	= {Institute of Electrical and Electronics Engineers Inc.},
+  title		= {{Accelerating deep learning by binarized hardware}},
+  volume	= {2018-February},
+  year		= {2018}
+}

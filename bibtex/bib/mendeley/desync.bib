@@ -1,4 +1,126 @@
 
+@Article{	  Bufistov2010,
+  author	= {Bufistov, Dmitry},
+  title		= {{Performance Optimization of Elastic Systems}},
+  url		= {https://www.cs.upc.edu/~jordicf/gavina/BIB/files/PhD_Bufistov.pdf},
+  year		= {2010}
+}
+
+@PhDThesis{	  Casanova2008,
+  abstract	= {This master's thesis is on the field of computer science
+		  applied on electronics. The miniaturisation of integrated
+		  circuits is bringing new problems in terms of power
+		  consumption, speed, and variability tolerance. The current
+		  synchronous designs are struggling to cope with these
+		  problems, and in consequence new optimisations or paradigms
+		  are being studied. The study of this thesis are the
+		  optimisations like clock skew for synchronous circuits and
+		  asynchronous circuits as an alternative paradigm. The
+		  performance analysis of both cases are equivalent and
+		  algorithms on graph theory for cycles have been implemented
+		  to calculate the optimum speed. Asynchronous controllers
+		  are essential for a good asynchronous design. To create a
+		  connectivity structure of controllers it is necessary to
+		  group the memory elements (registers) of the circuit into
+		  clusters. Clustering registers affects power consumption,
+		  performance, area, and variability tolerance. To produce a
+		  good clus-tering is a hard job because of the high number
+		  of registers and for the trade-offs of optimising all these
+		  characteristics. An initial problem in clustering of
+		  controllers is to decide how many controllers we want. A
+		  design with one cluster give us the same problems of a
+		  synchronous de-sign, high power consumption and too much
+		  sensible on variability of temperature, voltage,
+		  manufacturing errors, etc. On the other hand, having as
+		  many controllers as registers will produce too much
+		  overhead in area for all the new logic and wires that needs
+		  to be added. It is important to have clusters as less
+		  connected as possible to design simple controllers and to
+		  minimise the impact on area. We know from benchmarks and
+		  industrial designs that the register graph is highly
+		  connected, and the controllers graph is almost complete. A
+		  variation of Min-Cut can give us a solution to optimise
+		  this property. The clustering will have an impact on
+		  performance. Grouping registers implies a lost of freedom,
+		  and optimisations like clock skew or the asynchronous
+		  circuit will be affected by this lost as a handicap to
+		  reach the maximum speed. From the placement point of view
+		  we need to have clusters where their registers are close to
+		  minimise the clock tree. The ideal solution is a partition
+		  of the space. The worst solution is to have the registers
+		  spared around. The contribution of this thesis are two
+		  clustering algorithms; A local search solution to minimise
+		  the number of connections, and a k-means implementation
+		  that combines the minimisation of the clock trees and the
+		  maximisation of performance, by using parameters to balance
+		  it. These algorithms have been implemented in the Elastix
+		  EDA tool and executed on ISCAS benchmarks and SUN
+		  Microsystems OpenSparc processor. Acknowledgements Several
+		  people has helped me making this thesis possible. I would
+		  like to thank Prof. Jordi Cortadella to give me the
+		  opportunity to work on this project, and to guide me from
+		  earlier years of my degree to here; Ferran Martorell to
+		  introduce me into the electronic design world and make me
+		  feel safe on it; and my family and friends to support me
+		  and made my life easy these months. This research was
+		  supported by a grant from Elastix Corporation, thanks to an
+		  agreement with Universitat Polit{\`{e}}cnica de Catalunya.
+		  I would like to specially thank Elastix Corporation for the
+		  resources that had put on me to make this project.},
+  author	= {Casanova, Jon{\`{a}}s},
+  school	= {Universitat Polit{\`{e}}cnica de Catalunya},
+  title		= {{Clustering for the Optimisation of Asynchronous
+		  Controllers}},
+  url		= {http://www.lsi.upc.es/~jordicf/gavina/BIB/files/Master_Casanova.pdf},
+  year		= {2008}
+}
+
+@InProceedings{	  Casanova2009,
+  address	= {New York, New York, USA},
+  author	= {Casanova, Jonas and Cortadella, Jordi},
+  booktitle	= {Proc. 2009 Int. Conf. Comput. Des. - ICCAD '09},
+  doi		= {10.1145/1687399.1687502},
+  isbn		= {9781605588001},
+  pages		= {547},
+  publisher	= {ACM Press},
+  title		= {{Multi-level clustering for clock skew optimization}},
+  url		= {http://portal.acm.org/citation.cfm?doid=1687399.1687502},
+  year		= {2009}
+}
+
+@InProceedings{	  Chinnery2001,
+  author	= {Chinnery, D. G. and Nikoli{\'{c}}, B. and Keutzer, K.},
+  booktitle	= {Proc. 38th Annu. Conf. Des. Autom. - DAC '01},
+  title		= {{Achieving 550MHz in an ASIC Methodology}},
+  url		= {https://people.eecs.berkeley.edu/~bora/publications/DAC01.pdf},
+  year		= {2001}
+}
+
+@InProceedings{	  Cortadella2004,
+  abstract	= {This paper proposes a technique for creating a
+		  combinational logic network with an output that signals
+		  when all other outputs have stabilized. The method is based
+		  on dual-rail encoding, and guarantees low timing overhead
+		  and reasonable area and power overhead. We discuss various
+		  scenarios in which completion detection can be used to
+		  measure the delay of a synchronous circuit at fabrication
+		  time or at run time, and of an asynchronous circuit at run
+		  time. We conclude by showing, on a large set of benchmarks,
+		  the effectiveness of the proposed technique.},
+  author	= {Cortadella, J. and Kondratye, A. and Lavagno, L. and
+		  Sotiriou, C.},
+  booktitle	= {Proc. - IEEE Int. Conf. Comput. Des. VLSI Comput.
+		  Process.},
+  doi		= {10.1109/ICCD.2004.1347969},
+  isbn		= {0769522319},
+  issn		= {10636404},
+  pages		= {505--508},
+  title		= {{Coping with the variability of combinational logic
+		  delays}},
+  url		= {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp={\&}arnumber=1347969},
+  year		= {2004}
+}
+
 @Article{	  Cortadella2006,
   author	= {Cortadella, J. and Kondratyev, A. and Lavagno, L. and
 		  Sotiriou, C.P.},
@@ -13,6 +135,51 @@
   url		= {http://ieeexplore.ieee.org/document/1677680/},
   volume	= {25},
   year		= {2006}
+}
+
+@InProceedings{	  Cortadella2010,
+  author	= {Cortadella, Jordi and Lavagno, Luciano and Amiri, Djavad
+		  and Casanova, Jonas and Macian, Carlos and Martorell,
+		  Ferran and Moya, Juan A. and Necchi, Luca and Sokolov,
+		  Danil and Tuncer, Emre},
+  booktitle	= {2010 IEEE Int. Conf. Integr. Circuit Des. Technol.},
+  doi		= {10.1109/ICICDT.2010.5510273},
+  isbn		= {978-1-4244-5773-1},
+  month		= jun,
+  pages		= {146--150},
+  publisher	= {IEEE},
+  title		= {{Narrowing the margins with elastic clocks}},
+  url		= {http://ieeexplore.ieee.org/document/5510273/},
+  year		= {2010}
+}
+
+@InProceedings{	  Cortadella2016,
+  author	= {Cortadella, Jordi and Lupon, Marc and Moreno, Alberto and
+		  Roca, Antoni and Sapatnekar, Sachin S.},
+  booktitle	= {2016 22nd IEEE Int. Symp. Asynchronous Circuits Syst.},
+  doi		= {10.1109/ASYNC.2016.14},
+  isbn		= {978-1-4673-9007-1},
+  month		= may,
+  pages		= {19--26},
+  publisher	= {IEEE},
+  title		= {{Ring Oscillator Clocks and Margins}},
+  url		= {http://ieeexplore.ieee.org/document/7584887/},
+  year		= {2016}
+}
+
+@InProceedings{	  Davare2004,
+  address	= {New York, New York, USA},
+  author	= {Davare, Abhijit and Lwin, Kelvin and Kondratyev, Alex and
+		  Sangiovanni-Vincentelli, Alberto},
+  booktitle	= {Proc. 41st Annu. Conf. Des. Autom. - DAC '04},
+  doi		= {10.1145/996566.996727},
+  isbn		= {1581138288},
+  pages		= {588},
+  publisher	= {ACM Press},
+  title		= {{The best of both worlds: the efficient asynchronous
+		  implementation of synchronous specifications}},
+  url		= {http://portal.acm.org/citation.cfm?doid=996566.996727},
+  year		= {2004}
 }
 
 @Article{	  Liu2010,
@@ -53,10 +220,101 @@
   year		= {2010}
 }
 
+@InProceedings{	  Liu2013,
+  author	= {Liu, Jian and Nowick, Steven M. and Seok, Mingoo},
+  booktitle	= {2013 IEEE 19th Int. Symp. Asynchronous Circuits Syst.},
+  doi		= {10.1109/ASYNC.2013.29},
+  isbn		= {978-1-4673-5956-6},
+  month		= may,
+  pages		= {1--7},
+  publisher	= {IEEE},
+  title		= {{Soft MOUSETRAP: A Bundled-Data Asynchronous Pipeline
+		  Scheme Tolerant to Random Variations at Ultra-Low Supply
+		  Voltages}},
+  url		= {http://ieeexplore.ieee.org/document/6546171/},
+  year		= {2013}
+}
+
+@PhDThesis{	  Liu2013a,
+  author	= {Liu, Yuqi},
+  school	= {Lund University},
+  title		= {{Clock tree design in sub-Vt circuits - Analysis on
+		  standard-and full-custom gates}},
+  url		= {http://www.eit.lth.se/sprapport.php?uid=716},
+  year		= {2013}
+}
+
+@InProceedings{	  Park2011,
+  author	= {Park, Junyoung and Abraham, Jacob A.},
+  booktitle	= {IEEE/ACM Int. Symp. Low Power Electron. Des.},
+  doi		= {10.1109/ISLPED.2011.5993672},
+  isbn		= {978-1-61284-658-3},
+  month		= aug,
+  pages		= {391--396},
+  publisher	= {IEEE},
+  title		= {{A fast, accurate and simple critical path monitor for
+		  improving energy-delay product in DVS systems}},
+  url		= {http://ieeexplore.ieee.org/document/5993672/},
+  year		= {2011}
+}
+
+@InProceedings{	  Petlin,
+  author	= {Petlin, O.A. and Furber, S.B.},
+  booktitle	= {Proc. 13th IEEE VLSI Test Symp.},
+  doi		= {10.1109/VTEST.1995.512652},
+  isbn		= {0-8186-7000-2},
+  pages		= {296--301},
+  publisher	= {IEEE Comput. Soc. Press},
+  title		= {{Scan testing of micropipelines}},
+  url		= {http://ieeexplore.ieee.org/document/512652/}
+}
+
+@InProceedings{	  Rykunov,
+  author	= {Rykunov, Maxim and Mokhov, Andrey and Sokolov, Danil and
+		  Yakovlev, Alex and Koelmans, Albert},
+  booktitle	= {2013 IEEE 24th Int. Conf. Appl. Syst. Archit. Process.},
+  title		= {{Design-for-adaptivity of microarchitectures}},
+  url		= {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6567596}
+}
+
+@Article{	  Smirnov,
+  abstract	= {We present an asynchronous micropipeline synthesis flow
+		  supporting conventional synthesizable HDL specifications.
+		  Using Synopsys Design Compiler as the front-end interfacing
+		  behavior specification, the synthesis core and the final
+		  netlist front-end ensures easy integration into
+		  conventional design flow. With our RTL to micropipeline
+		  re-implementation engine in the back-end, conventional HDL
+		  specification is implemented as an asynchronous
+		  micropipeline. Synthesis can be targeted at a wide range of
+		  micropipeline protocols and implementations through
+		  standard cell library approach. Primary target applications
+		  include high throughput low power using domino-like
+		  low-latency cells and designs requiring side channel attack
+		  resistance using a power balanced micropipeline library.},
+  author	= {Smirnov, Alexander and Taubin, Alexander},
+  title		= {{Synthesizing Asynchronous Micropipelines with Design
+		  Compiler}},
+  url		= {https://pdfs.semanticscholar.org/b520/1abd077e64d1b9691b8333293573f564f30e.pdf}
+}
+
 @InProceedings{	  Tuncer2009,
   address	= {New York, New York, USA},
   author	= {Tuncer, Emre and Cortadella, Jordi and Lavagno, Luciano},
   booktitle	= {Proc. 46th Annu. Des. Autom. Conf. ZZZ - DAC '09},
+  isbn		= {9781605584973},
+  pages		= {8},
+  publisher	= {ACM Press},
+  title		= {{Enabling adaptability through elastic clocks}},
+  url		= {http://portal.acm.org/citation.cfm?doid=1629911.1629916},
+  year		= {2009}
+}
+
+@InProceedings{	  Tuncer2009a,
+  address	= {New York, New York, USA},
+  author	= {Tuncer, Emre and Cortadella, Jordi and Lavagno, Luciano},
+  booktitle	= {Proc. 46th Annu. Des. Autom. Conf. ZZZ - DAC '09},
+  doi		= {10.1145/1629911.1629916},
   isbn		= {9781605584973},
   pages		= {8},
   publisher	= {ACM Press},
