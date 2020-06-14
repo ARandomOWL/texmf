@@ -7,6 +7,8 @@
 
 % Force long version of acronym in abstract
 \AtBeginEnvironment{abstract}{\renewcommand{\ac}{\acl}}
+\AtBeginEnvironment{abstract}{\renewcommand{\Ac}{\Acl}}
 \AtBeginEnvironment{abstract}{\renewcommand{\acp}{\aclp}}
+\AtBeginEnvironment{abstract}{\renewcommand{\Acp}{\Aclp}}
 % Reset all acronym usage after abstract
 \AfterEndEnvironment{abstract}{\acresetall}
