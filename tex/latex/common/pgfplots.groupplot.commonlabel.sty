@@ -1,0 +1,31 @@
+% https://tex.stackexchange.com/a/117935
+\ProvidesPackage{pgfplots.groupplot.commonlabel}[2020/08/18 v1.0 Enable common x
+or y labels using 'groupplot <x/y>label=' .]
+\RequirePackage{pgfplots}
+
+\pgfplotsset{
+    groupplot xlabel/.initial={},
+    every groupplot x label/.style={
+        at={($({\pgfplots@group@name\space c1r\pgfplots@group@rows.west}|-{\pgfplots@group@name\space c1r\pgfplots@group@rows.outer south})!0.5!({\pgfplots@group@name\space c\pgfplots@group@columns r\pgfplots@group@rows.east}|-{\pgfplots@group@name\space c\pgfplots@group@columns r\pgfplots@group@rows.outer south})$)},
+        anchor=north,
+    },
+    groupplot ylabel/.initial={},
+    every groupplot y label/.style={
+            rotate=90,
+        at={($({\pgfplots@group@name\space c1r1.north}-|{\pgfplots@group@name\space c1r1.outer
+west})!0.5!({\pgfplots@group@name\space c1r\pgfplots@group@rows.south}-|{\pgfplots@group@name\space c1r\pgfplots@group@rows.outer west})$)},
+        anchor=south
+    },
+    execute at end groupplot/.code={%
+      \node [/pgfplots/every groupplot x label]
+{\pgfkeysvalueof{/pgfplots/groupplot xlabel}};
+      \node [/pgfplots/every groupplot y label]
+{\pgfkeysvalueof{/pgfplots/groupplot ylabel}};
+    }
+}
+
+\def\endpgfplots@environment@groupplot{%
+    \endpgfplots@environment@opt%
+    \pgfkeys{/pgfplots/execute at end groupplot}%
+    \endgroup%
+}
