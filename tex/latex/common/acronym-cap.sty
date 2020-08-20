@@ -111,3 +111,16 @@
 % Also capitalize in list of acronyms
 \patchcmd{\AC@@acro}{] #3}{] \MakeUppercase #3}{}{}
 \patchcmd{\AC@@acro}{] #3}{] \MakeUppercase #3}{}{}
+
+% Patch acsfont - don't reduce acs size when using capital versions.
+\renewcommand*\acsfont[1]{%
+  \ifAC@smaller
+    \ifAC@uppercase@first
+      #1%
+    \else
+      \textsmaller{#1}%
+    \fi
+  \else
+    #1%
+  \fi
+}
