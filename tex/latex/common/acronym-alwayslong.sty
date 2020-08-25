@@ -1,0 +1,28 @@
+\ProvidesPackage{acronym-alwayslong}[2020/08/25 v1.0 Provides acronymalwayslong to force printing long version of an acronym throughout the document.]
+\RequirePackage{acronym}
+
+\newcommand*\acronymalwayslong[1]{\csname @namedef\endcsname{acronym@alwayslong@#1}{}}
+\newcommand*\acronymalwayslongredef[2]{%
+	% Redefine #1 to old#1.
+	% If acronym is marked 'alwayslong', use #2, else use old#1.
+	% eg. \acronymalwayslongredef{ac}{acl}: redefine \ac to use \acl if marked
+	% 'alwayslong', else use original \ac.
+	\expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+	\csname @namedef\endcsname{#1}##1{%
+		\expandafter\ifx\csname acronym@alwayslong@##1\endcsname\relax
+			\csname old#1\endcsname{##1}%
+		\else
+			\csname #2\endcsname{##1}%
+		\fi
+	}
+}
+
+\acronymalwayslongredef{ac}{acl}
+\acronymalwayslongredef{acp}{aclp}
+\acronymalwayslongredef{iac}{iacl}
+\acronymalwayslongredef{iacp}{iaclp}
+% Try to redefine capitalized versions from acronym-cap
+\acronymalwayslongredef{Ac}{Acl}
+\acronymalwayslongredef{Acp}{Aclp}
+\acronymalwayslongredef{Iac}{Iacl}
+\acronymalwayslongredef{Iacp}{Iaclp}
