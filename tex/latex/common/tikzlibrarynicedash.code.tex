@@ -1,0 +1,35 @@
+\usetikzlibrary{decorations, shapes.geometric}
+
+% % https://tex.stackexchange.com/a/133357/132551
+% \tikzset{
+%     nice dash/.code args={on #1 off #2}{
+%         % Use csname so catcode of @ doesn't have do be changed.
+%         \csname tikz@addoption\endcsname{%
+%             \pgfgetpath\currentpath%
+%             \pgfprocessround{\currentpath}{\currentpath}%
+%             \csname pgf@decorate@parsesoftpath\endcsname{\currentpath}{\currentpath}%
+%             \pgfmathparse{\csname pgf@decorate@totalpathlength\endcsname-#1}\let\rest=\pgfmathresult%
+%             \pgfmathparse{#1+#2}\let\onoff=\pgfmathresult%
+%             \pgfmathparse{max(floor(\rest/\onoff), 1)}\let\nfullonoff=\pgfmathresult%
+%             \pgfmathparse{max((\rest-\onoff*\nfullonoff)/\nfullonoff+#2, #2)}\let\offexpand=\pgfmathresult%
+%             \pgfsetdash{{#1}{\offexpand}}{0pt}}%
+%     }
+% }
+
+% https://tex.stackexchange.com/a/377390/132551
+\makeatletter
+\tikzset{%
+  nice dash/.code args={on #1 off #2}{%
+    \tikz@addoption{%
+      \pgfgetpath\currentpath%
+      \pgfprocessround{\currentpath}{\currentpath}%
+      \pgf@decorate@parsesoftpath{\currentpath}{\currentpath}%
+      \pgfmathparse{max(round((\pgf@decorate@totalpathlength-#1)/(#1+#2)),0)}%
+      \let\npattern=\pgfmathresult%
+      \pgfmathparse{\pgf@decorate@totalpathlength/(\npattern*(#1+#2)+#1)}%
+      \let\spattern=\pgfmathresult%
+      \pgfsetdash{{\spattern*#1}{\spattern*#2}}{0pt}%
+    }%
+  }%
+}
+\makeatother
