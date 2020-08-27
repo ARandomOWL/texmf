@@ -1,8 +1,13 @@
 %% acronym-cap.sty
 %%
 %% Add macros for capitalizing the first letter of acronyms.
-\ProvidesPackage{acronym-cap}[2017/04/29 v1.0 Add macros for capitalizing the first letter of acronyms.]
+%% Obsolete as of acronym v1.42
+\ProvidesPackage{acronym-cap}[2020/08/27 v1.1 Add macros for capitalizing the first letter of acronyms.]
 \RequirePackage{acronym}
+\@ifpackagelater{acronym}{2019/11/12}{%
+  \PackageWarning{acronym-cap}{As of v1.42 the acronym package provides its own capitalized commands. This package is obsolete and will not be loaded.}
+}{% Carry on loading this package if older version of acronym
+
 \RequirePackage{etoolbox}
 
 \newif\ifAC@uppercase@first
@@ -123,4 +128,6 @@
   \else
     #1%
   \fi
+}
+
 }
