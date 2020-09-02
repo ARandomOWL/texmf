@@ -8,21 +8,18 @@
 	% eg. \acronymalwayslongredef{ac}{acl}: redefine \ac to use \acl if marked
 	% 'alwayslong', else use original \ac.
 	\expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
-	\csname @namedef\endcsname{#1}##1{%
-		\expandafter\ifx\csname acronym@alwayslong@##1\endcsname\relax
-			\csname old#1\endcsname{##1}%
+	\expandafter\renewcommand\csname #1\endcsname[2][\AC@linebreakpenalty]{%
+		\expandafter\ifx\csname acronym@alwayslong@##2\endcsname\relax
+			\csname old#1\endcsname[##1]{##2}%
 		\else
-			\csname #2\endcsname{##1}%
+			\csname #2\endcsname{##2}% long versions don't take the optional arg
 		\fi
 	}
 }
 
 \acronymalwayslongredef{ac}{acl}
 \acronymalwayslongredef{acp}{aclp}
-\acronymalwayslongredef{iac}{iacl}
-\acronymalwayslongredef{iacp}{iaclp}
-% Try to redefine capitalized versions from acronym-cap
+% Try to redefine capitalized versions from acronym-cap, or native ones since
+% acronym v1.42.
 \acronymalwayslongredef{Ac}{Acl}
 \acronymalwayslongredef{Acp}{Aclp}
-\acronymalwayslongredef{Iac}{Iacl}
-\acronymalwayslongredef{Iacp}{Iaclp}
