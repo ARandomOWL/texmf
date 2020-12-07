@@ -1,0 +1,6 @@
+\ProvidesPackage{ieeetran-noitemerr-fix}[2020/11/02 v1.0 Fixes 'LaTeX Error: Something's wrong--perhaps a missing item' in ieeetran.bst with empty bibliography.]
+% https://tex.stackexchange.com/a/350921
+\def\endthebibliography{%
+  \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+  \endlist
+}
