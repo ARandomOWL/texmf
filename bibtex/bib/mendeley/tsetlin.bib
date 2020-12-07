@@ -1,32 +1,5 @@
 
 @Article{	  Abeyrathna2019,
-  abstract	= {The recently introduced Tsetlin Machine (TM) has provided
-		  competitive pattern classification accuracy in several
-		  benchmarks, composing patterns with easy-to-interpret
-		  conjunctive clauses in propositional logic. In this paper,
-		  we go beyond pattern classification by introducing a new
-		  type of TMs, namely, the Regression Tsetlin Machine (RTM).
-		  In all brevity, we modify the inner inference mechanism of
-		  the TM so that input patterns are transformed into a single
-		  continuous output, rather than to distinct categories. We
-		  achieve this by: (1) using the conjunctive clauses of the
-		  TM to capture arbitrarily complex patterns; (2) mapping
-		  these patterns to a continuous output through a novel
-		  voting and normalization mechanism; and (3) employing a
-		  feedback scheme that updates the TM clauses to minimize the
-		  regression error. The feedback scheme uses a new activation
-		  probability function that stabilizes the updating of
-		  clauses, while the overall system converges towards an
-		  accurate input-output mapping. The performance of the
-		  proposed approach is evaluated using six different
-		  artificial datasets with and without noise. The performance
-		  of the RTM is compared with the Classical Tsetlin Machine
-		  (CTM) and the Multiclass Tsetlin Machine (MTM). Our
-		  empirical results indicate that the RTM obtains the best
-		  training and testing results for both noisy and noise-free
-		  datasets, with a smaller number of clauses. This, in turn,
-		  translates to higher regression accuracy, using
-		  significantly less computational resources.},
   archiveprefix	= {arXiv},
   arxivid	= {1905.04206},
   author	= {Abeyrathna, K. Darshana and Granmo, Ole-Christoffer and
@@ -40,27 +13,6 @@
 }
 
 @Article{	  Abeyrathna2019a,
-  abstract	= {In this paper, we apply a new promising tool for pattern
-		  classification, namely, the Tsetlin Machine (TM), to the
-		  field of disease forecasting. The TM is interpretable
-		  because it is based on manipulating expressions in
-		  propositional logic, leveraging a large team of Tsetlin
-		  Automata (TA). Apart from being interpretable, this
-		  approach is attractive due to its low computational cost
-		  and its capacity to handle noise. To attack the problem of
-		  forecasting, we introduce a preprocessing method that
-		  extends the TM so that it can handle continuous input.
-		  Briefly stated, we convert continuous input into a binary
-		  representation based on thresholding. The resulting
-		  extended TM is evaluated and analyzed using an artificial
-		  dataset. The TM is further applied to forecast dengue
-		  outbreaks of all the seventeen regions in Philippines using
-		  the spatio-temporal properties of the data. Experimental
-		  results show that dengue outbreak forecasts made by the TM
-		  are more accurate than those obtained by a Support Vector
-		  Machine (SVM), Decision Trees (DTs), and several
-		  multi-layered Artificial Neural Networks (ANNs), both in
-		  terms of forecasting precision and F1-score.},
   archiveprefix	= {arXiv},
   arxivid	= {1905.04199},
   author	= {Abeyrathna, K. Darshana and Granmo, Ole-Christoffer and
@@ -74,37 +26,6 @@
 }
 
 @Article{	  Berge2018,
-  abstract	= {Medical applications challenge today's text categorization
-		  techniques by demanding both high accuracy and
-		  ease-of-interpretation. Although deep learning has provided
-		  a leap ahead in accuracy, this leap comes at the sacrifice
-		  of interpretability. To address this
-		  accuracy-interpretability challenge, we here introduce, for
-		  the first time, a text categorization approach that
-		  leverages the recently introduced Tsetlin Machine. In all
-		  brevity, we represent the terms of a text as propositional
-		  variables. From these, we capture categories using simple
-		  propositional formulae, such as: if "rash" and "reaction"
-		  and "penicillin" then Allergy. The Tsetlin Machine learns
-		  these formulae from a labelled text, utilizing conjunctive
-		  clauses to represent the particular facets of each
-		  category. Indeed, even the absence of terms (negated
-		  features) can be used for categorization purposes. Our
-		  empirical comparison with Na$\backslash$"ive Bayes,
-		  decision trees, linear support vector machines (SVMs),
-		  random forest, long short-term memory (LSTM) neural
-		  networks, and other techniques, is quite conclusive. The
-		  Tsetlin Machine either performs on par with or outperforms
-		  all of the evaluated methods on both the 20 Newsgroups and
-		  IMDb datasets, as well as on a non-public clinical dataset.
-		  On average, the Tsetlin Machine delivers the best recall
-		  and precision scores across the datasets. Finally, our GPU
-		  implementation of the Tsetlin Machine executes 5 to 15
-		  times faster than the CPU implementation, depending on the
-		  dataset. We thus believe that our novel approach can have a
-		  significant impact on a wide range of text analysis
-		  applications, forming a promising starting point for deeper
-		  natural language understanding with the Tsetlin Machine.},
   archiveprefix	= {arXiv},
   arxivid	= {1809.04547},
   author	= {Berge, Geir Thore and Granmo, Ole-Christoffer and Tveit,
@@ -120,29 +41,6 @@
 }
 
 @Article{	  Constantinides2019,
-  abstract	= {We consider efficiency in deep neural networks. Hardware
-		  accelerators are gaining interest as machine learning
-		  becomes one of the drivers of high-performance computing.
-		  In these accelerators, the directed graph describing a
-		  neural network can be implemented as a directed graph
-		  describing a Boolean circuit. We make this observation
-		  precise, leading naturally to an understanding of practical
-		  neural networks as discrete functions, and show that
-		  so-called binarised neural networks are functionally
-		  complete. In general, our results suggest that it is
-		  valuable to consider Boolean circuits as neural networks,
-		  leading to the question of which circuit topologies are
-		  promising. We argue that continuity is central to
-		  generalisation in learning, explore the interaction between
-		  data coding, network topology, and node functionality for
-		  continuity, and pose some open questions for future
-		  research. As a first step to bridging the gap between
-		  continuous and Boolean views of neural network
-		  accelerators, we present some recent results from our work
-		  on LUTNet, a novel Field-Programmable Gate Array inference
-		  approach. Finally, we conclude with additional possible
-		  fruitful avenues for research bridging the continuous and
-		  discrete views of neural networks.},
   archiveprefix	= {arXiv},
   arxivid	= {1905.02438},
   author	= {Constantinides, George A.},
@@ -154,39 +52,6 @@
 }
 
 @Article{	  Granmo2018,
-  abstract	= {Although simple individually, artificial neurons provide
-		  state-of-the-art performance when interconnected in deep
-		  networks. Unknown to many, there exists an arguably even
-		  simpler and more versatile learning mechanism, namely, the
-		  Tsetlin Automaton. Merely by means of a single integer as
-		  memory, it learns the optimal action in stochastic
-		  environments through increment and decrement operations. In
-		  this paper, we introduce the Tsetlin Machine, which solves
-		  complex pattern recognition problems with easy-to-interpret
-		  propositional formulas, composed by a collective of Tsetlin
-		  Automata. To eliminate the longstanding problem of
-		  vanishing signal-to-noise ratio, the Tsetlin Machine
-		  orchestrates the automata using a novel game. Our
-		  theoretical analysis establishes that the Nash equilibria
-		  of the game align with the propositional formulas that
-		  provide optimal pattern recognition accuracy. This
-		  translates to learning without local optima, only global
-		  ones. We argue that the Tsetlin Machine finds the
-		  propositional formula that provides optimal accuracy, with
-		  probability arbitrarily close to unity. In five benchmarks,
-		  the Tsetlin Machine provides competitive accuracy compared
-		  with SVMs, Decision Trees, Random Forests, Naive Bayes
-		  Classifier, Logistic Regression, and Neural Networks. The
-		  Tsetlin Machine further has an inherent computational
-		  advantage since both inputs, patterns, and outputs are
-		  expressed as bits, while recognition and learning rely on
-		  bit manipulation. The combination of accuracy,
-		  interpretability, and computational simplicity makes the
-		  Tsetlin Machine a promising tool for a wide range of
-		  domains. Being the first of its kind, we believe the
-		  Tsetlin Machine will kick-start new paths of research, with
-		  a potentially significant impact on the AI field and the
-		  applications of AI.},
   archiveprefix	= {arXiv},
   arxivid	= {1804.01508},
   author	= {Granmo, Ole-Christoffer},
@@ -206,40 +71,6 @@
 }
 
 @Article{	  Granmo2019a,
-  abstract	= {Deep neural networks have obtained astounding successes
-		  for important pattern recognition tasks, but they suffer
-		  from high computational complexity and the lack of
-		  interpretability. The recent Tsetlin Machine (TM) attempts
-		  to address this lack by using easy-to-interpret conjunctive
-		  clauses in propositional logic to solve complex pattern
-		  recognition problems. The TM provides competitive accuracy
-		  in several benchmarks, while keeping the important property
-		  of interpretability. It further facilitates hardware-near
-		  implementation since inputs, patterns, and outputs are
-		  expressed as bits, while recognition and learning rely on
-		  straightforward bit manipulation. In this paper, we exploit
-		  the TM paradigm by introducing the Convolutional Tsetlin
-		  Machine (CTM), as an interpretable alternative to
-		  convolutional neural networks (CNNs). Whereas the TM
-		  categorizes an image by employing each clause once to the
-		  whole image, the CTM uses each clause as a convolution
-		  filter. That is, a clause is evaluated multiple times, once
-		  per image patch taking part in the convolution. To make the
-		  clauses location-aware, each patch is further augmented
-		  with its coordinates within the image. The output of a
-		  convolution clause is obtained simply by ORing the outcome
-		  of evaluating the clause on each patch. In the learning
-		  phase of the TM, clauses that evaluate to 1 are contrasted
-		  against the input. For the CTM, we instead contrast against
-		  one of the patches, randomly selected among the patches
-		  that made the clause evaluate to 1. Accordingly, the
-		  standard Type I and Type II feedback of the classic TM can
-		  be employed directly, without further modification. The CTM
-		  obtains a peak test accuracy of 99.51{\%} on MNIST,
-		  96.21{\%} on Kuzushiji-MNIST, 89.56{\%} on Fashion-MNIST,
-		  and 100.0{\%} on the 2D Noisy XOR Problem, which is
-		  competitive with results reported for simple 4-layer CNNs,
-		  BinaryConnect, and a recent FPGA-accelerated Binary CNN.},
   archiveprefix	= {arXiv},
   arxivid	= {1905.09688},
   author	= {Granmo, Ole-Christoffer and Glimsdal, Sondre and Jiao, Lei

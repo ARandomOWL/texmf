@@ -7,66 +7,6 @@
 }
 
 @PhDThesis{	  Casanova2008,
-  abstract	= {This master's thesis is on the field of computer science
-		  applied on electronics. The miniaturisation of integrated
-		  circuits is bringing new problems in terms of power
-		  consumption, speed, and variability tolerance. The current
-		  synchronous designs are struggling to cope with these
-		  problems, and in consequence new optimisations or paradigms
-		  are being studied. The study of this thesis are the
-		  optimisations like clock skew for synchronous circuits and
-		  asynchronous circuits as an alternative paradigm. The
-		  performance analysis of both cases are equivalent and
-		  algorithms on graph theory for cycles have been implemented
-		  to calculate the optimum speed. Asynchronous controllers
-		  are essential for a good asynchronous design. To create a
-		  connectivity structure of controllers it is necessary to
-		  group the memory elements (registers) of the circuit into
-		  clusters. Clustering registers affects power consumption,
-		  performance, area, and variability tolerance. To produce a
-		  good clus-tering is a hard job because of the high number
-		  of registers and for the trade-offs of optimising all these
-		  characteristics. An initial problem in clustering of
-		  controllers is to decide how many controllers we want. A
-		  design with one cluster give us the same problems of a
-		  synchronous de-sign, high power consumption and too much
-		  sensible on variability of temperature, voltage,
-		  manufacturing errors, etc. On the other hand, having as
-		  many controllers as registers will produce too much
-		  overhead in area for all the new logic and wires that needs
-		  to be added. It is important to have clusters as less
-		  connected as possible to design simple controllers and to
-		  minimise the impact on area. We know from benchmarks and
-		  industrial designs that the register graph is highly
-		  connected, and the controllers graph is almost complete. A
-		  variation of Min-Cut can give us a solution to optimise
-		  this property. The clustering will have an impact on
-		  performance. Grouping registers implies a lost of freedom,
-		  and optimisations like clock skew or the asynchronous
-		  circuit will be affected by this lost as a handicap to
-		  reach the maximum speed. From the placement point of view
-		  we need to have clusters where their registers are close to
-		  minimise the clock tree. The ideal solution is a partition
-		  of the space. The worst solution is to have the registers
-		  spared around. The contribution of this thesis are two
-		  clustering algorithms; A local search solution to minimise
-		  the number of connections, and a k-means implementation
-		  that combines the minimisation of the clock trees and the
-		  maximisation of performance, by using parameters to balance
-		  it. These algorithms have been implemented in the Elastix
-		  EDA tool and executed on ISCAS benchmarks and SUN
-		  Microsystems OpenSparc processor. Acknowledgements Several
-		  people has helped me making this thesis possible. I would
-		  like to thank Prof. Jordi Cortadella to give me the
-		  opportunity to work on this project, and to guide me from
-		  earlier years of my degree to here; Ferran Martorell to
-		  introduce me into the electronic design world and make me
-		  feel safe on it; and my family and friends to support me
-		  and made my life easy these months. This research was
-		  supported by a grant from Elastix Corporation, thanks to an
-		  agreement with Universitat Polit{\`{e}}cnica de Catalunya.
-		  I would like to specially thank Elastix Corporation for the
-		  resources that had put on me to make this project.},
   author	= {Casanova, Jon{\`{a}}s},
   school	= {Universitat Polit{\`{e}}cnica de Catalunya},
   title		= {{Clustering for the Optimisation of Asynchronous
@@ -97,16 +37,6 @@
 }
 
 @InProceedings{	  Cortadella2004,
-  abstract	= {This paper proposes a technique for creating a
-		  combinational logic network with an output that signals
-		  when all other outputs have stabilized. The method is based
-		  on dual-rail encoding, and guarantees low timing overhead
-		  and reasonable area and power overhead. We discuss various
-		  scenarios in which completion detection can be used to
-		  measure the delay of a synchronous circuit at fabrication
-		  time or at run time, and of an asynchronous circuit at run
-		  time. We conclude by showing, on a large set of benchmarks,
-		  the effectiveness of the proposed technique.},
   author	= {Cortadella, J. and Kondratye, A. and Lavagno, L. and
 		  Sotiriou, C.},
   booktitle	= {Proc. - IEEE Int. Conf. Comput. Des. VLSI Comput.
@@ -183,30 +113,6 @@
 }
 
 @Article{	  Liu2010,
-  abstract	= {In nanoscale technologies that experience large levels of
-		  process variation, post-silicon adaptation is an important
-		  step in circuit design. These adaptation techniques are
-		  often based on measurements of a replica of the nominal
-		  critical path, whose variations are intended to reflect
-		  those of the entire circuit after manufacturing. For
-		  realistic circuits, where the number of critical paths can
-		  be large, the notion of using a single critical path is too
-		  simplistic. This paper overcomes this problem by
-		  introducing the idea of synthesizing a representative
-		  critical path (RCP), which captures these complexities of
-		  the variations. We first prove that the requirement on the
-		  RCP is that it should be highly correlated with the circuit
-		  delay. Next, we present three novel algorithms to
-		  automatically build the RCP. Our experimental results
-		  demonstrate that over a number of samples of manufactured
-		  circuits, the delay of the RCP captures the worst case
-		  delay of the manufactured circuit. The average prediction
-		  error of all circuits is shown to be below 2.8{\%} for all
-		  three approaches. For both our approach and the critical
-		  path replica method, it is essential to guard-band the
-		  prediction to ensure pessimism: on average our approach
-		  requires a guard band 31{\%} smaller than for the critical
-		  path replica method.},
   author	= {Liu, Qunzeng and Sapatnekar, Sachin S.},
   doi		= {10.1109/TCAD.2009.2035552},
   issn		= {02780070},
@@ -278,20 +184,6 @@
 }
 
 @Article{	  Smirnov,
-  abstract	= {We present an asynchronous micropipeline synthesis flow
-		  supporting conventional synthesizable HDL specifications.
-		  Using Synopsys Design Compiler as the front-end interfacing
-		  behavior specification, the synthesis core and the final
-		  netlist front-end ensures easy integration into
-		  conventional design flow. With our RTL to micropipeline
-		  re-implementation engine in the back-end, conventional HDL
-		  specification is implemented as an asynchronous
-		  micropipeline. Synthesis can be targeted at a wide range of
-		  micropipeline protocols and implementations through
-		  standard cell library approach. Primary target applications
-		  include high throughput low power using domino-like
-		  low-latency cells and designs requiring side channel attack
-		  resistance using a power balanced micropipeline library.},
   author	= {Smirnov, Alexander and Taubin, Alexander},
   title		= {{Synthesizing Asynchronous Micropipelines with Design
 		  Compiler}},

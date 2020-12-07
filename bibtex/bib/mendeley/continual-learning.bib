@@ -1,34 +1,5 @@
 
 @TechReport{	  Ravaglia,
-  abstract	= {AI-powered edge devices currently lack the ability to
-		  adapt their embedded inference models to the ever-changing
-		  environment. To tackle this issue, Continual Learning (CL)
-		  strategies aim at incrementally improving the decision
-		  capabilities based on newly acquired data. In this work,
-		  after quantifying memory and computational requirements of
-		  CL algorithms, we define a novel HW/SW extreme-edge
-		  platform featuring a low power RISC-V octa-core cluster
-		  tailored for on-demand incremental learning over locally
-		  sensed data. The presented multi-core HW/SW architecture
-		  achieves a peak performance of 2.21 and 1.70 MAC/cycle,
-		  respectively, when running forward and backward steps of
-		  the gradient descent. We report the trade-off between
-		  memory footprint, latency, and accuracy for learning a new
-		  class with Latent Replay CL when targeting an image
-		  classification task on the CORe50 dataset. For a CL setting
-		  that retrains all the layers, taking 5h to learn a new
-		  class and achieving up to 77.3{\%} of precision, a more
-		  efficient solution retrains only part of the network,
-		  reaching an accuracy of 72.5{\%} with a memory requirement
-		  of 300 MB and a computation latency of 1.5 hours. On the
-		  other side, retraining only the last layer results in the
-		  fastest (867 ms) and less memory hungry (20 MB) solution
-		  but scoring 58{\%} on the CORe50 dataset. Thanks to the
-		  parallelism of the low-power cluster engine, our HW/SW
-		  platform results 25× faster than typical MCU device, on
-		  which CL is still impractical, and demonstrates an 11×
-		  gain in terms of energy consumption with respect to
-		  mobile-class solutions.},
   archiveprefix	= {arXiv},
   arxivid	= {2007.13631v1},
   author	= {Ravaglia, Leonardo and Rusci, Manuele and Capotondi,

@@ -1,32 +1,5 @@
 
 @InProceedings{	  Abeyrathna2020,
-  abstract	= {Due to the high energy consumption and scalability
-		  challenges of deep learning, there is a critical need to
-		  shift research focus towards dealing with energy
-		  consumption constraints. Tsetlin Machines (TMs) are a
-		  recent approach to machine learning that has demonstrated
-		  significantly reduced energy usage compared to neural
-		  networks alike, while performing competitively
-		  accuracy-wise on several benchmarks. However, TMs rely
-		  heavily on energy-costly random number generation to
-		  stochastically guide a team of Tsetlin Automata to a Nash
-		  Equilibrium of the TM game. In this paper, we propose a
-		  novel finite-state learning automaton that can replace the
-		  Tsetlin Automata in TM learning, for increased determinism.
-		  The new automaton uses multi-step deterministic state jumps
-		  to reinforce sub-patterns. Simultaneously, flipping a coin
-		  to skip every {\$}d{\$}'th state update ensures
-		  diversification by randomization. The {\$}d{\$}-parameter
-		  thus allows the degree of randomization to be finely
-		  controlled. E.g., {\$}d=1{\$} makes every update random and
-		  {\$}d=\backslashinfty{\$} makes the automaton completely
-		  deterministic. Our empirical results show that, overall,
-		  only substantial degrees of determinism reduces accuracy.
-		  Energy-wise, random number generation constitutes switching
-		  energy consumption of the TM, saving up to 11 mW power for
-		  larger datasets with high {\$}d{\$} values. We can thus use
-		  the new {\$}d{\$}-parameter to trade off accuracy against
-		  energy consumption, to facilitate low-energy machine learning.},
   archiveprefix	= {arXiv},
   arxivid	= {2007.02114},
   author	= {Abeyrathna, K. Darshana and Granmo, Ole-Christoffer and
@@ -102,7 +75,6 @@
   author	= {Wheeldon, Adrian},
   howpublished	= {Arm Res. Summit 2018},
   keywords	= {poster},
-  mendeley-tags	= {poster},
   title		= {{Faster and Cheaper Circuits through Self-timing}},
   year		= {2018}
 }
@@ -111,25 +83,11 @@
   author	= {Wheeldon, Adrian and Biggs, John and Kufel, Jedrzej},
   howpublished	= {Arm Limited},
   keywords	= {patent},
-  mendeley-tags	= {patent},
   title		= {{Integrated Circuit Design}},
   year		= {2020}
 }
 
 @Article{	  Wheeldon2019,
-  abstract	= {This work presents a design flow for asynchronous,
-		  self-timed dual-rail circuits which introduces a timing
-		  assumption in the return-to-spacer phase. The design flow
-		  enables power proportionality and is demonstrated through
-		  the design of a 32-bit ripple-carry adder and a 32-bit
-		  comparator for internet of things applications. The designs
-		  are synthesized to a 65 nm cell library with
-		  state-of-the-art transistor sizing for subthreshold.
-		  Simulation results show improved performance and energy per
-		  computation across operating conditions compared with
-		  single-rail equivalents. The design flow allows extension
-		  of the power proportional philosophy to a wider range of
-		  circuits.},
   author	= {Wheeldon, Adrian and Morris, Jordan and Sokolov, Danil and
 		  Yakovlev, Alex},
   doi		= {10.1016/j.vlsi.2019.01.013},
@@ -150,7 +108,6 @@
   author	= {Wheeldon, Adrian},
   howpublished	= {SCONA Workshop, DATE 2020},
   keywords	= {talk},
-  mendeley-tags	= {talk},
   title		= {{Tsetlin Machine: A new Paradigm for Pervasive AI}},
   url		= {https://www.youtube.com/watch?v=TaspuovmSR8},
   year		= {2020}
@@ -160,41 +117,11 @@
   author	= {Wheeldon, Adrian and Lei, Jie},
   howpublished	= {Arm Res. Summit 2020},
   keywords	= {poster},
-  mendeley-tags	= {poster},
   title		= {{Mignon: Machine Learning using Tsetlin Machine}},
   year		= {2020}
 }
 
 @Article{	  Wheeldon2020b,
-  abstract	= {Energy efficiency continues to be the core design
-		  challenge for artificial intelligence (AI) hardware
-		  designers. In this paper, we propose a new AI hardware
-		  architecture targeting Internet of Things applications. The
-		  architecture is founded on the principle of learning
-		  automata, defined using propositional logic. The
-		  logic-based underpinning enables low-energy footprints as
-		  well as high learning accuracy during training and
-		  inference, which are crucial requirements for efficient AI
-		  with long operating life. We present the first insights
-		  into this new architecture in the form of a custom-designed
-		  integrated circuit for pervasive applications. Fundamental
-		  to this circuit is systematic encoding of binarized input
-		  data fed into maximally parallel logic blocks. The
-		  allocation of these blocks is optimized through a design
-		  exploration and automation flow using field programmable
-		  gate array-based fast prototypes and software simulations.
-		  The design flow allows for an expedited hyperparameter
-		  search for meeting the conflicting requirements of energy
-		  frugality and high accuracy. Extensive validations on the
-		  hardware implementation of the new architecture using
-		  single- and multi-class machine learning datasets show
-		  potential for significantly lower energy than the existing
-		  AI hardware architectures. In addition, we demonstrate test
-		  accuracy and robustness matching the software
-		  implementation, outperforming other state-of-the-art
-		  machine learning algorithms. This article is part of the
-		  theme issue 'Advanced electromagnetic non-destructive
-		  evaluation and smart monitoring'.},
   author	= {Wheeldon, Adrian and Shafik, Rishad and Rahman, Tousif and
 		  Lei, Jie and Yakovlev, Alex and Granmo, Ole Christoffer},
   doi		= {10.1098/rsta.2019.0593},

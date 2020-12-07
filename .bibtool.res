@@ -1,5 +1,8 @@
 check.double = {on}
 delete.field = {file}
+delete.field = {annote}
+delete.field = {abstract}
+delete.field = {mendeley-tags}
 preserve.key.case = {on}
 sort = {on}
 ### URL Rewrites

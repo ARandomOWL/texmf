@@ -13,23 +13,6 @@
 }
 
 @InProceedings{	  Blunno2000,
-  abstract	= {This paper presents a compiler from a standard Hardware
-		  Description Language (Verilog HDL) to an asynchronous
-		  Control Unit and a synchronous Data Path. The Control Unit,
-		  specified as a Signal Transition Graph, can be implemented
-		  using research-oriented asynchronous synthesis tools. The
-		  Data Path, specified using the Synthesizable Subset of
-		  Verilog, can be implemented using state-of-the-art
-		  commercial synchronous synthesis tools. Our compiler
-		  integrates in a fully automated manner source parsing,
-		  control/data splitting, managing the design and inserting
-		  matched delays for data bundling constraints. It can be
-		  used to produce asynchronous designs in an Application
-		  Specific Integrated Circuit design style, since the result
-		  is a netlist of standard cells ready for physical design.
-		  We describe a simple example of compilation and its
-		  results, and we discuss some outstanding issues in the
-		  domain of asynchronous Control Unit synthesis},
   author	= {Blunno, Ivan and Lavagno, Luciano},
   booktitle	= {Proc. - Int. Symp. Asynchronous Circuits Syst.},
   doi		= {10.1109/ASYNC.2000.836967},
@@ -44,27 +27,6 @@
 }
 
 @InProceedings{	  Blunno2004,
-  abstract	= {This paper discusses how Pipefitter, a tool chain that
-		  implements a fully automated synthesis flow for
-		  asynchronous circuits, can be used to design a simple
-		  asynchronous microcontroller. The use of register transfer
-		  level (RTL)-like Verilog hardware description languages
-		  (HDL) as the input format makes the first steps of the
-		  design flow (i.e., specification and simulation) very easy
-		  for the designer. Pipefitter directly synthesizes the
-		  control unit as a hazard-free standard cell netlist, uses a
-		  genetic algorithm to perform binding and multiplexer
-		  optimization for the datapath and allows the user to
-		  manually specify the binding. It also produces a
-		  synthesizable Verilog specification for the datapath, as
-		  well as a set of scripts driving both its synthesis and
-		  timing analysis by state-of-the-art commercial synchronous
-		  RTL and logic synthesis tools. The automated insertion of
-		  matched delays completes the logic design, and hands off
-		  the netlist to the standard cell-based layout tools. The
-		  example presented in this brief, shows how Pipefitter can
-		  be effectively used for the design of asynchronous
-		  application specific integrated circuits.},
   author	= {Blunno, Ivan and Lavagno, Luciano},
   booktitle	= {Proceedings. IEEE Int. Conf. Comput. Des. VLSI Comput.
 		  Process.},
@@ -110,39 +72,6 @@
 }
 
 @Article{	  Chang2013,
-  abstract	= {Microcontrollers play a vital role in embodying
-		  intelligence into battery-powered everyday objects to
-		  realize the internet of things (IoT). The desirable
-		  attributes of such a microcontroller and the like include
-		  high energy and area efficiency, and robust error-free
-		  operation under dynamic voltage scaling (DVS), workload,
-		  process, voltage, and temperature (PVT) variation effects.
-		  In this work, a synchronous-logic (S 8051) and a
-		  quasi-delay-insensitive asynchronous-logic (A 8051) 8051
-		  microcontroller core are designed and fabricated for
-		  full-range DVS from nominal VDD to deep sub-threshold. The
-		  performance of the S 8051 and A 8051 are largely comparable
-		  at nominal conditions and the entire DVS range, but differs
-		  when PVT and workload are varied. At nominal VDD, both the
-		  microcontroller cores feature comparable energy and speed,
-		  with the electromagnetic interference of the A 8051 {\~{}}
-		  12 dB lower and the area {\~{}} 2 × larger than the S
-		  8051. When DVS is applied, both the microcontroller cores
-		  feature comparable energy and speed; the S 8051 requires
-		  simultaneous adjustment of clock frequency with VDD. At
-		  wide PVT variations, up to {\~{}} 12 × delay margins are
-		  required for the S 8051, whereas the A 8051 operates at
-		  actual speed. When the workload of both microcontrollers is
-		  varied, the A 8051 features lower energy dissipation per
-		  workload due to the exploitation of its asynchronous-logic
-		  protocols. For IoT applications that incur wide PVT and
-		  workload variations, A 8051 is more suitable due to its
-		  self-timed nature, whereas when PVT and workload variations
-		  are less severe, S 8051 is more suitable due to a smaller
-		  IC area.},
-  annote	= {- Async 8051 operated in subthreshold - Gates optimised
-		  for sync - design not optimised for subthreshold - "Async"
-		  RAM used -- has both sync and async ports},
   author	= {Chang, Kok Leong and Chang, Joseph S. and Gwee, Bah Hwee
 		  and Chong, Kwen Siong},
   doi		= {10.1109/JETCAS.2013.2243031},
@@ -161,13 +90,6 @@
 }
 
 @Article{	  Fuketa2011,
-  annote	= {From Duplicate 1 (An Average-Performance-Oriented
-		  Subthreshold Processor Self-Timed by Memory Read Completion
-		  - Fuketa, Hiroshi; Kuroda, Dan; Hashimoto, Masanori; Onoye,
-		  Takao)
-		  
-		  - implemented in 65nm - RISC design - 4-stage pipeline -
-		  Timed from memory using configurable delays},
   author	= {Fuketa, Hiroshi and Kuroda, Dan and Hashimoto, Masanori
 		  and Onoye, Takao},
   doi		= {10.1109/TCSII.2011.2149110},
@@ -184,21 +106,6 @@
 }
 
 @Article{	  Furber2000,
-  abstract	= {AMULET3 is a 32-bit asynchronous processor core that is
-		  fully$\backslash$ninstruction set compatible with the
-		  clocked ARM cores. It represents
-		  the$\backslash$nculmination of ten years of research and
-		  development into asynchronous$\backslash$nprocessor design
-		  at the University of Manchester, and is the first
-		  step$\backslash$ninto commercial use for this technology.
-		  AMULET3 shows that asynchronous$\backslash$ntechnology is
-		  commercially viable, and is competitive in terms
-		  of$\backslash$nperformance, area and power-efficiency with
-		  clocked design. In addition,$\backslash$nasynchronous
-		  design offers significant advantages in terms of
-		  reduced$\backslash$nelectromagnetic interference and unique
-		  power management capabilities$\backslash$n},
-  annote	= {Manual},
   author	= {Furber, S.B. and Edwards, D.a. and Garside, J.D.},
   doi		= {10.1109/ICCD.2000.878304},
   isbn		= {0-7695-0801-4},
@@ -390,22 +297,6 @@
 }
 
 @Article{	  VanGageldonk,
-  abstract	= {This paper presents a low-power asynchronous
-		  imple-mentation of the 80C51 microcontroller. It was
-		  realized in a 0.5 CMOS process and it shows a power
-		  advantage of a factor 4 compared to a recent synchronous
-		  implementa-tion in the same technology. The chip is fully
-		  bit compatible with the synchronous implementation, and
-		  timing compat-ible for external memory access. The circuit
-		  is a compiled VLSI-program, using Tangram as
-		  VLSI-programming language and the Tangram tool-set to
-		  compile the design automatically to a standard-cell
-		  netlist. This design approach proves to be powerful enough
-		  to describe the microcontroller and derive an efficient
-		  im-plementation. Further, it offers the designer the
-		  possibility to explore various alternatives in the design
-		  space.},
-  annote	= {Tangram},
   author	= {{Van Gageldonk}, Hans and {Van Berkel}, Kees and Peeters,
 		  Ad and Baumann, Daniel and Gloor, Daniel and Stegmann,
 		  Gerhard},
@@ -413,23 +304,6 @@
 }
 
 @Article{	  Ying,
-  abstract	= {A novel VLSI design and implementation of a low power
-		  8-bit microcontroller using asynchronous logic is proposed
-		  in this paper. Taking advantage of the low power potential
-		  of asynchronous logic, the 2-stage pipelined MCU is
-		  carefully designed by chosen proper architecture as well as
-		  suitable asynchronous signal protocols which including a
-		  combination of a specific "Completion Detection Method" and
-		  "matching delay Method". Other low power design techniques
-		  such as "Gating Clock" also applied to the design. Using
-		  synchronous design flow and standard-cell library
-		  facilitates the VLSI design and circuit implementation.
-		  Fabricated in Chartered 0.6 um CMOS technology, this low
-		  power asynchronous MCU achieves only 16{\%} power
-		  dissipation of the conventional designed PIC16C61, which
-		  shares the same instruction set and function as the MCU we
-		  designed},
-  annote	= {GALS},
   author	= {{Yu Ying} and {Zhou Lei} and {Min Hao}},
   doi		= {10.1109/ICASIC.2001.982683},
   isbn		= {0-7803-6677-8},
@@ -443,23 +317,6 @@
 }
 
 @InProceedings{	  YuYing2001,
-  abstract	= {A novel VLSI design and implementation of a low power
-		  8-bit microcontroller using asynchronous logic is proposed
-		  in this paper. Taking advantage of the low power potential
-		  of asynchronous logic, the 2-stage pipelined MCU is
-		  carefully designed by chosen proper architecture as well as
-		  suitable asynchronous signal protocols which including a
-		  combination of a specific "Completion Detection Method" and
-		  "matching delay Method". Other low power design techniques
-		  such as "Gating Clock" also applied to the design. Using
-		  synchronous design flow and standard-cell library
-		  facilitates the VLSI design and circuit implementation.
-		  Fabricated in Chartered 0.6 um CMOS technology, this low
-		  power asynchronous MCU achieves only 16{\%} power
-		  dissipation of the conventional designed PIC16C61, which
-		  shares the same instruction set and function as the MCU we
-		  designed},
-  annote	= {GALS},
   author	= {{Yu Ying} and {Zhou Lei} and {Min Hao}},
   booktitle	= {ASICON 2001. 2001 4th Int. Conf. ASIC Proc. (Cat.
 		  No.01TH8549)},

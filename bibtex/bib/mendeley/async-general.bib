@@ -1,24 +1,5 @@
 
 @InProceedings{	  Brej2006,
-  abstract	= {Delay-insensitive dual-rail and bundled data design
-		  methodologies are the two main approaches used for the
-		  creation of asynchronous circuits. Bundled data allows the
-		  creation of fast, low overhead circuits, whereas dual-rail
-		  allows bit-level pipelining and average case performance.
-		  This paper describes 'Early output' logic, which combines
-		  the positive features of the two methods to create faster
-		  asynchronous circuits. This method allows the creation of
-		  circuits yielding performance faster than their synchronous
-		  counterparts. Early output implementations allow logic to
-		  evaluate results before all inputs are presented. The
-		  results move to the next stage, but the current stage
-		  stalls while waiting for the late inputs to arrive simply
-		  to acknowledge them. This unnecessary wait can be removed
-		  by allowing backwards propagating 'Anti-Tokens' to remove
-		  the late inputs. The use of anti-tokens and improved
-		  semi-decoupled latches allows the removal of many stalls
-		  due to unnecessary synchronisations, thus improving the
-		  performance of the circuit.},
   author	= {Brej, C F and Garside, J D},
   booktitle	= {Proc. IEEE/ACM Int. Conf. Comput. Des.},
   pages		= {158--163},
@@ -27,61 +8,6 @@
 }
 
 @PhDThesis{	  Moreira2016,
-  abstract	= {O paradigma s{\'{i}}ncrono foi, por d{\'{e}}cadas, a
-		  principal escolha da ind{\'{u}}stria para o projeto de
-		  circuitos integrados. Infelizmente, com o desenvolvimento
-		  da ind{\'{u}}stria de semicondutores,
-		  restri{\c{c}}{\~{o}}es de projeto relativas {\`{a}}
-		  pot{\^{e}}ncia de um circuito e incertezas de atrasos
-		  aumentaram, dificultando o projeto s{\'{i}}ncrono. Alguns
-		  dos motivos para isso s{\~{a}}o o aumento na variabilidade
-		  dos processos de fabrica{\c{c}}{\~{a}}o de dispositivo, as
-		  perdas de desempenho relativas em fios e as incertezas
-		  temporais causadas por variabilidades nas
-		  condi{\c{c}}{\~{o}}es operacionais de dispositivos. Dessa
-		  forma, o paradigma ass{\'{i}}ncrono surge como uma
-		  alternativa, devido {\`{a}} sua robustez contra
-		  varia{\c{c}}{\~{o}}es temporais e suporte ao projeto de
-		  circuitos de alto desepenho e baixo consumo. Entretanto,
-		  grande parte da ind{\'{u}}stria de ferramentas de
-		  automa{\c{c}}{\~{a}}o de projeto eletr{\^{o}}nico foi
-		  desenvolvida visando o projeto de circuitos s{\'{i}}ncronos
-		  e atualmente o suporte a circuitos ass{\'{i}}ncronos
-		  {\'{e}} consideravelmente limitado. Esta Tese prop{\~{o}}e
-		  novas t{\'{e}}cnicas de projeto para otimizar circuitos
-		  ass{\'{i}}ncronos, desde o n{\'{i}}vel de c{\'{e}}lulas ao
-		  n{\'{i}}vel de sistema. Come{\c{c}}amos analisando e
-		  otimizando componentes b{\'{a}}sicos para o projeto desses
-		  circuitos e depois apresentamos novas solu{\c{c}}{\~{o}}es
-		  para implement{\'{a}}-los no n{\'{i}}vel de transistores.
-		  As otimiza{\c{c}}{\~{o}}es propostas permitem uma melhor
-		  explora{\c{c}}{\~{a}}o dos par{\^{a}}metros desses
-		  circuitos, incluindo pot{\^{e}}ncia, atraso e {\'{a}}rea.
-		  Em um segundo momento, exploramos o uso desses componentes
-		  como c{\'{e}}lulas para a gera{\c{c}}{\~{a}}o de uma
-		  biblioteca de suporte ao projeto semi-dedicado de circuitos
-		  ass{\'{i}}ncronos. Nesse contexto, propomos um fluxo
-		  completamente automatizado para projetar tais bibliotecas.
-		  O fluxo compreende ferramentas de dimensionamento de
-		  transistores e caracteriza{\c{c}}{\~{a}}o el{\'{e}}trica,
-		  desenvolvidas nesta Tese, e uma ferramenta de projeto de
-		  leiaute, desenvolvida por um grupo de pesquisa parceiro.
-		  Esse trabalho tamb{\'{e}}m apresenta uma biblioteca aberta,
-		  com centenas de componentes validados extensivamente
-		  atrav{\'{e}}s de simula{\c{c}}{\~{o}}es p{\'{o}}s-leiaute.
-		  Al{\'{e}}m disso, usando essa biblioteca desenvolvemos
-		  novos templates para o projeto de circuitos
-		  ass{\'{i}}ncronos no n{\'{i}}vel de sistema, propondo um
-		  fluxo autom{\'{a}}tico para s{\'{i}}ntese e mapeamento
-		  tecnol{\'{o}}gico. Comparado a uma solu{\c{c}}{\~{a}}o
-		  ass{\'{i}}ncrona no estado da arte, nosso mais novo
-		  template apresenta uma efici{\^{e}}ncia energ{\'{e}}tica
-		  quase duas vezes maior. As contribui{\c{c}}{\~{o}}es desta
-		  Tese permitiram a constru{\c{c}}{\~{a}}o de uma
-		  infraestrutura para o projeto de circuitos
-		  ass{\'{i}}ncronos, abrindo caminho para a
-		  explora{\c{c}}{\~{a}}o do uso de templates
-		  ass{\'{i}}ncronos para solucionar problemas modernos e futuros no projeto de circuitos integrados.},
   author	= {Moreira, Matheus Trevisan},
   keywords	= {ARQUITETURA DE REDES,CIENCIAS EXATAS E DA TERRA::CIENCIA
 		  DA COMPUTACAO,CIRCUITOS ASS{\'{I}}NCRONOS,ENGENHARIA
@@ -97,16 +23,6 @@
 }
 
 @Article{	  Nowick1996,
-  abstract	= {A new general method for designing asynchronous datapath
-		  components, called speculative completion, is introduced.
-		  The method has many of the advantages of a bundled data
-		  approach, such as the use of single-rail synchronous
-		  datapaths, but it also allows early completion. As a case
-		  study, the method is applied to the high-performance
-		  parallel BLC adder design of Brent and Kung. Through
-		  careful gate-level analysis, performance improvements of up
-		  to 30{\%} over a comparable synchronous implementation are
-		  expected. {\textcopyright} IEE, 1996.},
   author	= {Nowick, S. M.},
   doi		= {10.1049/ip-cdt:19960704},
   issn		= {13502387},
@@ -123,31 +39,6 @@
 }
 
 @InProceedings{	  Sartori2019,
-  abstract	= {Asynchronous quasi-delay-insensitive (QDI) circuits are
-		  known for their potentially enhanced robustness to PVT
-		  variations when compared to synchronous circuits or to
-		  bundled data asynchronous design. They are also a good
-		  choice for high performance circuits used to solve several
-		  real-world problems. However, it is often difficult to
-		  constrain the minimum performance for QDI circuits. Thus,
-		  enhancing the synthesis quality for QDI design is a
-		  justifiable effort, especially in rising application
-		  fields, such as the Internet of Things and Artificial
-		  Intelligence. This work proposes Pulsar, a method based on
-		  the extension of SDDS-NCL, a previously proposed
-		  asynchronous QDI template and design flow. Pulsar brings
-		  four original contributions: (i) two new models for
-		  components used to as sequential barriers; (ii) a new model
-		  for half buffer pipelines, half-buffer channel network
-		  (HBCN); (iii) a linear programming formulation to define a
-		  circuit cycle time constraint; (iv) a design flow that
-		  enables automating the process to design sequential
-		  SDDS-NCL circuits. Experiments comparing synthesis results
-		  with Pulsar of a 6-stage, multiply-accumulate (MAC) show
-		  that it can guarantee a maximum cycle time of 3.2ns, while
-		  the original Unclesynthesised circuit without logic
-		  optimisation leads to timing violations at a 6ns
-		  constraint.},
   author	= {Sartori, Marcos L.L. and Wuerdig, Rodrigo N. and Moreira,
 		  Matheus T. and Calazans, Ney L.V.},
   booktitle	= {Proc. - Int. Symp. Asynchronous Circuits Syst.},
@@ -165,25 +56,6 @@
 }
 
 @InProceedings{	  Yakovlev2013,
-  abstract	= {The growing variability and complexity of advanced CMOS
-		  technologies makes the physical design of clocked logic in
-		  large Systems-on-Chip more and more challenging.
-		  Asynchronous logic has been studied for many years and
-		  become an attractive solution for a broad range of
-		  applications, from massively parallel multi-media systems
-		  to systems with ultra-low power {\&} low-noise constraints,
-		  like cryptography, energy autonomous systems, and
-		  sensor-network nodes. The objective of this embedded
-		  tutorial is to give a comprehensive and recent overview of
-		  asynchronous logic. The tutorial will cover the basic
-		  principles and advantages of asynchronous logic, some
-		  insights on new research challenges, and will present the
-		  GALS scheme as an intermediate design style with recent
-		  results in asynchronous Network-on-Chip for future Many
-		  Core architectures. Regarding industrial acceptance, recent
-		  asynchronous logic applications within the microelectronics
-		  industry will be presented, with a main focus on the
-		  commercial CAD tools available today.},
   author	= {Yakovlev, Alex and Vivet, Pascal and Renaudin, Marc},
   booktitle	= {DATE '13 Proc. Conf. Des. Autom. Test Eur.},
   isbn		= {9783981537000},
@@ -196,22 +68,6 @@
 }
 
 @InProceedings{	  Zhou2006b,
-  abstract	= {Designing asynchronous circuits by reusing existing
-		  synchronous tools has become a promising solution to the
-		  problem of poor CAD support in asynchronous world. A
-		  straightforward way is to structurally map the gates in a
-		  synchronous netlist to their functionally equivalent
-		  modules which use delay-insensitive codes. Different
-		  trade-offs exist in previous methods between the overheads
-		  of the implementations and their robustness. The aim of
-		  this paper is to optimise the area of asynchronous circuits
-		  using partial acknowledgement concept. We employ this
-		  concept in two design flows, which are implemented in a
-		  software tool to evaluate the efficiency of the method. The
-		  benchmark results show the average reduction in area by
-		  28{\%} and in the number of inter-functional module wires
-		  that require timing verification by 67{\%}, compared to
-		  NCL-X.},
   address	= {New York, New York, USA},
   author	= {Zhou, Yu and Sokolov, Danil and Yakovlev, Alex},
   booktitle	= {Proc. 2006 IEEE/ACM Int. Conf. Comput. Des. - ICCAD '06},
