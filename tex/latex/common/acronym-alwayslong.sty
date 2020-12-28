@@ -18,7 +18,10 @@
 }
 
 % alwaysshort simply marks the acronym used. This may come with side-effects.
-\newcommand*\acronymalwaysshort[1]{\acused{#1}}
+\newcommand*\acronymalwaysshort[1]{%
+	\acused{#1}% Mark used now
+	\AfterEndEnvironment{abstract}{\acused{#1}}% Mark used again after abstract, since acronym-abstract calls \acresetall
+}
 
 \acronymalwayslongredef{ac}{acl}
 \acronymalwayslongredef{acp}{aclp}
