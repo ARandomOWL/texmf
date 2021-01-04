@@ -51,7 +51,8 @@
 \RequirePackage[
 	markifdraft,
 	]{gitinfo2}
-	\renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} (\gitAuthorDate) \gitReln}
+	\providecommand\gitrev{}% Holds a custom revision number
+	\renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} (\gitAuthorDate) \gitrev}
 	\apptocmd\gitMarkFormat{\upshape\mdseries}{}{} % Fix: text is bold if bold text begins next page
 \PassOptionsToPackage{pdfusetitle}{hyperref}
 \AtEndPreamble{%
@@ -128,7 +129,7 @@
 }
 
 % Header/footer styles using fancyhdr
-\setlength{\headheight}{14pt}
+\setlength{\headheight}{16pt}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[RE]{\leftmark}
