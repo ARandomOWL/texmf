@@ -48,6 +48,22 @@
 		\g@addto@macro\mainmatter{\linenumbers}
 		\g@addto@macro\backmatter{\nolinenumbers}
 	\fi
+	\RequirePackage{amsmath}
+	%% https://tex.stackexchange.com/a/461192 Automatic fix (without mathlines)
+	%% Patch 'normal' math environments:
+	\newcommand*\linenomathpatch[1]{%
+	  \cspreto{#1}{\linenomath}%
+	  \cspreto{#1*}{\linenomath}%
+	  \cspreto{end#1}{\endlinenomath}%
+	  \cspreto{end#1*}{\endlinenomath}%
+	}
+	\linenomathpatch{equation}
+	\linenomathpatch{gather}
+	\linenomathpatch{multline}
+	\linenomathpatch{align}
+	\linenomathpatch{alignat}
+	\linenomathpatch{flalign}
+
 \RequirePackage[
 	markifdraft,
 	]{gitinfo2}
