@@ -24,14 +24,12 @@
 \ifnclthesis@print
 	\PassOptionsToClass{twoside}{book}
 	\PassOptionsToClass{switch}{lineno}
-	\ifnclthesis@draft
-		\nclthesis@doublespacingtrue
-	\fi
 \else
 	\PassOptionsToClass{oneside}{book}
 \fi
 \ifnclthesis@draft
 	\PassOptionsToPackage{backref=true}{biblatex}
+	\nclthesis@doublespacingtrue
 \fi
 
 % Use the book class
@@ -143,7 +141,7 @@
 		\end{center}%
 	\end{titlepage}
 	%
-	% use double line spacing if we're in draft mode and printing mode
+	% use double line spacing if we're in draft mode
 	\ifnclthesis@doublespacing
 		\doublespacing
 	\else
