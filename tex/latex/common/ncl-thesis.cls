@@ -38,6 +38,23 @@
 	a4paper,
 	]{book}
 
+% Margins using geometry
+\ifnclthesis@print
+	\RequirePackage[
+		top=2cm,
+		bottom=2cm,
+		inner=3cm,
+		outer=2cm,
+		]{geometry}
+\else
+	\RequirePackage[
+		top=2cm,
+		bottom=2cm,
+		left=2.5cm,% Equalise left and right so we get the same total horizontal margin as in print
+		right=2.5cm,
+		]{geometry}
+\fi
+
 \RequirePackage{etoolbox}
 \RequirePackage{colors-ncl}
 \RequirePackage{fancyhdr}
