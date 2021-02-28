@@ -59,32 +59,33 @@
 \RequirePackage{colors-ncl}
 \RequirePackage{fancyhdr}
 \RequirePackage{setspace}
+
+\ifnclthesis@draft
 \ifnclthesis@lineno
 	\RequirePackage[pagewise]{lineno}
-	% Add line numbers to main matter if draft mode
-	\ifnclthesis@draft
-		\g@addto@macro\mainmatter{\linenumbers}
-		\g@addto@macro\backmatter{\nolinenumbers}
-		\AtBeginEnvironment{abstract}{\linenumbers}
-		\AtEndEnvironment{abstract}{\nolinenumbers}
+	\g@addto@macro\mainmatter{\linenumbers}
+	\g@addto@macro\backmatter{\nolinenumbers}
+	\AtBeginEnvironment{abstract}{\linenumbers}
+	\AtEndEnvironment{abstract}{\nolinenumbers}
 
-		\RequirePackage{amsmath}
-		%% https://tex.stackexchange.com/a/461192 Automatic fix (without mathlines)
-		%% Patch 'normal' math environments:
-		\newcommand*\linenomathpatch[1]{%
-		  \cspreto{#1}{\linenomath}%
-		  \cspreto{#1*}{\linenomath}%
-		  \cspreto{end#1}{\endlinenomath}%
-		  \cspreto{end#1*}{\endlinenomath}%
-		}
-		\linenomathpatch{equation}
-		\linenomathpatch{gather}
-		\linenomathpatch{multline}
-		\linenomathpatch{align}
-		\linenomathpatch{alignat}
-		\linenomathpatch{flalign}
-	\fi
+	\RequirePackage{amsmath}
+	%% https://tex.stackexchange.com/a/461192 Automatic fix (without mathlines)
+	%% Patch 'normal' math environments:
+	\newcommand*\linenomathpatch[1]{%
+	  \cspreto{#1}{\linenomath}%
+	  \cspreto{#1*}{\linenomath}%
+	  \cspreto{end#1}{\endlinenomath}%
+	  \cspreto{end#1*}{\endlinenomath}%
+	}
+	\linenomathpatch{equation}
+	\linenomathpatch{gather}
+	\linenomathpatch{multline}
+	\linenomathpatch{align}
+	\linenomathpatch{alignat}
+	\linenomathpatch{flalign}
 \fi
+\fi
+\providecommand{\@LN}[2]{}% Prevent errors when recompiling after lineno is disabled
 
 \RequirePackage[
 	markifdraft,
