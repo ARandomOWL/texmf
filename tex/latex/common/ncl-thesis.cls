@@ -2,9 +2,11 @@
 \newif\ifnclthesis@print
 \newif\ifnclthesis@draft
 \newif\ifnclthesis@final
+\newif\ifnclthesis@lineno
 \DeclareOption{print}{\nclthesis@printtrue}
 \DeclareOption{draft}{\nclthesis@drafttrue}
 \DeclareOption{final}{\nclthesis@finaltrue}
+\DeclareOption{lineno}{\nclthesis@linenotrue}
 \DeclareOption{linenomodulo}{\PassOptionsToPackage{modulo}{lineno}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
@@ -42,27 +44,32 @@
 \RequirePackage{colors-ncl}
 \RequirePackage{fancyhdr}
 \RequirePackage{setspace}
-\RequirePackage[pagewise]{lineno}
+\ifnclthesis@lineno
+	\RequirePackage[pagewise]{lineno}
 	% Add line numbers to main matter if draft mode
 	\ifnclthesis@draft
 		\g@addto@macro\mainmatter{\linenumbers}
 		\g@addto@macro\backmatter{\nolinenumbers}
+		\AtBeginEnvironment{abstract}{\linenumbers}
+		\AtEndEnvironment{abstract}{\nolinenumbers}
+
+		\RequirePackage{amsmath}
+		%% https://tex.stackexchange.com/a/461192 Automatic fix (without mathlines)
+		%% Patch 'normal' math environments:
+		\newcommand*\linenomathpatch[1]{%
+		  \cspreto{#1}{\linenomath}%
+		  \cspreto{#1*}{\linenomath}%
+		  \cspreto{end#1}{\endlinenomath}%
+		  \cspreto{end#1*}{\endlinenomath}%
+		}
+		\linenomathpatch{equation}
+		\linenomathpatch{gather}
+		\linenomathpatch{multline}
+		\linenomathpatch{align}
+		\linenomathpatch{alignat}
+		\linenomathpatch{flalign}
 	\fi
-	\RequirePackage{amsmath}
-	%% https://tex.stackexchange.com/a/461192 Automatic fix (without mathlines)
-	%% Patch 'normal' math environments:
-	\newcommand*\linenomathpatch[1]{%
-	  \cspreto{#1}{\linenomath}%
-	  \cspreto{#1*}{\linenomath}%
-	  \cspreto{end#1}{\endlinenomath}%
-	  \cspreto{end#1*}{\endlinenomath}%
-	}
-	\linenomathpatch{equation}
-	\linenomathpatch{gather}
-	\linenomathpatch{multline}
-	\linenomathpatch{align}
-	\linenomathpatch{alignat}
-	\linenomathpatch{flalign}
+\fi
 
 \RequirePackage[
 	markifdraft,
