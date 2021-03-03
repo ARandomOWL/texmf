@@ -1,0 +1,45 @@
+%% acronym-smallcaps.tex
+%%
+\ProvidesPackage{acronym-smallcaps}[2021/03/03 v1.0 Use smallcaps in acronyms]
+\newif\ifacronymsmallcaps@initialcap
+\DeclareOption{initialcap}{\acronymsmallcaps@initialcaptrue}% Use full cap for first letter of \Acs
+\ProcessOptions\relax
+
+% Use smallcaps instead of textsmaller
+\renewcommand*{\acsfont}[1]{\textsc{\MakeLowercase{#1}}}
+\renewcommand*\AC@acsp[1]{%
+	\ifcsname fn@#1@PS\endcsname
+		\csname fn@#1@PS\endcsname
+	\else
+		\ifAC@smaller
+			\acsfont{\AC@acs{#1}}\textsmaller{s}%
+		\else
+			\acsfont{\AC@acs{#1}s}%
+		\fi
+	\fi
+}
+\renewcommand*{\@acsp}[1]{%
+	\AC@acsp{#1}%
+	\ifAC@starred\else\AC@logged{#1}\fi}
+
+\ifacronymsmallcaps@initialcap
+	% Initial full cap for \Acs
+	\renewcommand{\@Ac}[2][\AC@linebreakpenalty]{%
+		\ifAC@dua
+			\ifAC@starred\Acl*{#2}\else\Acl{#2}\fi%
+		\else
+			\expandafter\ifx\csname AC@\AC@prefix#2\endcsname\AC@used%
+			\ifAC@starred\Acs*{#2}\else\Acs{#2}\fi%
+			\else
+				\ifAC@starred\Acf*[#1]{#2}\else\Acf[#1]{#2}\fi%
+		\fi
+		\fi}
+	\newcommand*{\Acs}{\AC@starredfalse\protect\Acsa}%
+	\WithSuffix\newcommand\Acs*{\AC@starredtrue\protect\Acsa}%
+	\newcommand*{\Acsa}[1]{%
+		\texorpdfstring{\protect\@Acs{#1}}{#1}}
+	\newcommand*{\@Acs}[1]{% Uppercase first letter of Acs, others smallcaps
+		{\renewcommand*{\acsfont}[1]{\textsc{\MakeLowercase{\MakeUppercase #1}}}
+		\acsfont{\AC@acs{#1}}}%
+		\ifAC@starred\else\AC@logged{#1}\fi}
+\fi
