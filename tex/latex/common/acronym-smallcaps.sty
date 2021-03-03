@@ -2,8 +2,18 @@
 %%
 \ProvidesPackage{acronym-smallcaps}[2021/03/03 v1.0 Use smallcaps in acronyms]
 \newif\ifacronymsmallcaps@initialcap
+\newif\ifacronymsmallcaps@allcap
 \DeclareOption{initialcap}{\acronymsmallcaps@initialcaptrue}% Use full cap for first letter of \Acs
+\DeclareOption{allcap}{\acronymsmallcaps@allcaptrue}% Use all-caps for \Acs
 \ProcessOptions\relax
+
+\newif\ifacronymsmallcaps@docap
+\ifacronymsmallcaps@initialcap
+	\acronymsmallcaps@docaptrue
+\fi
+\ifacronymsmallcaps@allcap
+	\acronymsmallcaps@docaptrue
+\fi
 
 % Use smallcaps instead of textsmaller
 \renewcommand*{\acsfont}[1]{\textsc{\MakeLowercase{#1}}}
@@ -22,12 +32,31 @@
 	\AC@acsp{#1}%
 	\ifAC@starred\else\AC@logged{#1}\fi}
 
-% Initial full cap - requires mfirstuc
-\ifacronymsmallcaps@initialcap
-	\RequirePackage{mfirstuc}
-	\newcommand*{\Acsfont}[1]{\textsc{\MakeLowercase{\makefirstuc{#1}}}}
+\newcommand*\AC@Acsp[1]{%
+	\ifcsname fn@#1@PS\endcsname
+		\csname fn@#1@PS\endcsname
+	\else
+		\ifAC@smaller
+			\ifacronymsmallcaps@allcap
+				\Acsfont{\AC@acs{#1}}s%
+			\else
+				\Acsfont{\AC@acs{#1}}\textsmaller{s}%
+			\fi
+		\else
+			\Acsfont{\AC@acs{#1}s}%
+		\fi
+	\fi
+}
 
-	% Initial full cap for \Acs
+% Full cap - requires mfirstuc
+\ifacronymsmallcaps@docap
+	\ifacronymsmallcaps@initialcap
+		\RequirePackage{mfirstuc}
+		\newcommand*{\Acsfont}[1]{\textsc{\MakeLowercase{\makefirstuc{#1}}}}
+	\else\ifacronymsmallcaps@allcap
+		\newcommand*{\Acsfont}[1]{\MakeUppercase{#1}}
+	\fi\fi
+
 	% Patch Ac
 	\renewcommand{\@Ac}[2][\AC@linebreakpenalty]{%
 		\ifAC@dua
@@ -67,6 +96,6 @@
 	\newcommand*{\Acspa}[1]{%
 		\texorpdfstring{\protect\@Acsp{#1}}{\AC@Acsp{#1}}}
 	\newcommand*{\@Acsp}[1]{%
-		\Acsfont{\AC@acsp{#1}}%
+		\AC@Acsp{#1}%
 		\ifAC@starred\else\AC@logged{#1}\fi}
 \fi
