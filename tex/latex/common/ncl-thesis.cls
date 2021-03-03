@@ -94,6 +94,7 @@
 	\renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} (\gitAuthorDate) \gitrev}
 	\apptocmd\gitMarkFormat{\upshape\mdseries}{}{} % Fix: text is bold if bold text begins next page
 \PassOptionsToPackage{pdfusetitle}{hyperref}
+\PassOptionsToPackage{pdfa}{hyperref}% Make hyperref attempt to satisfy PDF/A
 \AtEndPreamble{%
 	\RequirePackage{hyperref}
 	% Draft watermark
