@@ -22,8 +22,13 @@
 	\AC@acsp{#1}%
 	\ifAC@starred\else\AC@logged{#1}\fi}
 
+% Initial full cap - requires mfirstuc
 \ifacronymsmallcaps@initialcap
+	\RequirePackage{mfirstuc}
+	\newcommand*{\Acsfont}[1]{\textsc{\MakeLowercase{\makefirstuc{#1}}}}
+
 	% Initial full cap for \Acs
+	% Patch Ac
 	\renewcommand{\@Ac}[2][\AC@linebreakpenalty]{%
 		\ifAC@dua
 			\ifAC@starred\Acl*{#2}\else\Acl{#2}\fi%
@@ -34,12 +39,34 @@
 				\ifAC@starred\Acf*[#1]{#2}\else\Acf[#1]{#2}\fi%
 		\fi
 		\fi}
+
+	% Acs
 	\newcommand*{\Acs}{\AC@starredfalse\protect\Acsa}%
 	\WithSuffix\newcommand\Acs*{\AC@starredtrue\protect\Acsa}%
 	\newcommand*{\Acsa}[1]{%
 		\texorpdfstring{\protect\@Acs{#1}}{#1}}
-	\newcommand*{\@Acs}[1]{% Uppercase first letter of Acs, others smallcaps
-		{\renewcommand*{\acsfont}[1]{\textsc{\MakeLowercase{\MakeUppercase #1}}}
-		\acsfont{\AC@acs{#1}}}%
+	\newcommand*{\@Acs}[1]{%
+		\Acsfont{\AC@acs{#1}}%
+		\ifAC@starred\else\AC@logged{#1}\fi}
+
+	% Patch Acp
+	\renewcommand{\@Acp}[2][\AC@linebreakpenalty]{%
+		\ifAC@dua
+			\ifAC@starred\Aclp*{#2}\else\Aclp{#2}\fi%
+		\else
+			\expandafter\ifx\csname AC@\AC@prefix#2\endcsname\AC@used
+				\ifAC@starred\Acsp*{#2}\else\Acsp{#2}\fi%
+		\else
+			\ifAC@starred\Acfp*[#1]{#2}\else\Acfp[#1]{#2}\fi%
+		\fi
+		\fi}
+
+	% Acsp
+	\newcommand*{\Acsp}{\AC@starredfalse\protect\Acspa}%
+	\WithSuffix\newcommand\Acsp*{\AC@starredtrue\protect\Acspa}%
+	\newcommand*{\Acspa}[1]{%
+		\texorpdfstring{\protect\@Acsp{#1}}{\AC@Acsp{#1}}}
+	\newcommand*{\@Acsp}[1]{%
+		\Acsfont{\AC@acsp{#1}}%
 		\ifAC@starred\else\AC@logged{#1}\fi}
 \fi
