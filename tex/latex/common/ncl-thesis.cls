@@ -2,10 +2,12 @@
 \newif\ifnclthesis@print
 \newif\ifnclthesis@draft
 \newif\ifnclthesis@final
+\newif\ifnclthesis@alwaysbackref
 \newif\ifnclthesis@lineno
 \DeclareOption{print}{\nclthesis@printtrue}
 \DeclareOption{draft}{\nclthesis@drafttrue}
 \DeclareOption{final}{\nclthesis@finaltrue}
+\DeclareOption{alwaysbackref}{\nclthesis@alwaysbackreftrue}
 \DeclareOption{lineno}{\nclthesis@linenotrue}
 \DeclareOption{linenomodulo}{\PassOptionsToPackage{modulo}{lineno}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -30,6 +32,9 @@
 \ifnclthesis@draft
 	\PassOptionsToPackage{backref=true}{biblatex}
 	\nclthesis@doublespacingtrue
+\fi
+\ifnclthesis@alwaysbackref
+	\PassOptionsToPackage{backref=true}{biblatex}
 \fi
 
 % Use the book class
