@@ -112,12 +112,6 @@
 \PassOptionsToPackage{pdfa}{hyperref}% Make hyperref attempt to satisfy PDF/A
 \AtEndPreamble{%
 	\RequirePackage{hyperref}
-	% Draft watermark
-	\ifnclthesis@draft
-		\RequirePackage[firstpage]{draftwatermark}
-		\SetWatermarkText{DRAFT}
-		\SetWatermarkScale{1}
-	\fi
 }
 
 % More sensible float placement
