@@ -76,6 +76,12 @@
 	\g@addto@macro\backmatter{\nolinenumbers}
 	\AtBeginEnvironment{abstract}{\linenumbers}
 	\AtEndEnvironment{abstract}{\nolinenumbers}
+	\AtEndPreamble{%
+		\AtBeginBibliography{\nolinenumbers}% Provided by biblatex, so must come after it's loaded
+		% Bibliography forms a group, so turning lineno back on after is
+		% not required. \AtEndBiblography does not exist anyway.
+		% \AtEndBibliography{\linenumbers}%
+	}
 
 	\RequirePackage{amsmath}
 	%% https://tex.stackexchange.com/a/461192 Automatic fix (without mathlines)
