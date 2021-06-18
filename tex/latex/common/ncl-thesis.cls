@@ -61,6 +61,9 @@
 		]{geometry}
 \fi
 
+% Define abstract environment, as it's not defined in book class
+\newenvironment{abstract}{\chapter{Abstract}}
+
 \RequirePackage{etoolbox}
 \RequirePackage{colors-ncl}
 \RequirePackage{fancyhdr}
