@@ -9,6 +9,7 @@
 \DeclareOption{final}{\nclthesis@finaltrue}
 \DeclareOption{alwaysbackref}{\nclthesis@alwaysbackreftrue}
 \DeclareOption{lineno}{\nclthesis@linenotrue}
+\DeclareOption{linenopagewise}{\PassOptionsToPackage{pagewise}{lineno}}
 \DeclareOption{linenomodulo}{\PassOptionsToPackage{modulo}{lineno}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
@@ -67,7 +68,7 @@
 
 \ifnclthesis@draft
 \ifnclthesis@lineno
-	\RequirePackage[pagewise]{lineno}
+	\RequirePackage{lineno}
 	\g@addto@macro\mainmatter{\linenumbers}
 	\g@addto@macro\backmatter{\nolinenumbers}
 	\AtBeginEnvironment{abstract}{\linenumbers}
