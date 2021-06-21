@@ -20,7 +20,8 @@
 \newcommand{\listofacronyms}{%
   \ifeeeacro@nolist
   \else
-    \chapter{\listacronymname}
+    \chapter*{\listacronymname}
+    \addcontentsline{toc}{chapter}{\listacronymname}
   \fi
   \begin{acronym}[DRAM]
     \acro{AI}{artificial intelligence}
